@@ -39,6 +39,7 @@
 # @flag -U --uniq                                  ignore filesystems with duplicate target
 # @flag -u --notruncate                            don't truncate text in columns
 # @flag -v --nofsroot                              don't print [/dir] for bind or btrfs mounts
+# @flag -y --shell                                 use column names to be usable as shell variable identifiers
 # @flag -x --verify                                verify mount table content (default is fstab)
 # @flag --verbose                                  print more details
 # @flag --vfs-all                                  print all VFS options

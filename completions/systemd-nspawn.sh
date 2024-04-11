@@ -10,6 +10,7 @@
 # @option --template <PATH>                        Initialize root directory from template directory, if missing
 # @flag -x --ephemeral                             Run container with snapshot of root directory, and remove it after exit
 # @option -i --image <PATH>                        Root file system disk image (or device node) for the container
+# @option --image-policy <POLICY>                  Specify disk image dissection policy
 # @option --oci-bundle <PATH>                      OCI bundle directory
 # @flag --read-only                                Mount the root directory read-only
 # @option --volatile <MODE>                        Run the system in volatile mode
@@ -20,10 +21,11 @@
 # @flag -a --as-pid2                               Maintain a stub init as PID1, invoke binary as PID2
 # @flag -b --boot                                  Boot up full system (i.e.
 # @option --chdir <PATH>                           Set working directory in the container
-# @option -E --setenv <NAME=VALUE>                 Pass an environment variable to PID 1
+# @option -E --setenv <NAME[=VALUE]>               Pass an environment variable to PID 1
 # @option -u --user                                Run the command under specified user or UID
 # @option --kill-signal <SIGNAL>                   Select signal to use for shutting down PID 1
 # @option --notify-ready <BOOLEAN>                 Receive notifications from the child init process
+# @option --suppress-sync <BOOLEAN>                Suppress any form of disk data synchronization
 # @option -M --machine <NAME>                      Set the machine name for the container
 # @option --hostname <NAME>                        Override the hostname for the container
 # @option --uuid                                   Set a specific machine UUID for the container
@@ -33,10 +35,11 @@
 # @flag --keep-unit                                Do not register a scope for the machine, reuse the service unit nspawn is running in
 # @option --private-users <UIDBASE[:NUIDS]>        Similar, but with user configured UID/GID range
 # @option --private-users-ownership <MODE>         Adjust ('chown') or map ('map') OS tree ownership to private UID/GID range
+# @flag -U                                         Equivalent to --private-users=pick and --private-users-ownership=auto
 # @flag --private-network                          Disable network in container
-# @option --network-interface <INTERFACE>          Assign an existing network interface to the container
-# @option --network-macvlan <INTERFACE>            Create a macvlan network interface based on an existing network interface to the container
-# @option --network-ipvlan <INTERFACE>             Create an ipvlan network interface based on an existing network interface to the container
+# @option --network-interface <HOSTIF[:CONTAINERIF]>  Assign an existing network interface to the container
+# @option --network-macvlan <HOSTIF[:CONTAINERIF]>  Create a macvlan network interface based on an existing network interface to the container
+# @option --network-ipvlan <HOSTIF[:CONTAINERIF]>  Create an ipvlan network interface based on an existing network interface to the container
 # @flag -n --network-veth                          Add a virtual Ethernet connection between host and container
 # @option --network-veth-extra <HOSTIF[:CONTAINERIF]>  Add an additional virtual Ethernet link between host and container
 # @option --network-bridge <INTERFACE>             Add a virtual Ethernet connection to the container and attach it to an existing bridge on the host

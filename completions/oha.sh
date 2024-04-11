@@ -28,6 +28,7 @@
 # @flag --disable-compression               Disable compression.
 # @option -r --redirect                     Limit for number of Redirect.
 # @flag --disable-keepalive                 Disable keep-alive, prevents re-use of TCP connections between different HTTP requests.
+# @flag --no-pre-lookup                     *Not* perform a DNS lookup at beginning to cache it
 # @flag --ipv6                              Lookup only ipv6.
 # @flag --ipv4                              Lookup only ipv4.
 # @flag --insecure                          Accept invalid certs.

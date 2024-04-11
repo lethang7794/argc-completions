@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
+# @flag -A --noempty                              don't print empty devices
 # @flag -D --discard                              print discard capabilities
 # @option -E --dedup*,[`_choice_column`] <column>  de-duplicate output by <column>
 # @option -I --include <list>                     show only devices with specified major numbers
 # @flag -J --json                                 use JSON output format
+# @flag -M --merge                                group parents of sub-trees (usable for RAIDs, Multi-path)
 # @flag -O --output-all                           output all columns
 # @flag -P --pairs                                use key="value" output format
 # @flag -S --scsi                                 output info about SCSI devices
+# @flag -N --nvme                                 output info about NVMe devices
+# @flag -v --virtio                               output info about virtio devices
 # @option -T --tree[`_choice_column`] <column>    use tree format output
 # @flag -a --all                                  print all devices
 # @flag -b --bytes                                print SIZE in bytes rather than in human readable format
@@ -16,7 +20,6 @@
 # @flag -f --fs                                   output info about filesystems
 # @flag -i --ascii                                use ascii characters only
 # @flag -l --list                                 use list format output
-# @flag -M --merge                                group parents of sub-trees (usable for RAIDs, Multi-path)
 # @flag -m --perms                                output info about permissions
 # @flag -n --noheadings                           don't print headings
 # @option -o --output*,[`_choice_column`] <list>  output columns
@@ -26,7 +29,8 @@
 # @flag -t --topology                             output info about topology
 # @option -w --width <num>                        specifies output width as number of characters
 # @option -x --sort[`_choice_column`] <column>    sort output by <column>
-# @flag -z --zoned                                print zone model
+# @flag -y --shell                                use column names to be usable as shell variable identifiers
+# @flag -z --zoned                                print zone related information
 # @option --sysroot <dir>                         use specified directory as system root
 # @flag -h --help                                 display this help
 # @flag -V --version                              display version

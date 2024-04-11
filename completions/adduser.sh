@@ -1,30 +1,37 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-# @option --conf <FILE>                  Use FILE instead of /etc/adduser.conf.
-# @flag --disabled-login                 Do not run passwd to set the password.
-# @flag --disabled-password              Like --disabled-login, but logins are still possible (for example using SSH RSA keys) but not using password authentication.
-# @flag --force-badname                  By default, user and group names are checked against the configurable regular expression NAME_REGEX (or NAME_REGEX_SYSTEM if --system is specified) specified in the configuration file.
-# @option --gecos                        Set the gecos field for the new entry generated.
-# @option --gid <ID>                     When creating a group, this option forces the new groupid to be the given number.
-# @flag --group                          When combined with --system, a group with the same name and ID as the system user is created.
-# @flag --help                           Display brief instructions.
-# @option --home <DIR>                   Use DIR as the user's home directory, rather than the default specified by the configuration file.
-# @option --shell[`_module_os_shell`]    Use SHELL as the user's login shell, rather than the default specified by the configuration file.
-# @option --ingroup <GROUP>              Add the new user to GROUP instead of a usergroup or the default group defined by USERS_GID in the configuration file.
-# @flag --no-create-home                 Do not create the home directory, even if it doesn't exist.
-# @flag --quiet                          Suppress informational messages, only show warnings and errors.
-# @flag --debug                          Be verbose, most useful if you want to nail down a problem with adduser.
-# @flag --system                         Create a system user or group.
-# @option --uid <ID>                     Force the new userid to be the given number.
-# @option --firstuid <ID>                Override the first uid in the range that the uid is chosen from (overrides FIRST_UID specified in the configuration file).
-# @option --lastuid <ID>                 Override the last uid in the range that the uid is chosen from ( LAST_UID )
-# @flag --add_extra_groups               Add new user to extra groups defined in the configuration file.
-# @flag --version                        Display version and copyright information.
-# @arg user
+# @flag --badname                           Allow names that do not conform to standards.
+# @option -b --base-dir <BASE_DIR>          The default base directory for the system if -d HOME_DIR is not specified.
+# @option -c --comment                      Any text string.
+# @option -d --home-dir <HOME_DIR>          The new user will be created using HOME_DIR as the value for the user's login directory.
+# @flag -D --defaults                       See below, the subsection "Changing the default values".
+# @option -e --expiredate <EXPIRE_DATE>     The date on which the user account will be disabled.
+# @option -f --inactive                     defines the number of days after the password exceeded its maximum age where the user is expected to replace this password.
+# @flag -F --add-subids-for-system          Update /etc/subuid and /etc/subgid even when creating a system account with -r option.
+# @option -g --gid <GROUP>                  The name or the number of the user's primary group.
+# @option -G --groups <GROUP1[,GROUP2,...[,GROUPN]]]>  A list of supplementary groups which the user is also a member of.
+# @flag -h --help                           Display help message and exit.
+# @option -k --skel <SKEL_DIR>              The skeleton directory, which contains files and directories to be copied in the user's home directory, when the home directory is created by useradd.
+# @option -K --key <KEY=VALUE>              Overrides /etc/login.defs defaults (UID_MIN, UID_MAX, UMASK, PASS_MAX_DAYS and others).
+# @flag -l --no-log-init                    Do not add the user to the lastlog and faillog databases.
+# @flag -m --create-home                    Create the user's home directory if it does not exist.
+# @flag -M --no-create-home                 Do not create the user's home directory, even if the system wide setting from /etc/login.defs (CREATE_HOME) is set to yes.
+# @flag -N --no-user-group                  Do not create a group with the same name as the user, but add the user to the group specified by the -g option or by the GROUP variable in /etc/default/useradd.
+# @flag -o --non-unique                     allows the creation of an account with an already existing UID.
+# @option -p --password                     defines an initial password for the account.
+# @flag -r --system                         Create a system account.
+# @option -R --root <CHROOT_DIR>            Apply changes in the CHROOT_DIR directory and use the configuration files from the CHROOT_DIR directory.
+# @option -P --prefix <PREFIX_DIR>          Apply changes to configuration files under the root filesystem found under the directory PREFIX_DIR.
+# @option -s --shell[`_module_os_shell`]    sets the path to the user's login shell.
+# @option -u --uid                          The numerical value of the user's ID.
+# @flag -U --user-group                     Create a group with the same name as the user, and add the user to this group.
+# @option -Z --selinux-user <SEUSER>        defines the SELinux user for the new account.
+# @option --selinux-range <SERANGE>         defines the SELinux MLS range for the new account.
+# @arg login
 
 _module_os_shell() {
-    command cat /etc/shells | sed -n '/^\// p'   
+    command cat /etc/shells | sed -n '/^\// p'
 }
 
 command eval "$(argc --argc-eval "$0" "$@")"

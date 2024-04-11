@@ -16,8 +16,9 @@
 # @flag --preserve-credentials                   do not touch uids or gids
 # @option -r --root <dir>                        set the root directory
 # @option -w --wd <dir>                          set the working directory
+# @option -W --wdns <dir>                        set the working directory in namespace
+# @flag -e --env                                 inherit environment variables from target process
 # @flag -F --no-fork                             do not fork before exec'ing <program>
-# @flag -Z --follow-context                      set SELinux context according to --target PID
 # @flag -h --help                                display this help
 # @flag -V --version                             display version
 # @arg program[`_module_os_command`]

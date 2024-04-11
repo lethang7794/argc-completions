@@ -883,36 +883,6 @@ rewrite() {
 }
 # }} restic rewrite
 
-# {{ restic self-update
-# @cmd Update the restic binary
-# @flag -h --help                         help for self-update
-# @option --output <filename>             Save the downloaded file as filename (default: running binary itself)
-# @option --cacert <file>                 file to load root certificates from (default: use system certificates or $RESTIC_CACERT)
-# @option --cache-dir <directory>         set the cache directory.
-# @flag --cleanup-cache                   auto remove old cache directories
-# @option --compression <mode>            compression mode (only available for repository format version 2), one of (auto|off|max) (default: $RESTIC_COMPRESSION) (default auto)
-# @flag --insecure-tls                    skip TLS certificate verification when connecting to the repository (insecure)
-# @flag --json                            set output mode to JSON for commands that support it
-# @option --key-hint <key>                key ID of key to try decrypting first (default: $RESTIC_KEY_HINT)
-# @option --limit-download <rate>         limits downloads to a maximum rate in KiB/s.
-# @option --limit-upload <rate>           limits uploads to a maximum rate in KiB/s.
-# @flag --no-cache                        do not use a local cache
-# @flag --no-lock                         do not lock the repository, this allows some operations on read-only repositories
-# @option -o --option <key=value>         set extended option (key=value, can be specified multiple times)
-# @option --pack-size <size>              set target pack size in MiB, created pack files may be larger (default: $RESTIC_PACK_SIZE)
-# @option --password-command <command>    shell command to obtain the repository password from (default: $RESTIC_PASSWORD_COMMAND)
-# @option -p --password-file <file>       file to read the repository password from (default: $RESTIC_PASSWORD_FILE)
-# @flag -q --quiet                        do not output comprehensive progress report
-# @option -r --repo[`_choice_repo`] <repository>  repository to backup to or restore from (default: $RESTIC_REPOSITORY)
-# @option --repository-file <file>        file to read the repository location from (default: $RESTIC_REPOSITORY_FILE)
-# @option --retry-lock <duration>         retry to lock the repository if it is already locked, takes a value like 5m or 2h (default: no retries)
-# @option --tls-client-cert <file>        path to a file containing PEM encoded TLS client certificate and private key (default: $RESTIC_TLS_CLIENT_CERT)
-# @flag -v --verbose                      be verbose (specify multiple times or a level using --verbose=n, max level/times is 2)
-self-update() {
-    :;
-}
-# }} restic self-update
-
 # {{ restic snapshots
 # @cmd List all snapshots
 # @flag -c --compact                      use compact output format

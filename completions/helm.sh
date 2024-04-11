@@ -14,9 +14,10 @@
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 
 # {{ helm completion
 # @cmd generate autocompletion scripts for the specified shell
@@ -33,9 +34,10 @@
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 completion() {
     :;
 }
@@ -56,9 +58,10 @@ completion() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 completion::bash() {
     :;
 }
@@ -80,9 +83,10 @@ completion::bash() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 completion::fish() {
     :;
 }
@@ -104,9 +108,10 @@ completion::fish() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 completion::powershell() {
     :;
 }
@@ -128,9 +133,10 @@ completion::powershell() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 completion::zsh() {
     :;
 }
@@ -153,9 +159,10 @@ completion::zsh() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name
 create() {
     :;
@@ -178,9 +185,10 @@ create() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 dependency() {
     :;
 }
@@ -188,7 +196,7 @@ dependency() {
 # {{{ helm dependency build
 # @cmd rebuild the charts/ directory based on the Chart.lock file
 # @flag -h --help                            help for build
-# @option --keyring <file>                   keyring containing public keys (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   keyring containing public keys (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --skip-refresh                       do not refresh the local repository cache
 # @flag --verify                             verify the packages against signatures
 # @option --burst-limit <int>                client-side default throttling limit (default 100)
@@ -203,9 +211,10 @@ dependency() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 dependency::build() {
     :;
@@ -228,9 +237,10 @@ dependency::build() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 dependency::list() {
     :;
@@ -240,7 +250,7 @@ dependency::list() {
 # {{{ helm dependency update
 # @cmd update charts/ based on the contents of Chart.yaml
 # @flag -h --help                            help for update
-# @option --keyring <file>                   keyring containing public keys (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   keyring containing public keys (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --skip-refresh                       do not refresh the local repository cache
 # @flag --verify                             verify the packages against signatures
 # @option --burst-limit <int>                client-side default throttling limit (default 100)
@@ -255,9 +265,10 @@ dependency::list() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 dependency::update() {
     :;
@@ -280,9 +291,10 @@ dependency::update() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 env() {
     :;
 }
@@ -303,9 +315,10 @@ env() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 get() {
     :;
 }
@@ -327,9 +340,10 @@ get() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::all() {
     :;
@@ -352,9 +366,10 @@ get::all() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::hooks() {
     :;
@@ -377,9 +392,10 @@ get::hooks() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::manifest() {
     :;
@@ -403,9 +419,10 @@ get::manifest() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::metadata() {
     :;
@@ -428,9 +445,10 @@ get::metadata() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::notes() {
     :;
@@ -455,9 +473,10 @@ get::notes() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 get::values() {
     :;
@@ -483,9 +502,10 @@ get::values() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 history() {
     :;
@@ -509,7 +529,7 @@ history() {
 # @flag -h --help                                  help for install
 # @flag --insecure-skip-tls-verify                 skip tls certificate checks for the chart download
 # @option --key-file <file>                        identify HTTPS client using this SSL key file
-# @option --keyring <file>                         location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                         location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @option -l --labels <stringToString>             Labels that would be added to release metadata.
 # @option --name-template <string>                 specify template used to name the release
 # @flag --no-hooks                                 prevent hooks from running during install
@@ -547,9 +567,10 @@ history() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name
 # @arg chart[`_choice_chart`]
 install() {
@@ -560,6 +581,7 @@ install() {
 # {{ helm lint
 # @cmd examine a chart for possible issues
 # @flag -h --help                            help for lint
+# @option --kube-version <string>            Kubernetes version used for capabilities and deprecation checks
 # @flag --quiet                              print only warnings and errors
 # @option --set* <string>                    set values on the command line (can specify multiple or separate values with commas: key1=val1,key2=val2)
 # @option --set-file*,[`_choice_set_file`] <file>  set values from respective files specified via the command line (can specify multiple or separate values with commas: key1=path1,key2=path2)
@@ -581,9 +603,10 @@ install() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg path
 lint() {
     :;
@@ -624,9 +647,10 @@ lint() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 list() {
     :;
 }
@@ -639,7 +663,7 @@ list() {
 # @option -d --destination <path>            location to write the chart.
 # @flag -h --help                            help for package
 # @option --key <string>                     name of the key to use when signing.
-# @option --keyring <file>                   location of a public keyring (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of a public keyring (default "/home/lqt/.gnupg/pubring.gpg")
 # @option --passphrase-file <file>           location of a file which contains the passphrase for the signing key.
 # @flag --sign                               use a PGP private key to sign this package
 # @option --version <string>                 set the version on the chart to this semver version
@@ -655,9 +679,10 @@ list() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart_path
 package() {
     :;
@@ -679,9 +704,10 @@ package() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 plugin() {
     :;
 }
@@ -703,9 +729,10 @@ plugin() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg path-url+ <path|url>
 plugin::install() {
     :;
@@ -728,9 +755,10 @@ plugin::install() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 plugin::list() {
     :;
 }
@@ -752,9 +780,10 @@ plugin::list() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg plugin+[`_choice_plugin`]
 plugin::uninstall() {
     :;
@@ -777,9 +806,10 @@ plugin::uninstall() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg plugin+[`_choice_plugin`]
 plugin::update() {
     :;
@@ -797,7 +827,7 @@ plugin::update() {
 # @flag -h --help                            help for pull
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -820,9 +850,10 @@ plugin::update() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_repo_chart`]
 pull() {
     :;
@@ -849,9 +880,10 @@ pull() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg dir![`_choice_chart`]
 # @arg remote
 push() {
@@ -874,9 +906,10 @@ push() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 registry() {
     :;
 }
@@ -903,9 +936,10 @@ registry() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg host
 registry::login() {
     :;
@@ -927,9 +961,10 @@ registry::login() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg host
 registry::logout() {
     :;
@@ -952,9 +987,10 @@ registry::logout() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 repo() {
     :;
 }
@@ -985,9 +1021,10 @@ repo() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name
 # @arg url
 repo::add() {
@@ -1013,9 +1050,10 @@ repo::add() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg dir
 repo::index() {
     :;
@@ -1039,9 +1077,10 @@ repo::index() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 repo::list() {
     :;
 }
@@ -1063,9 +1102,10 @@ repo::list() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name*[`_choice_repo_name`]
 repo::remove() {
     :;
@@ -1089,9 +1129,10 @@ repo::remove() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name*[`_choice_repo_name`]
 repo::update() {
     :;
@@ -1123,9 +1164,10 @@ repo::update() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release![`_choice_release`]
 # @arg revision[`_choice_revision`]
 rollback() {
@@ -1148,9 +1190,10 @@ rollback() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 search() {
     :;
 }
@@ -1175,9 +1218,10 @@ search() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg keyword
 search::hub() {
     :;
@@ -1206,9 +1250,10 @@ search::hub() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg keyword
 search::repo() {
     :;
@@ -1232,9 +1277,10 @@ search::repo() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 show() {
     :;
 }
@@ -1247,7 +1293,7 @@ show() {
 # @flag -h --help                            help for all
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -1267,9 +1313,10 @@ show() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 show::all() {
     :;
@@ -1284,7 +1331,7 @@ show::all() {
 # @flag -h --help                            help for chart
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -1304,9 +1351,10 @@ show::all() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 show::chart() {
     :;
@@ -1321,7 +1369,7 @@ show::chart() {
 # @flag -h --help                            help for crds
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -1341,9 +1389,10 @@ show::chart() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 show::crds() {
     :;
@@ -1358,7 +1407,7 @@ show::crds() {
 # @flag -h --help                            help for readme
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -1378,9 +1427,10 @@ show::crds() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 show::readme() {
     :;
@@ -1396,7 +1446,7 @@ show::readme() {
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @option --jsonpath <path>                  supply a JSONPath expression to filter the output
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @flag --pass-credentials                   pass credentials to all domains
 # @option --password <string>                chart repository password where to locate the requested chart
 # @flag --plain-http                         use insecure HTTP connections for the chart download
@@ -1416,9 +1466,10 @@ show::readme() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg chart[`_choice_chart`]
 show::values() {
     :;
@@ -1445,9 +1496,10 @@ show::values() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 status() {
     :;
@@ -1474,7 +1526,7 @@ status() {
 # @flag --insecure-skip-tls-verify           skip tls certificate checks for the chart download
 # @flag --is-upgrade                         set .Release.IsUpgrade instead of .Release.IsInstall
 # @option --key-file <file>                  identify HTTPS client using this SSL key file
-# @option --keyring <file>                   location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @option --kube-version <string>            Kubernetes version used for Capabilities.KubeVersion
 # @option -l --labels <stringToString>       Labels that would be added to release metadata.
 # @option --name-template <string>           specify template used to name the release
@@ -1517,9 +1569,10 @@ status() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg name
 # @arg chart[`_choice_chart`]
 template() {
@@ -1545,9 +1598,10 @@ template() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release[`_choice_release`]
 test() {
     :;
@@ -1578,9 +1632,10 @@ test() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release_name[`_choice_release`]
 uninstall() {
     :;
@@ -1606,7 +1661,7 @@ uninstall() {
 # @flag --insecure-skip-tls-verify                 skip tls certificate checks for the chart download
 # @flag -i --install                               if a release by this name doesn't already exist, run an install
 # @option --key-file <file>                        identify HTTPS client using this SSL key file
-# @option --keyring <file>                         location of public keys used for verification (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                         location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
 # @option -l --labels <stringToString>             Labels that would be added to release metadata.
 # @flag --no-hooks                                 disable pre/post upgrade hooks
 # @option -o --output[table|json|yaml] <format>    prints the output in the specified format.
@@ -1645,9 +1700,10 @@ uninstall() {
 # @option --kube-token <string>                    bearer token used for authentication
 # @option --kubeconfig <file>                      path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>                 path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                          queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>                 path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>                path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>               path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg release[`_choice_release`]
 # @arg chart[`_choice_chart`]
 upgrade() {
@@ -1658,7 +1714,7 @@ upgrade() {
 # {{ helm verify
 # @cmd verify that a chart at the given path has been signed and is valid
 # @flag -h --help                            help for verify
-# @option --keyring <file>                   keyring containing public keys (default "/home/sigo/.gnupg/pubring.gpg")
+# @option --keyring <file>                   keyring containing public keys (default "/home/lqt/.gnupg/pubring.gpg")
 # @option --burst-limit <int>                client-side default throttling limit (default 100)
 # @flag --debug                              enable verbose output
 # @option --kube-apiserver <string>          the address and the port for the Kubernetes API server
@@ -1671,9 +1727,10 @@ upgrade() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 # @arg path
 verify() {
     :;
@@ -1697,9 +1754,10 @@ verify() {
 # @option --kube-token <string>              bearer token used for authentication
 # @option --kubeconfig <file>                path to the kubeconfig file
 # @option -n --namespace[`_choice_kube_namespace`] <string>  namespace scope for this request
-# @option --registry-config <file>           path to the registry config file (default "/home/sigo/.config/helm/registry/config.json")
-# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/sigo/.cache/helm/repository")
-# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/sigo/.config/helm/repositories.yaml")
+# @option --qps <float32>                    queries per second used when communicating with the Kubernetes API, not including bursting
+# @option --registry-config <file>           path to the registry config file (default "/home/lqt/.config/helm/registry/config.json")
+# @option --repository-cache <file>          path to the file containing cached repository indexes (default "/home/lqt/.cache/helm/repository")
+# @option --repository-config <file>         path to the file containing repository names and URLs (default "/home/lqt/.config/helm/repositories.yaml")
 version() {
     :;
 }

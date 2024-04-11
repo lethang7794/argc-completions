@@ -19,6 +19,7 @@
 # @option --timeout <0>                  Timeout until choose returns selected element ($GUM_CCHOOSE_TIMEOUT)
 # @option --limit <1>                    Maximum number of options to pick
 # @flag --no-limit                       Pick unlimited number of options (ignores limit)
+# @flag --select-if-one                  Select the given option if there is only one
 # @option --cursor.foreground <212>      Foreground Color ($GUM_CHOOSE_CURSOR_FOREGROUND)
 # @option --header.foreground <240>      Foreground Color ($GUM_CHOOSE_HEADER_FOREGROUND)
 # @option --item.foreground <value>      Foreground Color ($GUM_CHOOSE_ITEM_FOREGROUND)
@@ -97,6 +98,7 @@ file() {
 # @option --prompt.foreground <240>                Foreground Color ($GUM_FILTER_PROMPT_FOREGROUND)
 # @option --limit <1>                              Maximum number of options to pick
 # @flag --no-limit                                 Pick unlimited number of options (ignores limit)
+# @flag --select-if-one                            Select the given option if there is only one
 # @flag --strict                                   Only returns if anything matched.
 # @flag --no-strict                                Only returns if anything matched.
 filter() {
@@ -158,6 +160,7 @@ join() {
 # @flag --show-line-numbers                     Show line numbers
 # @flag --soft-wrap                             Soft wrap lines
 # @option --timeout <0>                         Timeout until command exits ($GUM_PAGER_TIMEOUT)
+# @option --foreground <value>                  Foreground Color ($GUM_PAGER_FOREGROUND)
 # @option --help.foreground <241>               Foreground Color ($GUM_PAGER_HELP_FOREGROUND)
 # @option --line-number.foreground <237>        Foreground Color ($GUM_PAGER_LINE_NUMBER_FOREGROUND)
 # @option --match.foreground <212>              Foreground Color ($GUM_PAGER_MATCH_FOREGROUND)
@@ -190,8 +193,8 @@ spin() {
 # @cmd Apply coloring, borders, spacing to text
 # @flag -h --help                        Show context-sensitive help.
 # @flag -v --version                     Print the version number
-# @option --background <value>           Background Color ($BACKGROUND)
 # @option --foreground <value>           Foreground Color ($FOREGROUND)
+# @option --background <value>           Background Color ($BACKGROUND)
 # @option --border <none>                Border Style ($BORDER)
 # @option --border-background <value>    Border Background Color ($BORDER_BACKGROUND)
 # @option --border-foreground <value>    Border Foreground Color ($BORDER_FOREGROUND)

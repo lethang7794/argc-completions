@@ -75,13 +75,6 @@ proxy() {
 }
 # }} dropbox proxy
 
-# {{ dropbox puburl
-# @cmd get public url of a file in your Dropbox's public folder
-puburl() {
-    :;
-}
-# }} dropbox puburl
-
 # {{ dropbox running
 # @cmd return whether Dropbox is running
 running() {
@@ -126,7 +119,7 @@ throttle() {
 # }} dropbox throttle
 
 # {{ dropbox update
-# @cmd download latest version of dropbox
+# @cmd download latest version of Dropbox
 update() {
     :;
 }

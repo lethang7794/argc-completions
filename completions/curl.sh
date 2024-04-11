@@ -72,7 +72,7 @@
 # @flag -G --get                                   Put the post data in the URL and use GET
 # @flag -g --globoff                               Disable URL sequences and ranges using {} and []
 # @option --happy-eyeballs-timeout-ms <milliseconds>  Time for IPv6 before trying IPv4
-# @flag --haproxy-clientip                         Sets client IP in HAProxy PROXY protocol v1 header
+# @option --haproxy-clientip <IP address>          Sets client IP in HAProxy PROXY protocol v1 header
 # @flag --haproxy-protocol                         Send HAProxy PROXY protocol v1 header
 # @flag -I --head                                  Show document info only
 # @option -H --header[`_module_http_header`] <header/@file>  Pass custom header(s) to server

@@ -23,6 +23,8 @@
 # @option --charset <X>     Use charset X for terminal/HTML and indentation line output.
 # @option --filelimitDo not descend dirs with more than ♯ files in them.
 # @option -o <filename>     Output to file instead of stdout.
+# @flag --du                Print directory sizes.
+# @flag --prune             Prune empty directories from the output.
 # @flag -q                  Print non-printable characters as '?'.
 # @flag -N                  Print non-printable characters as is.
 # @flag -Q                  Quote filenames with double quotes.
@@ -59,8 +61,7 @@
 # @option --hintro <X>      Use file X as the HTML intro.
 # @option --houtro <X>      Use file X as the HTML outro.
 # @flag --fromfile          Reads paths from files (.=stdin)
-# @flag --fromtabfile       Reads trees from tab indented files (.=stdin)
-# @flag --fflinks           Process link information when using --fromfile.
+# @flag --fflinks           Process link informtion when using --fromfile.
 # @flag --version           Print version and exit.
 # @flag --help              Print usage and this help message and exit.
 # @arg dirs*

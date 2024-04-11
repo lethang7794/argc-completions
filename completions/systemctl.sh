@@ -22,14 +22,16 @@
 # @flag -T --show-transaction           When enqueuing a unit job, show full transaction
 # @flag --show-types                    When showing sockets, explicitly show their type
 # @flag --value                         When showing properties, only print the value
-# @option --check-inhibitors <MODE>     Specify if checking inhibitors before shutting down, sleeping or hibernating
+# @option --check-inhibitors <MODE>     Whether to check inhibitors before shutting down, sleeping, or hibernating
 # @flag -i                              Shortcut for --check-inhibitors=no
-# @option --kill-who <WHO>              Whom to send signal to
+# @option --kill-whom <WHOM>            Whom to send signal to
+# @option --kill-value <INT>            Signal value to enqueue
 # @option -s --signal                   Which signal to send
 # @option --what <RESOURCES>            Which types of resources to remove
 # @flag --now                           Start or stop unit after enabling or disabling it
 # @flag --dry-run                       Only print what would be done Currently supported by verbs: halt, poweroff, reboot,
 # @flag -q --quiet                      Suppress output
+# @flag --no-warn                       Suppress several warnings shown by default
 # @flag --wait                          For (re)start, wait until service stopped again For is-system-running, wait until startup is completed
 # @flag --no-block                      Do not wait until operation finished
 # @flag --no-wall                       Don't send wall message before halt/power-off/reboot
@@ -37,21 +39,25 @@
 # @option --legend <BOOL>               Enable/disable the legend (column headers and hints)
 # @flag --no-pager                      Do not pipe output into a pager
 # @flag --no-ask-password               Do not ask for system passwords
-# @flag --global                        Enable/disable/mask default user unit files globally
-# @flag --runtime                       Enable/disable/mask unit files temporarily until next reboot
+# @flag --global                        Edit/enable/disable/mask default user unit files globally
+# @flag --runtime                       Edit/enable/disable/mask unit files temporarily until next reboot
 # @flag -f --force                      When enabling unit files, override existing symlinks When shutting down, execute action immediately
 # @option --preset-mode                 Apply only enable, only disable, or all presets
-# @option --root <PATH>                 Enable/disable/mask unit files in the specified root directory
+# @option --root <PATH>                 Edit/enable/disable/mask unit files in the specified root directory
+# @option --image <PATH>                Edit/enable/disable/mask unit files in the specified disk image
+# @option --image-policy <POLICY>       Specify disk image dissection policy
 # @option -n --lines <INTEGER>          Number of journal entries to show
-# @option -o --output[short|short-precise|short-iso|short-iso-precise|short-full|short-monotonic|short-unix|verbose|export|json|json-pretty|json-sse|cat] <STRING>  Change journal output mode
+# @option -o --output[short|short-precise|short-iso|short-iso-precise|short-full|short-monotonic|short-unix|short-delta|verbose|export|json|json-pretty|json-sse|cat] <STRING>  Change journal output mode
 # @flag --firmware-setup                Tell the firmware to show the setup menu on next boot
 # @option --boot-loader-menu <TIME>     Boot into boot loader menu on next boot
 # @option --boot-loader-entry <NAME>    Boot into a specific boot loader entry on next boot
 # @flag --plain                         Print unit dependencies as a list instead of a tree
-# @option --timestamp <FORMAT>          Change format of printed timestamps.
+# @option --timestamp <FORMAT>          Change format of printed timestamps (pretty, unix, us, utc, us+utc)
 # @flag --read-only                     Create read-only bind mount
 # @flag --mkdir                         Create directory before mounting, if missing
 # @flag --marked                        Restart/reload previously marked units
+# @option --drop-in <NAME>              Edit unit files using the specified drop-in file name
+# @option --when <TIME>                 Schedule halt/power-off/reboot/kexec action after a certain timestamp
 
 # {{ systemctl list-units
 # @cmd List units currently in memory
@@ -60,6 +66,20 @@ list-units() {
     :;
 }
 # }} systemctl list-units
+
+# {{ systemctl list-automounts
+# @cmd List automount units currently in memory, ordered by path
+list-automounts() {
+    :;
+}
+# }} systemctl list-automounts
+
+# {{ systemctl list-paths
+# @cmd List path units currently in memory, ordered by path
+list-paths() {
+    :;
+}
+# }} systemctl list-paths
 
 # {{ systemctl list-sockets
 # @cmd List socket units currently in memory, ordered by address
@@ -86,7 +106,7 @@ is-active() {
 # }} systemctl is-active
 
 # {{ systemctl is-failed
-# @cmd Check whether units are failed
+# @cmd Check whether units are failed or system is in degraded state
 # @arg pattern*[`_choice_unit`]
 is-failed() {
     :;
@@ -273,6 +293,13 @@ reset-failed() {
     :;
 }
 # }} systemctl reset-failed
+
+# {{ systemctl whoami
+# @cmd Return unit caller or specified PIDs are part of
+whoami() {
+    :;
+}
+# }} systemctl whoami
 
 # {{ systemctl list-unit-files
 # @cmd List installed unit files
@@ -548,6 +575,13 @@ kexec() {
     :;
 }
 # }} systemctl kexec
+
+# {{ systemctl soft-reboot
+# @cmd Shut down and reboot userspace
+soft-reboot() {
+    :;
+}
+# }} systemctl soft-reboot
 
 # {{ systemctl exit
 # @cmd Request user instance or container exit

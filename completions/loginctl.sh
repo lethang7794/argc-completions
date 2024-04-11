@@ -14,10 +14,10 @@
 # @flag -a --all                      Show all properties, including empty ones
 # @flag --value                       When showing properties, only print the value
 # @flag -l --full                     Do not ellipsize output
-# @option --kill-who <WHO>            Who to send signal to
+# @option --kill-whom <WHOM>          Whom to send signal to
 # @option -s --signal                 Which signal to send
 # @option -n --lines <INTEGER>        Number of journal entries to show
-# @option -o --output[short|short-precise|short-iso|short-iso-precise|short-full|short-monotonic|short-unix|verbose|export|json|json-pretty|json-sse|json-seq|cat|with-unit] <STRING>  Change journal output mode
+# @option -o --output[short|short-precise|short-iso|short-iso-precise|short-full|short-monotonic|short-unix|short-delta|json|json-pretty|json-sse|json-seq|cat|verbose|export|with-unit] <STRING>  Change journal output mode
 
 # {{ loginctl list-sessions
 # @cmd List sessions

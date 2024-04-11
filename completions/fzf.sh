@@ -32,7 +32,7 @@
 # @option --border-label-pos <COL>               Position of the border label [POSITIVE_INTEGER: columns from left|
 # @option --margin                               Screen margin (TRBL | TB,RL | T,RL,B | T,R,B,L)
 # @option --padding                              Padding inside border (TRBL | TB,RL | T,RL,B | T,R,B,L)
-# @option --info[default|right|hidden|inline|inline-right] <STYLE>  Finder info style [default|right|hidden|inline[:SEPARATOR]|inline-right]
+# @option --info[default|right|hidden|inline|inline-right] <STYLE>  Finder info style [default|right|hidden|inline[-right][:PREFIX]]
 # @option --separator <STR>                      String to form horizontal separator on info line
 # @flag --no-separator                           Hide info line separator
 # @option --scrollbar <C1[C2]>                   Scrollbar character(s) (each for main and preview window)
@@ -65,6 +65,12 @@
 # @flag --sync                                   Synchronous search for multi-staged filtering
 # @option --listen <[ADDR:]PORT>                 Start HTTP server to receive actions (POST /) (To allow remote process execution, use --listen-unsafe)
 # @flag --version                                Display version information and exit
+# @option --walker[file|follow|hidden] <OPTS>    [file][,dir][,follow][,hidden]
+# @option --walker-root <DIR>                    Root directory from which to start walker (default: .)
+# @option --walker-skip <DIRS>                   Comma-separated list of directory names to skip (default: .git,node_modules)
+# @flag --bash                                   Print script to set up Bash shell integration
+# @flag --zsh                                    Print script to set up Zsh shell integration
+# @flag --fish                                   Print script to set up Fish shell integration
 # @flag +i                                       Case-sensitive match
 # @flag +s                                       Do not sort the result
 

@@ -32,7 +32,8 @@
 # @flag -L --list-data-link-types               List the known data link types for the interface, in the specified mode, and exit.
 # @option -m <module>                           Load SMI MIB module definitions from file module.
 # @option -M <secret>                           Use secret as a shared secret for validating the digests found in TCP segments with the TCP-MD5 option (RFC 2385), if present.
-# @flag -n                                      Don't convert addresses (i.e., host addresses, port numbers, etc.) to names.
+# @flag -n                                      Don't convert host addresses to names.
+# @flag -nn                                     Don't convert protocol and port numbers etc.
 # @flag -N                                      Don't print domain name qualification of host names.
 # @flag -# --number                             Print an optional packet number at the beginning of the line.
 # @flag -O --no-optimize                        Do not run the packet-matching code optimizer.

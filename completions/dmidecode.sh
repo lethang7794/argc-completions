@@ -4,6 +4,7 @@
 # @option -d --dev-mem <FILE>      Read memory from device FILE (default: /dev/mem)
 # @flag -h --help                  Display this help text and exit
 # @flag -q --quiet                 Less verbose output
+# @flag --no-quirks                Decode everything without quirks
 # @option -s --string <KEYWORD>    Only display the value of the given DMI string
 # @option -t --type                Only display the entries of given type
 # @option -H --handle              Only display the entry of given handle

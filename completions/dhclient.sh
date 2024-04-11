@@ -10,6 +10,7 @@
 # @flag -q                                 Be quiet at startup, this is the default.
 # @flag -v                                 Enable verbose log messages.
 # @flag -w                                 Continue running even if no broadcast interfaces were found.
+# @flag -nc                                Do not drop capabilities.
 # @flag -n                                 Do not configure any interfaces.
 # @option -e <VAR=value>                   Define additional environment variables for the environment where dhclient-script executes.
 # @flag -r                                 Release the current lease and stop the running DHCP client as previously recorded in the PID file.
@@ -36,6 +37,7 @@
 # @option -pf <pid-file>                   Path to the process ID file.
 # @flag --no-pid                           Option to disable writing pid files.
 # @option -sf <script-file>                Path to the network configuration script invoked by dhclient when it gets a lease.
+# @flag -B                                 Always set the bootp broadcast flag in request packets, so that servers will always broadcast replies.
 # @arg ifaces*[`_module_os_network_interface`]
 
 _module_os_network_interface() {

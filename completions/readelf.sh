@@ -42,6 +42,7 @@
 # @option --ctf-parent <name>                  Use CTF archive member <name> as the CTF parent
 # @option --ctf-symbols <number|name>          Use section <number|name> as the CTF external symtab
 # @option --ctf-strings <number|name>          Use section <number|name> as the CTF external strtab
+# @option --sframe <NAME>                      Display SFrame info from section NAME, (default '.sframe')
 # @flag -I --histogram                         Display histogram of bucket list lengths
 # @flag -W --wide                              Allow output width to exceed 80 characters
 # @flag -T --silent-truncation                 If a symbol name is truncated, do not add [...] suffix

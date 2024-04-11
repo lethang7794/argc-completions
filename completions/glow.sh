@@ -2,7 +2,7 @@
 # Automatic generated, DON'T MODIFY IT.
 
 # @flag -a --all                 show system files and directories (TUI-mode only)
-# @option --config <string>      config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>      config file (default /home/lqt/.config/glow/glow.yml)
 # @flag -h --help                help for glow
 # @flag -l --local               show local files only; no network (TUI-mode only)
 # @flag -p --pager               display with pager
@@ -14,7 +14,7 @@
 # {{ glow completion
 # @cmd Generate the autocompletion script for the specified shell
 # @flag -h --help              help for completion
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 completion() {
     :;
 }
@@ -23,7 +23,7 @@ completion() {
 # @cmd Generate the autocompletion script for bash
 # @flag -h --help              help for bash
 # @flag --no-descriptions      disable completion descriptions
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 completion::bash() {
     :;
 }
@@ -33,7 +33,7 @@ completion::bash() {
 # @cmd Generate the autocompletion script for fish
 # @flag -h --help              help for fish
 # @flag --no-descriptions      disable completion descriptions
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 completion::fish() {
     :;
 }
@@ -43,7 +43,7 @@ completion::fish() {
 # @cmd Generate the autocompletion script for powershell
 # @flag -h --help              help for powershell
 # @flag --no-descriptions      disable completion descriptions
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 completion::powershell() {
     :;
 }
@@ -53,7 +53,7 @@ completion::powershell() {
 # @cmd Generate the autocompletion script for zsh
 # @flag -h --help              help for zsh
 # @flag --no-descriptions      disable completion descriptions
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 completion::zsh() {
     :;
 }
@@ -63,7 +63,7 @@ completion::zsh() {
 # {{ glow config
 # @cmd Edit the glow config file
 # @flag -h --help              help for config
-# @option --config <string>    config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>    config file (default /home/lqt/.config/glow/glow.yml)
 config() {
     :;
 }
@@ -73,7 +73,7 @@ config() {
 # @cmd Stash a markdown
 # @flag -h --help               help for stash
 # @option -m --memo <string>    memo/note for stashing
-# @option --config <string>     config file (default /home/sigo/.config/glow/glow.yml)
+# @option --config <string>     config file (default /home/lqt/.config/glow/glow.yml)
 # @arg path
 stash() {
     :;

@@ -27,6 +27,7 @@ cat_() {
 # @flag -b --backup                 Backup existing destination files
 # @flag -P --no-dereference         Never follow symbolic links
 # @flag --default-permissions       Use default permissions for the destination
+# @flag --default-modified-time     Use default file modification timestamps for the destination
 # @arg source-path!
 # @arg dest-path!
 copy() {
@@ -182,6 +183,7 @@ save() {
 # @cmd Set a file attribute
 # @option -t --type               Type of the attribute
 # @flag -n --nofollow-symlinks    Don’t follow symbolic links
+# @flag -d --delete               Unset given attribute
 # @arg path
 # @arg attribute
 # @arg value <VALUE…>

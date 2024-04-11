@@ -252,9 +252,9 @@ blockpull() {
 # @option --domain[`_choice_domain`] <string>    domain name, id or uuid
 # @option --path <path>                          Fully-qualified path of block device
 # @option --size <number>                        New size of the block device, as scaled integer (default KiB)
+# @flag --capacity                               resize to capacity of source (block device)
 # @arg domain![`_choice_domain`]
 # @arg path!
-# @arg size!
 blockresize() {
     :;
 }
@@ -2562,6 +2562,7 @@ nodedev-detach() {
 # {{ virsh nodedev-dumpxml
 # @cmd node device details in XML
 # @option --device <string>    device name or wwn pair in 'wwnn,wwpn' format
+# @flag --inactive             show inactive defined XML
 # @option --xpath <path>       xpath expression to filter the XML document
 # @flag --wrap                 wrap xpath results in an common root element
 # @arg device!
@@ -2576,6 +2577,8 @@ nodedev-dumpxml() {
 # @option --cap <string>    capability names, separated by comma
 # @flag --inactive          list inactive devices
 # @flag --all               list inactive & active devices
+# @flag --persistent        list persistent devices
+# @flag --transient         list transient devices
 nodedev-list() {
     :;
 }
@@ -2613,7 +2616,7 @@ nodedev-event() {
 # }} virsh nodedev-event
 
 # {{ virsh nodedev-define
-# @cmd Define a device by an xml file on a node
+# @cmd Define or modify a device by an xml file on a node
 # @option --file <file>    file containing an XML description of the device
 # @flag --validate         validate the XML against the schema
 # @arg file!
@@ -2658,6 +2661,20 @@ nodedev-info() {
     :;
 }
 # }} virsh nodedev-info
+
+# {{ virsh nodedev-update
+# @cmd Update a active and/or inactive node device
+# @option --device <string>    device name or wwn pair in 'wwnn,wwpn' format
+# @option --file <file>        file containing an XML description of the device
+# @flag --config               affect next node device startup
+# @flag --live                 affect running node device
+# @flag --current              affect current state of node device
+# @arg device!
+# @arg file!
+nodedev-update() {
+    :;
+}
+# }} virsh nodedev-update
 
 # {{ virsh secret-define
 # @cmd define or modify a secret from an XML file

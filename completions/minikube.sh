@@ -70,7 +70,7 @@
 # @option --mount-msize <262144>                 The number of bytes to use for 9p packet payload
 # @option --mount-options* <value>               Additional mount options, such as cache=fscache
 # @option --mount-port <0>                       Specify the port that the mount should be setup on, where 0 means any free port.
-# @option --mount-string[`_choice_mount_string`] </home/sigo:/minikube-host>  The argument to pass the minikube mount command on start.
+# @option --mount-string[`_choice_mount_string`] </home/lqt:/minikube-host>  The argument to pass the minikube mount command on start.
 # @option --mount-type <9p>                      Specify the mount filesystem type (supported types: 9p)
 # @option --mount-uid <docker>                   Default user id used for the mount
 # @option --namespace[`_choice_namespace`] <default>  The named space to activate after start

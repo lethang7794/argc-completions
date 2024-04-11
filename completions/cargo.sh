@@ -23,8 +23,8 @@
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @flag --future-incompat-report                 Outputs a future incompatibility report at the end of the build
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -38,9 +38,9 @@
 # @option --bin[`_choice_bin`] <NAME>            Build only the specified binary
 # @flag --examples                               Build all examples
 # @option --example[`_choice_example`] <NAME>    Build only the specified example
-# @flag --tests                                  Build all tests
+# @flag --tests                                  Build all test targets
 # @option --test[`_choice_test`] <NAME>          Build only the specified test target
-# @flag --benches                                Build all benches
+# @flag --benches                                Build all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Build only the specified bench target
 # @flag --all-targets                            Build all targets
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -71,8 +71,8 @@ build() {
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @flag --future-incompat-report                 Outputs a future incompatibility report at the end of the build
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -86,9 +86,9 @@ build() {
 # @option --bin[`_choice_bin`] <NAME>            Check only the specified binary
 # @flag --examples                               Check all examples
 # @option --example[`_choice_example`] <NAME>    Check only the specified example
-# @flag --tests                                  Check all tests
+# @flag --tests                                  Check all test targets
 # @option --test[`_choice_test`] <NAME>          Check only the specified test target
-# @flag --benches                                Check all benches
+# @flag --benches                                Check all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Check only the specified bench target
 # @flag --all-targets                            Check all targets
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -114,9 +114,9 @@ check() {
 # {{ cargo clean
 # @cmd Remove the target directory
 # @flag --doc                                    Whether or not to clean just the documentation directory
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -n --dry-run                             Display what would be deleted without deleting anything
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -143,8 +143,8 @@ clean() {
 # @flag --document-private-items                 Document private items
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -180,21 +180,21 @@ doc() {
 
 # {{ cargo new
 # @cmd Create a new cargo package
-# @option --vcs[git|hg|pijul|fossil|none]      Initialize a new repository for the given version control system, overriding a global configuration.
-# @option --bin[`_choice_bin`]                 Use a binary (application) template [default]
-# @flag --lib                                  Use a library template
-# @option --edition[2015|2018|2021] <YEAR>     Edition to set for the crate generated
-# @option --name                               Set the resulting package name, defaults to the directory name
-# @option --registry                           Registry to use
-# @flag -q --quiet                             Do not print cargo log messages
-# @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
-# @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
-# @option --config <KEY=VALUE>                 Override a configuration value
-# @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
-# @flag -h --help                              Print help
-# @flag --frozen                               Require Cargo.lock and cache are up to date
-# @flag --locked                               Require Cargo.lock is up to date
-# @flag --offline                              Run without accessing the network
+# @option --vcs[git|hg|pijul|fossil|none]          Initialize a new repository for the given version control system, overriding a global configuration.
+# @option --bin[`_choice_bin`]                     Use a binary (application) template [default]
+# @flag --lib                                      Use a library template
+# @option --edition[2015|2018|2021|2024] <YEAR>    Edition to set for the crate generated
+# @option --name                                   Set the resulting package name, defaults to the directory name
+# @option --registry                               Registry to use
+# @flag -v --verbose*                              Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                                 Do not print cargo log messages
+# @option --color[auto|always|never] <WHEN>        Coloring: auto, always, never
+# @option --config <KEY=VALUE>                     Override a configuration value
+# @option -Z <FLAG>                                Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+# @flag -h --help                                  Print help
+# @flag --frozen                                   Require Cargo.lock and cache are up to date
+# @flag --locked                                   Require Cargo.lock is up to date
+# @flag --offline                                  Run without accessing the network
 # @arg path!
 new() {
     :;
@@ -203,22 +203,22 @@ new() {
 
 # {{ cargo init
 # @cmd Create a new cargo package in an existing directory
-# @option --vcs[git|hg|pijul|fossil|none]      Initialize a new repository for the given version control system, overriding a global configuration.
-# @option --bin[`_choice_bin`]                 Use a binary (application) template [default]
-# @flag --lib                                  Use a library template
-# @option --edition[2015|2018|2021] <YEAR>     Edition to set for the crate generated
-# @option --name                               Set the resulting package name, defaults to the directory name
-# @option --registry                           Registry to use
-# @flag -q --quiet                             Do not print cargo log messages
-# @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
-# @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
-# @option --config <KEY=VALUE>                 Override a configuration value
-# @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
-# @flag -h --help                              Print help
-# @flag --frozen                               Require Cargo.lock and cache are up to date
-# @flag --locked                               Require Cargo.lock is up to date
-# @flag --offline                              Run without accessing the network
-# @arg path                                    [default: .]
+# @option --vcs[git|hg|pijul|fossil|none]          Initialize a new repository for the given version control system, overriding a global configuration.
+# @option --bin[`_choice_bin`]                     Use a binary (application) template [default]
+# @flag --lib                                      Use a library template
+# @option --edition[2015|2018|2021|2024] <YEAR>    Edition to set for the crate generated
+# @option --name                                   Set the resulting package name, defaults to the directory name
+# @option --registry                               Registry to use
+# @flag -v --verbose*                              Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                                 Do not print cargo log messages
+# @option --color[auto|always|never] <WHEN>        Coloring: auto, always, never
+# @option --config <KEY=VALUE>                     Override a configuration value
+# @option -Z <FLAG>                                Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+# @flag -h --help                                  Print help
+# @flag --frozen                                   Require Cargo.lock and cache are up to date
+# @flag --locked                                   Require Cargo.lock is up to date
+# @flag --offline                                  Run without accessing the network
+# @arg path                                        [default: .]
 init() {
     :;
 }
@@ -231,11 +231,13 @@ init() {
 # @option -F --features*,[`_choice_add_feature`]  Space or comma separated list of features to activate
 # @flag --optional                             Mark the dependency as optional
 # @flag --no-optional                          Mark the dependency as required
+# @flag --public                               Mark the dependency as public
+# @flag --no-public                            Mark the dependency as private
 # @option --rename <NAME>                      Rename the dependency
 # @flag --ignore-rust-version                  Ignore `rust-version` specification in packages (unstable)
 # @flag -n --dry-run                           Don't actually write the manifest
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -263,15 +265,15 @@ add() {
 # {{ cargo remove
 # @cmd Remove dependencies from a manifest file
 # @flag -n --dry-run                           Don't actually write the manifest
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
 # @flag -h --help                              Print help
-# @flag --dev                                  Remove as development dependency
-# @flag --build                                Remove as build dependency
-# @option --target[`_choice_target`]           Remove as dependency from the given target platform
+# @flag --dev                                  Remove from dev-dependencies
+# @flag --build                                Remove from build-dependencies
+# @option --target[`_choice_target`]           Remove from target-dependencies
 # @option -p --package[`_choice_package`] <SPEC>  Package to remove from
 # @option --manifest-path <PATH>               Path to Cargo.toml
 # @flag --frozen                               Require Cargo.lock and cache are up to date
@@ -288,8 +290,8 @@ remove() {
 # @alias r
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -342,9 +344,9 @@ run() {
 # @option --bin[`_choice_bin`] <NAME>            Test only the specified binary
 # @flag --examples                               Test all examples
 # @option --example[`_choice_example`] <NAME>    Test only the specified example
-# @flag --tests                                  Test all tests
+# @flag --tests                                  Test all test targets
 # @option --test[`_choice_test`] <NAME>          Test only the specified test target
-# @flag --benches                                Test all benches
+# @flag --benches                                Test all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Test only the specified bench target
 # @flag --all-targets                            Test all targets (does not include doctests)
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -374,8 +376,8 @@ test() {
 # @flag --no-fail-fast                           Run all benchmarks regardless of failure
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -389,9 +391,9 @@ test() {
 # @option --bin[`_choice_bin`] <NAME>            Benchmark only the specified binary
 # @flag --examples                               Benchmark all examples
 # @option --example[`_choice_example`] <NAME>    Benchmark only the specified example
-# @flag --tests                                  Benchmark all tests
+# @flag --tests                                  Benchmark all test targets
 # @option --test[`_choice_test`] <NAME>          Benchmark only the specified test target
-# @flag --benches                                Benchmark all benches
+# @flag --benches                                Benchmark all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Benchmark only the specified bench target
 # @flag --all-targets                            Benchmark all targets
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -419,8 +421,8 @@ bench() {
 # @flag -n --dry-run                           Don't actually write the lockfile
 # @flag --recursive                            Force updating all dependencies of [SPEC]... as well
 # @option --precise                            Update [SPEC] to exactly PRECISE
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -441,8 +443,8 @@ update() {
 # @option --limit                              Limit the number of results (default: 10, max: 100)
 # @option --index                              Registry index URL to search packages in
 # @option --registry                           Registry to search packages in
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -464,8 +466,8 @@ search() {
 # @option --token                                Token to use when uploading
 # @flag --no-verify                              Don't verify the contents by building them
 # @flag --allow-dirty                            Allow dirty working directories to be packaged
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -503,9 +505,9 @@ publish() {
 # @flag --list                                   list all installed packages and their versions
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag --debug                                  Build in debug mode (with the 'dev' profile) instead of release mode
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -526,7 +528,7 @@ publish() {
 # @flag --frozen                                 Require Cargo.lock and cache are up to date
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
-# @arg crate*[`_choice_remote_crate`]
+# @arg crate-ver* <CRATE[@<VER>]>                Select the package from the given source
 install() {
     :;
 }
@@ -535,8 +537,8 @@ install() {
 # {{ cargo uninstall
 # @cmd Uninstall a Rust binary
 # @option --root <DIR>                         Directory to uninstall packages from
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -562,8 +564,8 @@ uninstall() {
 # @flag --allow-staged                           Fix code even if the working directory has staged changes
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -576,9 +578,9 @@ uninstall() {
 # @option --bin[`_choice_bin`] <NAME>            Fix only the specified binary
 # @flag --examples                               Fix all examples
 # @option --example[`_choice_example`] <NAME>    Fix only the specified example
-# @flag --tests                                  Fix all tests
+# @flag --tests                                  Fix all test targets
 # @option --test[`_choice_test`] <NAME>          Fix only the specified test target
-# @flag --benches                                Fix all benches
+# @flag --benches                                Fix all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Fix only the specified bench target
 # @flag --all-targets                            Fix all targets (default)
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -600,7 +602,11 @@ uninstall() {
 # @flag -h --help                                Print this message
 # @flag -V --version                             Print version info and exit
 # @option --explain <LINT>                       Print the documentation for a given lint
-# @arg opts~[`_choice_clippy`]
+# @option -W --warn <LINT>                       Set lint warnings
+# @option -A --allow <LINT>                      Set lint allowed
+# @option -D --deny <LINT>                       Set lint denied
+# @option -F --forbid <LINT>                     Set lint forbidden
+# @arg args*
 clippy() {
     :;
 }
@@ -609,6 +615,7 @@ clippy() {
 # {{ cargo config
 # @cmd Inspect configuration values
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -626,6 +633,7 @@ config() {
 # @flag --show-origin                          Display where the config value is defined
 # @option --merged[yes|no] <merged>            Whether or not to merge config values [default: yes]
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -642,8 +650,8 @@ config::get() {
 
 # {{ cargo fetch
 # @cmd Fetch dependencies of a package from the network
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -668,8 +676,8 @@ fetch() {
 # @flag --allow-staged                           Fix code even if the working directory has staged changes
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -683,9 +691,9 @@ fetch() {
 # @option --bin[`_choice_bin`] <NAME>            Fix only the specified binary
 # @flag --examples                               Fix all examples
 # @option --example[`_choice_example`] <NAME>    Fix only the specified example
-# @flag --tests                                  Fix all tests
+# @flag --tests                                  Fix all test targets
 # @option --test[`_choice_test`] <NAME>          Fix only the specified test target
-# @flag --benches                                Fix all benches
+# @flag --benches                                Fix all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Fix only the specified bench target
 # @flag --all-targets                            Fix all targets (default)
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -726,8 +734,8 @@ fmt() {
 
 # {{ cargo generate-lockfile
 # @cmd Generate the lockfile for a package
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -752,8 +760,8 @@ git-checkout() {
 # @cmd Print a JSON representation of a Cargo.toml file's location
 # @flag --workspace                             Locate Cargo.toml of the workspace root
 # @option --message-format[json|plain] <FMT>    Output representation
-# @flag -q --quiet                              Do not print cargo log messages
 # @flag -v --verbose*                           Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                              Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>     Coloring: auto, always, never
 # @option --config <KEY=VALUE>                  Override a configuration value
 # @option -Z <FLAG>                             Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -770,8 +778,8 @@ locate-project() {
 # {{ cargo login
 # @cmd Save an api token from the registry locally.
 # @option --registry                           Registry to use
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -789,8 +797,8 @@ login() {
 # {{ cargo logout
 # @cmd Remove an API token from the registry locally
 # @option --registry                           Registry to use
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -808,8 +816,8 @@ logout() {
 # @option --filter-platform <TRIPLE>            Only include resolve dependencies matching the given target-triple
 # @flag --no-deps                               Output information only about the workspace members and don't fetch dependencies
 # @option --format-version[1] <VERSION>         Format version
-# @flag -q --quiet                              Do not print cargo log messages
 # @flag -v --verbose*                           Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                              Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>     Coloring: auto, always, never
 # @option --config <KEY=VALUE>                  Override a configuration value
 # @option -Z <FLAG>                             Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -834,8 +842,8 @@ metadata() {
 # @option --index                              Registry index URL to modify owners for
 # @option --registry                           Registry to modify owners for
 # @option --token                              API token to use when authenticating
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -855,8 +863,8 @@ owner() {
 # @flag --no-verify                              Don't verify the contents by building them
 # @flag --no-metadata                            Ignore warnings about a lack of human-usable metadata
 # @flag --allow-dirty                            Allow dirty working directories to be packaged
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -882,8 +890,8 @@ package() {
 
 # {{ cargo pkgid
 # @cmd Print a fully qualified package specification
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -901,8 +909,8 @@ pkgid() {
 
 # {{ cargo read-manifest
 # @cmd Print a JSON representation of a Cargo.toml manifest.
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -919,6 +927,7 @@ read-manifest() {
 # {{ cargo report
 # @cmd Generate and display various kinds of reports
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -934,6 +943,7 @@ report() {
 # @cmd Reports any crates which will eventually stop compiling
 # @option --id <id>                            identifier of the report generated by a Cargo command invocation
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -955,8 +965,8 @@ report::future-incompatibilities() {
 # @flag --future-incompat-report                 Outputs a future incompatibility report at the end of the build
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -967,9 +977,9 @@ report::future-incompatibilities() {
 # @option --bin[`_choice_bin`] <NAME>            Build only the specified binary
 # @flag --examples                               Build all examples
 # @option --example[`_choice_example`] <NAME>    Build only the specified example
-# @flag --tests                                  Build all tests
+# @flag --tests                                  Build all test targets
 # @option --test[`_choice_test`] <NAME>          Build only the specified test target
-# @flag --benches                                Build all benches
+# @flag --benches                                Build all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Build only the specified bench target
 # @flag --all-targets                            Build all targets
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -998,8 +1008,8 @@ rustc() {
 # @flag --open                                   Opens the docs in a browser after the operation
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
-# @flag -q --quiet                               Do not print cargo log messages
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1010,9 +1020,9 @@ rustc() {
 # @option --bin[`_choice_bin`] <NAME>            Build only the specified binary
 # @flag --examples                               Build all examples
 # @option --example[`_choice_example`] <NAME>    Build only the specified example
-# @flag --tests                                  Build all tests
+# @flag --tests                                  Build all test targets
 # @option --test[`_choice_test`] <NAME>          Build only the specified test target
-# @flag --benches                                Build all benches
+# @flag --benches                                Build all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Build only the specified bench target
 # @flag --all-targets                            Build all targets
 # @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
@@ -1038,7 +1048,6 @@ rustdoc() {
 
 # {{ cargo tree
 # @cmd Display a tree visualization of a dependency graph
-# @flag -q --quiet                               Do not print cargo log messages
 # @option -e --edges[features|normal|build|dev|all|no-normal|no-build|no-dev|no-proc-macro] <KINDS>  The kinds of dependencies to display
 # @option -i --invert <SPEC>                     Invert the tree direction and focus on the given package
 # @option --prune <SPEC>                         Prune the given package from the display of the dependency tree
@@ -1049,6 +1058,7 @@ rustdoc() {
 # @option --charset[utf8|ascii]                  Character set to use in output [default: utf8]
 # @option -f --format                            Format string used for printing dependencies [default: {p}]
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
 # @option --config <KEY=VALUE>                   Override a configuration value
 # @option -Z <FLAG>                              Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1075,8 +1085,8 @@ tree() {
 # @option -s --sync <TOML>                     Additional `Cargo.toml` to sync and vendor
 # @flag --respect-source-config                Respect `[source]` config in `.cargo/config`
 # @flag --versioned-dirs                       Always include version in subdir name
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1093,8 +1103,8 @@ vendor() {
 
 # {{ cargo verify-project
 # @cmd Check correctness of crate manifest
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1110,8 +1120,8 @@ verify-project() {
 
 # {{ cargo version
 # @cmd Show version information
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1131,8 +1141,8 @@ version() {
 # @option --index                              Registry index URL to yank from
 # @option --registry                           Registry to yank from
 # @option --token                              API token to use when authenticating
-# @flag -q --quiet                             Do not print cargo log messages
 # @flag -v --verbose*                          Use verbose output (-vv very verbose/build.rs output)
+# @flag -q --quiet                             Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>    Coloring: auto, always, never
 # @option --config <KEY=VALUE>                 Override a configuration value
 # @option -Z <FLAG>                            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
@@ -1199,23 +1209,6 @@ _choice_depid() {
 
 _choice_testname() {
     cargo t -- --list | gawk '/: test$/ { print substr($1, 1, length($1) - 1) }' 
-}
-
-_choice_clippy() {
-    if [[ "$ARGC_CWORD" == '-'* ]]; then
-        cat <<-'EOF'
---warn	Set lint warnings
--W	Set lint warnings
---allow	Set lint allowed
--A	Set lint allowed
---deny	Set lint denied
--D	Set lint denied
---forbid	Set lint forbidden
--F	Set lint forbidden
-EOF
-    else
-        _argc_util_comp_subcommand 0 rustc
-    fi
 }
 
 _choice_fmt() {

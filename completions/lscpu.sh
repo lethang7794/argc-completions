@@ -12,6 +12,7 @@
 # @option -s --sysroot <dir>    use specified directory as system root
 # @flag -x --hex                print hexadecimal masks rather than lists of CPUs
 # @flag -y --physical           print physical instead of logical IDs
+# @option --hierarchic[auto|never|always] <when>  use subsections in summary
 # @flag --output-all            print all available columns for -e, -p or -C
 # @flag -h --help               display this help
 # @flag -V --version            display version

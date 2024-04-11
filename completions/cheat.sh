@@ -14,7 +14,6 @@
 # @flag -T --tags                                 List all tags in use
 # @flag -v --version                              Print the version number
 # @option --rm[`_choice_personal_cheatsheet`] <cheatsheet>  Remove (delete) <cheatsheet>
-# @flag --conf                                    Display the config file path
 # @arg cheatsheet[`_choice_full_cheatsheet`]
 
 _choice_personal_cheatsheet() {

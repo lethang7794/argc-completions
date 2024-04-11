@@ -8,7 +8,7 @@
 # @flag -v --verbose             output a diagnostic for every file processed
 # @flag --no-preserve-root       do not treat '/' specially (the default)
 # @flag --preserve-root          fail to operate recursively on '/'
-# @option --reference <RFILE>    use RFILE's mode instead of MODE values
+# @option --reference <RFILE>    use RFILE's mode instead of specifying MODE values.
 # @flag -R --recursive           change files and directories recursively
 # @flag --help                   display this help and exit
 # @flag --version                output version information and exit

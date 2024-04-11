@@ -2,8 +2,8 @@
 # Automatic generated, DON'T MODIFY IT.
 
 # @flag -H --hidden                                Include hidden directories and files in the search results (default: hidden files and directories are skipped).
-# @flag -I --no-ignore                             Show search results from files and directories that would otherwise be ignored by '.gitignore', '.ignore', '.fdignore', or the global ignore file.
-# @flag --no-ignore-vcs                            Show search results from files and directories that would otherwise be ignored by '.gitignore' files.
+# @flag -I --no-ignore                             Show search results from files and directories that would otherwise be ignored by '.gitignore', '.ignore', '.fdignore', the global ignore file, or the default rule that excludes .git/.
+# @flag --no-ignore-vcs                            Show search results from '.git/' folders and files and directories that would otherwise be ignored by '.gitignore' files.
 # @flag --no-require-git                           Do not require a git repository to respect gitignores.
 # @flag --no-ignore-parent                         Show search results from files and directories that would otherwise be ignored by '.gitignore', '.ignore', or '.fdignore' files in parent directories.
 # @flag -u --unrestricted*                         Perform an unrestricted search, including ignored and hidden files.

@@ -89,8 +89,8 @@
 # @flag --auto-preparse                            Automatically preparse items (default enabled)
 # @flag --no-auto-preparse                         Automatically preparse items (default enabled)
 # @option --preparse-timeout <integer>             Preparsing timeout
-# @flag --metadata-network-access                  Allow metadata network access (default disabled)
-# @flag --no-metadata-network-access               Allow metadata network access (default disabled)
+# @flag --metadata-network-access                  Allow metadata network access (default enabled)
+# @flag --no-metadata-network-access               Allow metadata network access (default enabled)
 # @option --recursive[none|collapse|expand]        Subdirectory behavior
 # @option --ignore-filetypes <string>              Ignored extensions
 # @flag --show-hiddenfiles                         Show hidden files (default disabled)

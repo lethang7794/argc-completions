@@ -7,7 +7,9 @@
 # @flag -f --from          show remote hostname field
 # @flag -o --old-style     old style output
 # @flag -i --ip-addr       display IP address instead of hostname (if possible)
+# @flag -p --pids          show the PID(s) of processes in WHAT
 # @flag --help             display this help and exit
 # @flag -V --version       output version information and exit
+# @arg user
 
 command eval "$(argc --argc-eval "$0" "$@")"

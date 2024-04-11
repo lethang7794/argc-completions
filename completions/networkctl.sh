@@ -7,10 +7,12 @@
 # @flag --no-pager                    Do not pipe output into a pager
 # @flag --no-legend                   Do not show the headers and footers
 # @flag -a --all                      Show status for all links
-# @flag -s --stats                    Show detailed link statics
+# @flag -s --stats                    Show detailed link statistics
 # @flag -l --full                     Do not ellipsize output
 # @option -n --lines <INTEGER>        Number of journal entries to show
 # @option --json[pretty|short|off]    Generate JSON output
+# @flag --no-reload                   Do not reload systemd-networkd or systemd-udevd after editing network config
+# @option --drop-in <NAME>            Edit specified drop-in instead of main config file
 
 # {{ networkctl list
 # @cmd List links
@@ -96,6 +98,22 @@ reload() {
     :;
 }
 # }} networkctl reload
+
+# {{ networkctl edit
+# @cmd Edit network configuration files
+# @arg files-devices* <FILES|DEVICES>
+edit() {
+    :;
+}
+# }} networkctl edit
+
+# {{ networkctl cat
+# @cmd Show network configuration files
+# @arg files-devices* <FILES|DEVICES>
+cat_() {
+    :;
+}
+# }} networkctl cat
 
 _choice_device() {
     networkctl --no-legend --no-pager list 2>/dev/null | \

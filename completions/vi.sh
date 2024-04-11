@@ -10,6 +10,7 @@
 # @flag -m                   Modifications (writing files) not allowed
 # @flag -M                   Modifications in text not allowed
 # @flag -b                   Binary mode
+# @flag -l                   Lisp mode
 # @flag -C                   Compatible with Vi: 'compatible'
 # @flag -N                   Not fully Vi compatible: 'nocompatible'
 # @option -V <[N][fname]>    Be verbose [level N] [log messages to fname]

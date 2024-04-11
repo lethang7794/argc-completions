@@ -2,10 +2,9 @@
 # Automatic generated, DON'T MODIFY IT.
 
 # @flag -c --current                   show the current context name
-# @flag -u --unset                     unset the current context
 # @option -d*[`_choice_ctx`] <NAME>    delete context <NAME> ('.' for current-context)
+# @flag -u --unset                     unset the current context
 # @flag -h --help                      show this message
-# @flag -V --version                   show version
 # @arg name[`_choice_name`]
 
 . "$ARGC_COMPLETIONS_ROOT/utils/_argc_utils.sh"

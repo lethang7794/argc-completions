@@ -3,7 +3,6 @@
 
 # @flag -c --current    show the current namespace
 # @flag -h --help       show this message
-# @flag -V --version    show version
 # @arg name[`_choice_name`]
 
 _choice_name() {

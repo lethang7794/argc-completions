@@ -8,6 +8,7 @@
 # @option --deb-format <format>            Select archive format.
 # @flag --nocheck                          Suppress control file check (build bad packages).
 # @flag --root-owner-group                 Forces the owner and groups to root.
+# @option --threads-max <threads>          Use at most <threads> with compressor.
 # @flag --uniform-compression              Use the compression params on all members.
 # @flag --no-uniform-compression           Use the compression params on all members.
 # @option -z- <v>                          Set the compression level when building.

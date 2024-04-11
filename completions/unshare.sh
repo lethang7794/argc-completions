@@ -14,6 +14,9 @@
 # @option --map-group <<gid>|<name>>    map current group to gid (implies --user)
 # @flag -r --map-root-user              map current user to root (implies --user)
 # @flag -c --map-current-user           map current user to itself (implies --user)
+# @flag --map-auto                      map users and groups automatically (implies --user)
+# @option --map-users <<inneruid>:<outeruid>:<count>>  map count users from outeruid to inneruid (implies --user)
+# @option --map-groups <<innergid>:<outergid>:<count>>  map count groups from outergid to innergid (implies --user)
 # @option --kill-child <signame>        when dying, kill the forked child (implies --fork) defaults to SIGKILL
 # @option --mount-proc <dir>            mount proc filesystem first (implies --mount)
 # @option --propagation[slave|shared|private|unchanged]  modify mount propagation in mount namespace

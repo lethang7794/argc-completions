@@ -19,6 +19,7 @@
 # @flag -s --system-accs          display system accounts
 # @option --time-format <type>    display dates in short, full or iso format
 # @flag -u --user-accs            display user accounts
+# @flag -y --shell                use column names to be usable as shell variable identifiers
 # @flag -Z --context              display SELinux contexts
 # @flag -z --print0               delimit user entries with a nul character
 # @option --wtmp-file <path>      set an alternate path for wtmp

@@ -20,7 +20,7 @@
 # @flag --save-workspace-protocol       Save packages from the workspace with a "workspace:" protocol.
 # @flag --no-save-workspace-protocol    Save packages from the workspace with a "workspace:" protocol.
 # @flag --aggregate-output              Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>                Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>                Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -g --global                     Install as a global package
 # @flag --global-dir                    Specify a custom directory to store global packages
 # @flag -h --help                       Output usage information
@@ -40,6 +40,7 @@
 # @flag --workspace                     Only adds the new dependency if it is found in the workspace
 # @flag -w --workspace-root             Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match              If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>       Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>      Defines files related to tests.
@@ -68,7 +69,7 @@ import() {
 # @flag --aggregate-output                    Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --child-concurrency <number>        Controls the number of child processes run parallelly to build node modules
 # @flag -D --dev                              Only `devDependencies` are installed regardless of the `NODE_ENV`
-# @option -C --dir <dir>                      Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>                      Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/ argc-completions)
 # @flag --fix-lockfile                        Fix broken lockfile entries automatically
 # @option --force[cpu|os|arch]                Force reinstall dependencies: refetch packages modified in store, recreate a lockfile and/or modules directory created by a non-compatible version of pnpm.
 # @flag --global-dir                          Specify a custom directory to store global packages
@@ -107,6 +108,7 @@ import() {
 # @option --reporter[`_choice_reporter`] <append-only>  Set reporter.
 # @flag -s --silent                           No output is logged to the console, except fatal errors
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match                    If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>             Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>            Defines files related to tests.
@@ -129,7 +131,7 @@ it() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -g --global            Link package to/from global node_modules
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -147,7 +149,7 @@ ln() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag --no-optional          Remove the packages specified in `optionalDependencies`
@@ -166,7 +168,7 @@ prune() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag --pending                     Rebuild packages that were not build during installation.
@@ -176,6 +178,7 @@ prune() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -191,7 +194,7 @@ rb() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -203,6 +206,7 @@ rb() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -217,7 +221,7 @@ rm() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag -r --recursive         Unlink in every package found in subdirectories or in every workspace package, when executed inside a workspace.
@@ -238,7 +242,7 @@ unlink() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            How deep should levels of dependencies be inspected.
 # @flag -D --dev                      Update packages only in "devDependencies"
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -g --global                   Update globally installed packages
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -253,6 +257,7 @@ unlink() {
 # @flag --workspace                   Tries to link all packages from the workspace.
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -284,6 +289,7 @@ audit() {
 # @flag --no-optional                 Don't check "optionalDependencies"
 # @flag -P --prod                     Check only "dependencies" and "optionalDependencies"
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -301,7 +307,7 @@ licenses() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            Max display depth of the dependency tree
 # @flag -D --dev                      Display only the dependency graph for packages in `devDependencies`
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -g --global                   List packages in the global install prefix instead of in the current project
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -317,6 +323,7 @@ licenses() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -333,7 +340,7 @@ ls() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag --compatible                  Print only versions that satisfy specs in package.json
 # @flag -D --dev                      Check only "devDependencies"
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -346,6 +353,7 @@ ls() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -374,7 +382,7 @@ exec() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help                     Output usage information
 # @flag --if-present                  Avoid exiting with a non-zero exit code when the script is undefined
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -389,6 +397,7 @@ exec() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -411,6 +420,7 @@ start() {
 # @alias t
 # @flag -r --recursive                Run the tests in every package found in subdirectories or every workspace package, when executed inside a workspace.
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -419,6 +429,30 @@ test() {
     :;
 }
 # }} pnpm test
+
+# {{ pnpm cat-file
+# @cmd Prints the contents of a file based on the hash value stored in the index file
+# @arg hash!
+cat-file() {
+    :;
+}
+# }} pnpm cat-file
+
+# {{ pnpm cat-index
+# @cmd Prints the index file of a specific package from the store
+# @arg pkg-name-pkg-version <<pkg name>@<pkg version>>
+cat-index() {
+    :;
+}
+# }} pnpm cat-index
+
+# {{ pnpm find-hash
+# @cmd Experimental! Lists the packages that include the file with the specified hash.
+# @arg hash!
+find-hash() {
+    :;
+}
+# }} pnpm find-hash
 
 # {{ pnpm pack
 # @cmd
@@ -442,6 +476,7 @@ pack() {
 # @flag --report-summary                  Save the list of the newly published packages to "pnpm-publish-summary.json".
 # @option --tag <tag>                     Registers the published package with the given tag.
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match                If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>         Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>        Defines files related to tests.
@@ -508,7 +543,7 @@ store::status() {
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag -D --dev               Only development packages will be fetched
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag -P --prod              Development packages will not be fetched
@@ -553,7 +588,7 @@ dedup() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            Max display depth of the dependency graph
 # @flag -D --dev                      Display only the dependency graph for packages in `devDependencies`
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -g --global                   List packages in the global install prefix instead of in the current project
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -568,6 +603,7 @@ dedup() {
 # @flag --use-stderr                  Divert all output to stderr
 # @flag -w --workspace-root           Run the command on the root workspace project
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.
@@ -649,7 +685,7 @@ env::use() {
 # @flag --no-verify-store-integrity         If false, doesn't check whether packages in the store were mutated
 # @flag --aggregate-output                  Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag --background                        Runs the server in the background
-# @option -C --dir <dir>                    Change to directory <dir> (default: /home/sigo/w/argc-completions)
+# @option -C --dir <dir>                    Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
 # @flag -h --help                           Output usage information
 # @flag --ignore-stop-requests              Disallows stopping the server using `pnpm server stop`
 # @flag --ignore-upload-requests            Disallows creating new side effect cache during install
@@ -716,6 +752,7 @@ init() {
 # @flag --no-optional                 `optionalDependencies` are not installed
 # @flag -P --prod                     Packages in `devDependencies` won't be installed
 # @option --changed-files-ignore-pattern <pattern>  Defines files to ignore when filtering for changed projects since the specified commit/branch.
+# @flag --fail-if-no-match            If no projects are matched by the command, exit with exit code 1 (fail)
 # @option --filter[`_choice_workspace`] <selector>  Filtering allows you to restrict commands to specific subsets of packages.
 # @option --filter-prod <pattern>     Restricts the scope to package names matching the given pattern similar to --filter, but it ignores devDependencies when searching for dependencies and dependents.
 # @option --test-pattern <pattern>    Defines files related to tests.

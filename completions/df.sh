@@ -3,6 +3,7 @@
 
 # @flag -a --all                       include pseudo, duplicate, inaccessible file systems
 # @option -B --block-size <SIZE>       scale sizes by SIZE before printing them; e.g., '-BM' prints sizes in units of 1,048,576 bytes; see SIZE format below
+# @flag --direct                       show statistics for a file instead of mount point
 # @flag -h --human-readable            print sizes in powers of 1024 (e.g., 1023M)
 # @flag -H --si                        print sizes in powers of 1000 (e.g., 1.1G)
 # @flag -i --inodes                    list inode information instead of block usage

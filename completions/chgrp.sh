@@ -10,7 +10,7 @@
 # @flag -h --no-dereference      affect symbolic links instead of any referenced file (useful only on systems that can change the ownership of a symlink)
 # @flag --no-preserve-root       do not treat '/' specially (the default)
 # @flag --preserve-root          fail to operate recursively on '/'
-# @option --reference <RFILE>    use RFILE's group rather than specifying a GROUP value
+# @option --reference <RFILE>    use RFILE's group rather than specifying a GROUP.
 # @flag -R --recursive           operate on files and directories recursively
 # @flag -H                       if a command line argument is a symbolic link to a directory, traverse it
 # @flag -L                       traverse every symbolic link to a directory encountered

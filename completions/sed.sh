@@ -9,6 +9,8 @@
 # @option -f --file <script-file>     add the contents of script-file to the commands to be executed
 # @flag --follow-symlinks             follow symlinks when processing in place
 # @option -i --in-place <SUFFIX>      edit files in place (makes backup if SUFFIX supplied)
+# @flag -c --copy                     use copy instead of rename when shuffling files in -i mode
+# @flag -b --binary                   does nothing; for compatibility with WIN32/CYGWIN/MSDOS/EMX (open files in binary mode; CR+LF are not processed specially)
 # @option -l --line-length <N>        specify the desired line-wrap length for the `l' command
 # @flag --posix                       disable all GNU extensions.
 # @flag -E                            use extended regular expressions in the script (for portability use POSIX -E).

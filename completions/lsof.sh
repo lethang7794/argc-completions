@@ -11,10 +11,11 @@
 # @option -d <s>                          specifies a list of file descriptors (FDs) to exclude from or include in the output listing.
 # @option -D[`_choice_dcf`] <D>           directs lsof's use of the device cache file.
 # @option -e <s>                          exempts the file system whose path name is s from being subjected to kernel function calls that might block.
-# @flag -E                                +E specifies that Linux pipe, Linux UNIX socket and Linux pseudoterminal files should be displayed with endpoint information and the files of the endpoints should also be displayed.
+# @flag -E                                +E specifies that Linux pipe, Linux UNIX socket, Linux INET(6) socket closed in a local host, Linux pseudoterminal files, POSIX Message Queueue implementation in Linux, and Linux eventfd should be displayed with endpoint information and the files of the endpoints should also be displayed.
 # @option -f <cfgGn>                      f by itself clarifies how path name arguments are to be interpreted.
 # @option -F <f>                          specifies a character list, f, that selects the fields to be output for processing by another program, and the character that terminates each output field.
 # @option -g*,[`_module_os_group`] <s>    excludes or selects the listing of files for the processes whose optional process group IDentification (PGID) numbers are in the comma-separated set s - e.g., ``123'' or ``123,^456''.
+# @flag -H                                directs lsof to print human readable sizes, e.g. 123.4K 456.7M.
 # @option -i <i>                          selects the listing of files any of whose Internet address matches the address specified in i.
 # @option -K <k>                          selects the listing of tasks (threads) of processes, on dialects where task (thread) reporting is supported.
 # @option -k <k>                          specifies a kernel name list file, k, in place of /vmunix, /mach, etc.
@@ -28,12 +29,13 @@
 # @flag -O                                directs lsof to bypass the strategy it uses to avoid being blocked by some kernel operations - i.e., doing them in forked child processes.
 # @option -p*,[`_module_os_pid`] <s>      excludes or selects the listing of files for the processes whose optional process IDentification (PID) numbers are in the comma-separated set s - e.g., ``123'' or ``123,^456''.
 # @flag -P                                inhibits the conversion of port numbers to port names for network files.
-# @option -r <t[m<fmt>]>                  puts lsof in repeat mode.
+# @flag -Q                                ignore failed search terms.
+# @option -r <t[c<N>][m<fmt>]>            puts lsof in repeat mode.
 # @flag -R                                directs lsof to list the Parent Process IDentification number in the PPID column.
 # @option -s <p:s>                        s alone directs lsof to display file size at all times.
 # @option -S <t>                          specifies an optional time-out seconds value for kernel functions - lstat(2), readlink(2), and stat(2) - that might otherwise deadlock.
 # @option -T <t>                          controls the reporting of some TCP/TPI information, also reported by netstat(1), following the network addresses.
-# @flag -t                                specifies that lsof should produce terse output with process identifiers only and no header - e.g., so that the output may be piped to kill(1).
+# @flag -t                                produce terse output comprising only process identifiers (without a header), so that it is easy to use programmatically.
 # @option -u*,[`_module_os_user`] <s>     selects the listing of files for the user whose login names or user ID numbers are in the comma-separated set s - e.g., ``abe'', or ``548,root''.
 # @flag -U                                selects the listing of UNIX domain socket files.
 # @flag -v                                selects the listing of lsof version information, including: revision number; when the lsof binary was constructed; who constructed the binary and where; the name of the compiler used to construct the lsof binary; the version number of the compiler when readily available; the compiler and loader flags used to construct the lsof binary; and system information, typically the output of uname's -a option.

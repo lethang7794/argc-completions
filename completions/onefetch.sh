@@ -7,8 +7,6 @@
 # @flag --no-title                           Hides the title
 # @option --number-of-authors <NUM>          Maximum NUM of authors to be shown
 # @option --number-of-languages <NUM>        Maximum NUM of languages to be shown
-# @option --number-of-file-churns <NUM>      Maximum NUM of file churns to be shown
-# @option --churn-pool-size <NUM>            Minimum NUM of commits from HEAD used to compute the churn summary
 # @option -e --exclude*                      Ignore all files & directories matching EXCLUDE
 # @option --no-bots <REGEX>                  Exclude [bot] commits.
 # @flag --no-merges                          Ignores merge commits

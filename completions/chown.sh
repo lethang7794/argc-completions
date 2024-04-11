@@ -11,7 +11,7 @@
 # @option --from[`_choice_user_group`] <CURRENT_OWNER:CURRENT_GROUP>  change the owner and/or group of each file only if its current owner and/or group match those specified here.
 # @flag --no-preserve-root       do not treat '/' specially (the default)
 # @flag --preserve-root          fail to operate recursively on '/'
-# @option --reference <RFILE>    use RFILE's owner and group rather than specifying OWNER:GROUP values
+# @option --reference <RFILE>    use RFILE's owner and group rather than specifying OWNER:GROUP values.
 # @flag -R --recursive           operate on files and directories recursively
 # @flag -H                       if a command line argument is a symbolic link to a directory, traverse it
 # @flag -L                       traverse every symbolic link to a directory encountered

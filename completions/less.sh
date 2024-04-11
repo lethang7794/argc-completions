@@ -17,6 +17,7 @@
 # @flag -F --quit-if-one-screen         Quit if entire file fits on first screen.
 # @flag -g --hilite-search              Highlight only last match for searches.
 # @flag -G --HILITE-SEARCH              Don't highlight any matches for searches.
+# @flag --old-bot                       Revert to the old bottom of screen behavior.
 # @option -h --max-back-scroll <N>      Backward scroll limit.
 # @flag -i --ignore-case                Ignore case in searches that do not contain uppercase.
 # @flag -I --IGNORE-CASE                Ignore case in all searches.

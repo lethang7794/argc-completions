@@ -246,21 +246,7 @@ fetch() {
 # }} gem fetch
 
 # {{ gem generate_index
-# @cmd Generates the index files for a gem server directory
-# @option -d --directory <DIRNAME>    repository base dir containing gems subdir
-# @flag --modern                      Generate indexes for RubyGems (always true)
-# @flag --no-modern                   Generate indexes for RubyGems (always true)
-# @flag --update                      Update modern indexes with gems added since the last update
-# @flag -h --help                     Get help on this command
-# @flag -V                            Set the verbose level of output
-# @flag --verbose                     Set the verbose level of output
-# @flag --no-verbose                  Set the verbose level of output
-# @flag -q --quiet                    Silence command progress meter
-# @flag --silent                      Silence RubyGems output
-# @option --config-file <FILE>        Use this config file instead of default
-# @flag --backtrace                   Show stack backtrace on errors
-# @flag --debug                       Turn on Ruby debugging
-# @flag --norc                        Avoid loading any .gemrc file
+# @cmd Generates the index files for a gem server directory (requires rubygems-generate_index)
 generate_index() {
     :;
 }
@@ -511,7 +497,7 @@ outdated() {
 
 # {{ gem owner
 # @cmd Manage gem owners of a gem on the push server
-# @option -k --key <KEYNAME>         Use the given API key from /home/sigo/.local/share/gem/credentials
+# @option -k --key <KEYNAME>         Use the given API key from /home/lqt/.local/share/gem/credentials
 # @option --otp <CODE>               Digit code for multifactor authentication You can also use the environment variable GEM_HOST_OTP_CODE
 # @option -a --add <NEW_OWNER>       Add an owner by user identifier
 # @option -r --remove <OLD_OWNER>    Remove an owner by user identifier
@@ -568,7 +554,7 @@ pristine() {
 
 # {{ gem push
 # @cmd Push a gem up to the gem server
-# @option -k --key <KEYNAME>       Use the given API key from /home/sigo/.local/share/gem/credentials
+# @option -k --key <KEYNAME>       Use the given API key from /home/lqt/.local/share/gem/credentials
 # @option --otp <CODE>             Digit code for multifactor authentication You can also use the environment variable GEM_HOST_OTP_CODE
 # @option --host                   Push to another gemcutter-compatible host (e.g. https://rubygems.org)
 # @option -p <URL>                 Use HTTP proxy for remote operations
@@ -962,7 +948,7 @@ which() {
 # @option --platform              Specify the platform of gem to remove
 # @option --otp <CODE>            Digit code for multifactor authentication You can also use the environment variable GEM_HOST_OTP_CODE
 # @option --host                  Yank from another gemcutter-compatible host (e.g. https://rubygems.org)
-# @option -k --key <KEYNAME>      Use the given API key from /home/sigo/.local/share/gem/credentials
+# @option -k --key <KEYNAME>      Use the given API key from /home/lqt/.local/share/gem/credentials
 # @flag -h --help                 Get help on this command
 # @flag -V                        Set the verbose level of output
 # @flag --verbose                 Set the verbose level of output

@@ -2,7 +2,7 @@
 # Automatic generated, DON'T MODIFY IT.
 
 # @option -b --before <DAYS>                      print only lastlog records older than DAYS
-# @flag -C --clear                                clear lastlog record of an user (usable only with -u)
+# @flag -C --clear                                clear lastlog record of a user (usable only with -u)
 # @flag -h --help                                 display this help message and exit
 # @option -R --root <CHROOT_DIR>                  directory to chroot into
 # @flag -S --set                                  set lastlog record to current time (usable only with -u)

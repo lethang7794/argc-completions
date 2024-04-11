@@ -12,7 +12,7 @@
 # @flag -L --logical                              dereference TARGETs that are symbolic links
 # @flag -n --no-dereference                       treat LINK_NAME as a normal file if it is a symbolic link to a directory
 # @flag -P --physical                             make hard links directly to symbolic links
-# @flag -r --relative                             create symbolic links relative to link location
+# @flag -r --relative                             with -s, create links relative to link location
 # @flag -s --symbolic                             make symbolic links instead of hard links
 # @option -S --suffix                             override the usual backup suffix
 # @option -t --target-directory <DIRECTORY>       specify the DIRECTORY in which to create the links

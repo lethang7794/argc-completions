@@ -52,6 +52,7 @@
 # @flag -w --nowrap                    Don't hard-wrap long lines [default]
 # @flag -x --nohelp                    Don't show the two help lines
 # @flag -y --afterends                 Make Ctrl+Right stop at word ends
+# @flag -! --magic                     Also try magic to determine syntax
 # @flag -% --stateflags                Show some states on the title bar
 # @flag -_ --minibar                   Show a feedback bar at the bottom
 # @flag -0 --zero                      Hide all bars, use whole terminal

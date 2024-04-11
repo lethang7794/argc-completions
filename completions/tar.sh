@@ -60,7 +60,7 @@
 # @flag --no-wildcards                          verbatim string matching
 # @flag --no-wildcards-match-slash              wildcards do not match '/'
 # @flag --wildcards                             use wildcards (default for exclusion)
-# @flag --wildcards-match-slash                 wildcards match '/' (default for exclusion)
+# @flag --wildcards-match-slash                 wildcards match '/' (default)
 # @flag --keep-directory-symlink                preserve existing symlinks to directories when extracting
 # @flag --keep-newer-files                      don't replace existing files that are newer than their archive copies
 # @flag -k --keep-old-files                     don't replace existing files when extracting, treat them as errors
@@ -132,7 +132,7 @@
 # @flag -j --bzip2                              filter the archive through bzip2
 # @flag -J --xz                                 filter the archive through xz
 # @flag --lzip                                  filter the archive through lzip
-# @flag --lzma                                  filter the archive through xz
+# @flag --lzma                                  filter the archive through xz --format=lzma
 # @flag --lzop                                  filter the archive through lzop
 # @flag --no-auto-compress                      do not use archive suffix to determine the compression program
 # @flag --zstd                                  filter the archive through zstd

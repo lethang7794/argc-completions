@@ -13,9 +13,11 @@
 # @flag -e --extended           Show detailed socket information.
 # @flag -m --memory             Show socket memory usage.
 # @flag -p --processes          Show process using socket.
+# @flag -T --threads            Show thread using socket.
 # @flag -i --info               Show internal TCP information.
 # @flag --tos                   Show ToS and priority information.
 # @flag --cgroup                Show cgroup information.
+# @flag --tipcinfo              Show internal tipc socket information.
 # @flag -K --kill               Attempts to forcibly close sockets.
 # @flag -s --summary            Print summary statistics.
 # @flag -E --events             Continually display sockets as they are destroyed
@@ -32,13 +34,15 @@
 # @flag -w --raw                Display RAW sockets.
 # @flag -x --unix               Display Unix domain sockets (alias for -f unix).
 # @flag -S --sctp               Display SCTP sockets.
+# @flag --tipc                  Display tipc sockets (alias for -f tipc).
 # @flag --vsock                 Display vsock sockets (alias for -f vsock).
 # @flag --xdp                   Display XDP sockets (alias for -f xdp).
+# @flag -M --mptcp              Display MPTCP sockets.
 # @flag --inet-sockopt          Display inet socket options.
-# @option -f --family[unix|inet|inet6|link|netlink|vsock|xdp]  Display sockets of type FAMILY.
-# @option -A <QUERY>            List of socket tables to dump, separated by commas.
-# @option --query <QUERY>       List of socket tables to dump, separated by commas.
-# @option --socket <QUERY>      List of socket tables to dump, separated by commas.
+# @option -f --family[unix|inet|inet6|link|netlink|vsock|tipc|xdp]  Display sockets of type FAMILY.
+# @option -A[all|inet|tcp|udp|raw|unix|packet|netlink|unix_dgram|unix_stream|unix_seqpacket|packet_raw|packet_dgram|dccp|sctp|tipc|vsock_stream|vsock_dgram|xdp|mptcp] <QUERY>  List of socket tables to dump, separated by commas.
+# @option --query[all|inet|tcp|udp|raw|unix|packet|netlink|unix_dgram|unix_stream|unix_seqpacket|packet_raw|packet_dgram|dccp|sctp|tipc|vsock_stream|vsock_dgram|xdp|mptcp] <QUERY>  List of socket tables to dump, separated by commas.
+# @option --socket[all|inet|tcp|udp|raw|unix|packet|netlink|unix_dgram|unix_stream|unix_seqpacket|packet_raw|packet_dgram|dccp|sctp|tipc|vsock_stream|vsock_dgram|xdp|mptcp] <QUERY>  List of socket tables to dump, separated by commas.
 # @option -D --diag <FILE>      Do not display anything, just dump raw information about TCP sockets to FILE after applying filters.
 # @option -F --filter <FILE>    Read filter information from FILE.
 # @arg filter

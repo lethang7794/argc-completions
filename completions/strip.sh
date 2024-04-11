@@ -5,10 +5,11 @@
 # @option -O --output-target[`_choice_target`] <bfdname>  Create an output file in format <bfdname>
 # @option -F --target[`_choice_target`] <bfdname>  Set both input and output format to <bfdname>
 # @flag -p --preserve-dates                    Copy modified/access timestamps to the output
-# @flag -D --enable-deterministic-archives     Produce deterministic output when stripping archives (default)
-# @flag -U --disable-deterministic-archives    Disable -D behavior
+# @flag -D --enable-deterministic-archives     Produce deterministic output when stripping archives
+# @flag -U --disable-deterministic-archives    Disable -D behavior (default)
 # @option -R --remove-section <name>           Also remove section <name> from the output
 # @option --remove-relocations <name>          Remove relocations from section <name>
+# @flag --strip-section-headers                Strip section headers from the output
 # @flag -s --strip-all                         Remove all symbol and relocation information
 # @flag -g                                     Remove all debugging symbols & sections
 # @flag -S                                     Remove all debugging symbols & sections

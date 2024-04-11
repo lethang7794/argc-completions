@@ -1,32 +1,34 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-# @option --config-file <file>                Read config from file (default is $HOME/.gdu.yaml)
-# @flag -g --const-gc                         Enable memory garbage collection during analysis with constant level set by GOGC
-# @flag --enable-profiling                    Enable collection of profiling data and provide it on http://localhost:6060/debug/pprof/
-# @flag -L --follow-symlinks                  Follow symlinks for files, i.e.
-# @flag -h --help                             help for gdu
-# @option -i --ignore-dirs*, <dir>            Absolute paths to ignore (separated by comma) (default [/proc,/dev,/sys,/run])
-# @option -I --ignore-dirs-pattern*, <dir>    Absolute path patterns to ignore (separated by comma)
-# @option -X --ignore-from <file>             Read absolute path patterns to ignore from file
-# @option -f --input-file <file>              Import analysis from JSON file
-# @option -l --log-file <file>                Path to a logfile (default "/dev/null")
-# @option -m --max-cores <int>                Set max cores that GDU will use.
-# @flag -c --no-color                         Do not use colorized output
-# @flag -x --no-cross                         Do not cross filesystem boundaries
-# @flag -H --no-hidden                        Ignore hidden directories (beginning with dot)
-# @flag --no-mouse                            Do not use mouse
-# @flag --no-prefix                           Show sizes as raw numbers without any prefixes (SI or binary) in non-interactive mode
-# @flag -p --no-progress                      Do not show progress in non-interactive mode
-# @flag -n --non-interactive                  Do not run in interactive mode
-# @option -o --output-file <file>             Export all info into file as JSON
-# @flag -a --show-apparent-size               Show apparent size
-# @flag -d --show-disks                       Show all mounted disks
-# @flag -B --show-relative-size               Show relative size
-# @option --si[kB|MB|GB]                      Show sizes with decimal SI prefixes instead of binary prefixes (KiB, MiB, GiB)
-# @flag -s --summarize                        Show only a total in non-interactive mode
-# @flag -v --version                          Print version
-# @flag --write-config                        Write current configuration to file (default is $HOME/.gdu.yaml)
-# @arg directory_to_scan
+# @flag -0 --null                     end each output line with NUL, not newline
+# @flag -a --all                      write counts for all files, not just directories
+# @flag --apparent-size               print apparent sizes rather than device usage; although the apparent size is usually smaller, it may be larger due to holes in ('sparse') files, internal fragmentation, indirect blocks, and the like
+# @option -B --block-size <SIZE>      scale sizes by SIZE before printing them; e.g., '-BM' prints sizes in units of 1,048,576 bytes; see SIZE format below
+# @flag -b --bytes                    equivalent to '--apparent-size --block-size=1'
+# @flag -c --total                    produce a grand total
+# @flag -D --dereference-args         dereference only symlinks that are listed on the command line
+# @option -d --max-depth <N>          print the total for a directory (or file, with --all) only if it is N or fewer levels below the command line argument;  --max-depth=0 is the same as --summarize
+# @option --files0-from <F>           summarize device usage of the NUL-terminated file names specified in file F; if F is -, then read names from standard input
+# @flag -H                            equivalent to --dereference-args (-D)
+# @flag -h --human-readable           print sizes in human readable format (e.g., 1K 234M 2G)
+# @flag --inodes                      list inode usage information instead of block usage
+# @flag -k                            like --block-size=1K
+# @flag -L --dereference              dereference all symbolic links
+# @flag -l --count-links              count sizes many times if hard linked
+# @flag -m                            like --block-size=1M
+# @flag -P --no-dereference           don't follow any symbolic links (this is the default)
+# @flag -S --separate-dirs            for directories do not include size of subdirectories
+# @flag --si                          like -h, but use powers of 1000 not 1024
+# @flag -s --summarize                display only a total for each argument
+# @option -t --threshold <SIZE>       exclude entries smaller than SIZE if positive, or entries greater than SIZE if negative
+# @option --time <WORD>               show time as WORD instead of modification time: atime, access, use, ctime or status
+# @option --time-style <STYLE>        show times using STYLE, which can be: full-iso, long-iso, iso, or +FORMAT; FORMAT is interpreted like in 'date'
+# @option -X --exclude-from <FILE>    exclude files that match any pattern in FILE
+# @option --exclude <PATTERN>         exclude files that match PATTERN
+# @flag -x --one-file-system          skip directories on different file systems
+# @flag --help                        display this help and exit
+# @flag --version                     output version information and exit
+# @arg file*
 
 command eval "$(argc --argc-eval "$0" "$@")"

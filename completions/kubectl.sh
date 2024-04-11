@@ -1808,6 +1808,7 @@ edit() {
 # @flag --force                                   If true, immediately remove resources from API and bypass graceful deletion.
 # @option --grace-period <-1>                     Period of time in seconds given to the resource to terminate gracefully.
 # @flag --ignore-not-found                        Treat "resource not found" as a successful delete.
+# @flag -i --interactive                          If true, delete resource only when user confirms.
 # @option -k --kustomize <dir>                    Process a kustomization directory.
 # @flag --now                                     If true, resources are signaled for immediate shutdown (same as --grace-period=1).
 # @option -o --output <value>                     Output mode.
@@ -3819,6 +3820,74 @@ completion() {
     :;
 }
 # }} kubectl completion
+
+# {{ kubectl ctx
+# @cmd The command ctx is a plugin installed by the user
+# @option --as <value>                            Username to impersonate for the operation.
+# @option --as-group* <value>                     Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+# @option --as-uid <value>                        UID to impersonate for the operation.
+# @option --cache-dir <dir>                       Default cache directory
+# @option --certificate-authority <path>          Path to a cert file for the certificate authority
+# @option --client-certificate <path>             Path to a client certificate file for TLS
+# @option --client-key <path>                     Path to a client key file for TLS
+# @option --cluster[`_choice_cluster`] <value>    The name of the kubeconfig cluster to use
+# @option --context[`_choice_context`] <value>    The name of the kubeconfig context to use
+# @flag --disable-compression                     If true, opt-out of response compression for all requests to the server
+# @flag --insecure-skip-tls-verify                If true, the server's certificate will not be checked for validity.
+# @option --kubeconfig <path>                     Path to the kubeconfig file to use for CLI requests.
+# @option --log-flush-frequency <5s>              Maximum number of seconds between log flushes
+# @flag --match-server-version                    Require server version to match client version
+# @option -n --namespace[`_choice_namespace`] <value>  If present, the namespace scope for this CLI request
+# @option --password <value>                      Password for basic authentication to the API server
+# @option --profile <none>                        Name of profile to capture.
+# @option --profile-output <profile.pprof>        Name of the file to write the profile to
+# @option --request-timeout <0>                   The length of time to wait before giving up on a single server request.
+# @option -s --server <value>                     The address and port of the Kubernetes API server
+# @option --tls-server-name <value>               Server name to use for server certificate validation.
+# @option --token <value>                         Bearer token for authentication to the API server
+# @option --user[`_choice_user`] <value>          The name of the kubeconfig user to use
+# @option --username <value>                      Username for basic authentication to the API server
+# @option -v --v <0>                              number for the log level verbosity
+# @option --vmodule*, <value>                     comma-separated list of pattern=N settings for file-filtered logging (only works for the default text log format)
+# @flag --warnings-as-errors                      Treat warnings received from the server as errors and exit with a non-zero exit code
+ctx() {
+    :;
+}
+# }} kubectl ctx
+
+# {{ kubectl ns
+# @cmd The command ns is a plugin installed by the user
+# @option --as <value>                            Username to impersonate for the operation.
+# @option --as-group* <value>                     Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+# @option --as-uid <value>                        UID to impersonate for the operation.
+# @option --cache-dir <dir>                       Default cache directory
+# @option --certificate-authority <path>          Path to a cert file for the certificate authority
+# @option --client-certificate <path>             Path to a client certificate file for TLS
+# @option --client-key <path>                     Path to a client key file for TLS
+# @option --cluster[`_choice_cluster`] <value>    The name of the kubeconfig cluster to use
+# @option --context[`_choice_context`] <value>    The name of the kubeconfig context to use
+# @flag --disable-compression                     If true, opt-out of response compression for all requests to the server
+# @flag --insecure-skip-tls-verify                If true, the server's certificate will not be checked for validity.
+# @option --kubeconfig <path>                     Path to the kubeconfig file to use for CLI requests.
+# @option --log-flush-frequency <5s>              Maximum number of seconds between log flushes
+# @flag --match-server-version                    Require server version to match client version
+# @option -n --namespace[`_choice_namespace`] <value>  If present, the namespace scope for this CLI request
+# @option --password <value>                      Password for basic authentication to the API server
+# @option --profile <none>                        Name of profile to capture.
+# @option --profile-output <profile.pprof>        Name of the file to write the profile to
+# @option --request-timeout <0>                   The length of time to wait before giving up on a single server request.
+# @option -s --server <value>                     The address and port of the Kubernetes API server
+# @option --tls-server-name <value>               Server name to use for server certificate validation.
+# @option --token <value>                         Bearer token for authentication to the API server
+# @option --user[`_choice_user`] <value>          The name of the kubeconfig user to use
+# @option --username <value>                      Username for basic authentication to the API server
+# @option -v --v <0>                              number for the log level verbosity
+# @option --vmodule*, <value>                     comma-separated list of pattern=N settings for file-filtered logging (only works for the default text log format)
+# @flag --warnings-as-errors                      Treat warnings received from the server as errors and exit with a non-zero exit code
+ns() {
+    :;
+}
+# }} kubectl ns
 
 # {{ kubectl api-resources
 # @cmd Print the supported API resources on the server

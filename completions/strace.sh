@@ -34,7 +34,10 @@
 # @option --kvm <vcpu>                             Print the exit reason of kvm vcpu.
 # @flag -i --instruction-pointer                   Print the instruction pointer at the time of the system call.
 # @flag -n --syscall-number                        Print the syscall number.
-# @flag -k --stack-traces                          Print the execution stack trace of the traced processes after each system call.
+# @option -k --stack-trace <symbol>                Print the execution stack trace of the traced processes after each system call.
+# @option -kk <source>                             Print the execution stack trace and source code information of the traced processes after each system call.
+# @option --stack-trace <source>                   Print the execution stack trace and source code information of the traced processes after each system call.
+# @option --stack-trace-frame-limit <limit>        Print no more than this amount of stack trace frames when backtracing a system call (the default is 256).
 # @option -o --output <filename>                   Write the trace output to the file filename rather than to stderr.
 # @flag -A --output-append-mode                    Open the file provided in the -o option in append mode.
 # @option -r --relative-timestamps <precision>     Print a relative timestamp upon entry to each system call.
@@ -45,6 +48,7 @@
 # @flag -v --no-abbrev                             Print unabbreviated versions of environment, stat, termios, etc.
 # @option --strings-in-hex[`_choice_string_in_hex`] <option>  Control usage of escape sequences with hexadecimal numbers in the printed strings.
 # @option -X --const-print-style[`_choice_const_print_style`] <format>  Set the format for printing of named constants and flags.
+# @option -e --secontext <secontext=format>        When SELinux is available and is not disabled, print in square brackets SELinux contexts of processes, files, and descriptors.
 # @flag -c --summary-only                          Count time, calls, and errors for each system call and report a summary on program exit, suppressing the regular output.
 # @flag -C --summary                               Like -c but also print regular output while processes are running.
 # @option -O --summary-syscall-overhead <overhead>  Set the overhead for tracing system calls to overhead.

@@ -21,9 +21,12 @@
 # @flag --no-history             Do not write to the history database
 # @flag --show-all               Show all results
 # @flag --disable-ssl-strict     Ignore SSL strict checks when downloading files
-# @flag --ipfs                   Only use IPFS when downloading files
+# @flag --p2p                    Only use peer-to-peer networking when downloading files
 # @flag --filter                 Filter with a set of device flags using a ~ prefix to exclude, e.g. 'internal,~needs-reboot'
+# @flag --filter-release         Filter with a set of release flags using a ~ prefix to exclude, e.g. 'trusted-release,~trusted-metadata'
 # @flag --json                   Output in JSON format
+# @flag --no-security-fix        Do not prompt to fix security issues
+# @flag --no-authenticate        Don't prompt for authentication (less details may be shown)
 
 # {{ fwupdmgr activate
 # @cmd Activate devices
@@ -49,6 +52,15 @@ clear-results() {
 }
 # }} fwupdmgr clear-results
 
+# {{ fwupdmgr device-emulate
+# @cmd Emulate a device using a JSON manifest
+# @arg filename1
+# @arg filename2
+device-emulate() {
+    :;
+}
+# }} fwupdmgr device-emulate
+
 # {{ fwupdmgr device-test
 # @cmd Test a device using a JSON manifest
 # @arg filename1
@@ -57,6 +69,14 @@ device-test() {
     :;
 }
 # }} fwupdmgr device-test
+
+# {{ fwupdmgr device-wait
+# @cmd Wait for a device to appear
+# @arg guid-device-id <GUID|DEVICE-ID>
+device-wait() {
+    :;
+}
+# }} fwupdmgr device-wait
 
 # {{ fwupdmgr disable-remote
 # @cmd Disables a given remote
@@ -82,6 +102,38 @@ download() {
 }
 # }} fwupdmgr download
 
+# {{ fwupdmgr emulation-load
+# @cmd Load device emulation data
+# @arg filename
+emulation-load() {
+    :;
+}
+# }} fwupdmgr emulation-load
+
+# {{ fwupdmgr emulation-save
+# @cmd Save device emulation data
+# @arg filename
+emulation-save() {
+    :;
+}
+# }} fwupdmgr emulation-save
+
+# {{ fwupdmgr emulation-tag
+# @cmd Adds devices to watch for future emulation
+# @arg device-id-guid[`_choice_device_id`] <DEVICE-ID|GUID>
+emulation-tag() {
+    :;
+}
+# }} fwupdmgr emulation-tag
+
+# {{ fwupdmgr emulation-untag
+# @cmd Removes devices to watch for future emulation
+# @arg device-id-guid[`_choice_device_id`] <DEVICE-ID|GUID>
+emulation-untag() {
+    :;
+}
+# }} fwupdmgr emulation-untag
+
 # {{ fwupdmgr enable-remote
 # @cmd Enables a given remote
 # @arg remote-id[`_choice_remote_id`]
@@ -96,6 +148,24 @@ get-approved-firmware() {
     :;
 }
 # }} fwupdmgr get-approved-firmware
+
+# {{ fwupdmgr get-bios-setting
+# @cmd Alias to get-bios-settings
+# @arg setting1
+# @arg setting2
+get-bios-setting() {
+    :;
+}
+# }} fwupdmgr get-bios-setting
+
+# {{ fwupdmgr get-bios-settings
+# @cmd Retrieve BIOS settings.
+# @arg setting1
+# @arg setting2
+get-bios-settings() {
+    :;
+}
+# }} fwupdmgr get-bios-settings
 
 # {{ fwupdmgr get-blocked-firmware
 # @cmd Gets the list of blocked firmware
@@ -179,14 +249,31 @@ get-upgrades() {
 }
 # }} fwupdmgr get-upgrades
 
+# {{ fwupdmgr inhibit
+# @cmd Inhibit the system to prevent upgrades
+# @arg reason
+inhibit() {
+    :;
+}
+# }} fwupdmgr inhibit
+
 # {{ fwupdmgr install
-# @cmd Install a firmware file on this hardware
-# @arg file
+# @cmd Install a specific firmware file on all devices that match
 # @arg device-id-guid[`_choice_device_id`] <DEVICE-ID|GUID>
+# @arg version
 install() {
     :;
 }
 # }} fwupdmgr install
+
+# {{ fwupdmgr local-install
+# @cmd Install a firmware file in cabinet format on this hardware
+# @arg file
+# @arg device-id-guid[`_choice_device_id`] <DEVICE-ID|GUID>
+local-install() {
+    :;
+}
+# }} fwupdmgr local-install
 
 # {{ fwupdmgr modify-config
 # @cmd Modifies a daemon configuration value
@@ -206,6 +293,13 @@ modify-remote() {
 }
 # }} fwupdmgr modify-remote
 
+# {{ fwupdmgr quit
+# @cmd Asks the daemon to quit
+quit() {
+    :;
+}
+# }} fwupdmgr quit
+
 # {{ fwupdmgr refresh
 # @cmd Refresh metadata from remote server
 # @arg file-file_sig-remote-id <FILE FILE_SIG REMOTE-ID>
@@ -222,6 +316,13 @@ reinstall() {
 }
 # }} fwupdmgr reinstall
 
+# {{ fwupdmgr report-export
+# @cmd Export firmware history for manual upload
+report-export() {
+    :;
+}
+# }} fwupdmgr report-export
+
 # {{ fwupdmgr report-history
 # @cmd Share firmware history with the developers
 report-history() {
@@ -236,6 +337,22 @@ security() {
 }
 # }} fwupdmgr security
 
+# {{ fwupdmgr security-fix
+# @cmd Fix a specific host security attribute
+# @arg appstream_id
+security-fix() {
+    :;
+}
+# }} fwupdmgr security-fix
+
+# {{ fwupdmgr security-undo
+# @cmd Undo the host security attribute fix
+# @arg appstream_id
+security-undo() {
+    :;
+}
+# }} fwupdmgr security-undo
+
 # {{ fwupdmgr set-approved-firmware
 # @cmd Sets the list of approved firmware
 # @arg filename-checksum1-checksum2-checksum3 <FILENAME|CHECKSUM1[,CHECKSUM2][,CHECKSUM3]>
@@ -243,6 +360,17 @@ set-approved-firmware() {
     :;
 }
 # }} fwupdmgr set-approved-firmware
+
+# {{ fwupdmgr set-bios-setting
+# @cmd Sets one or more BIOS settings
+# @arg setting1
+# @arg value1
+# @arg setting2
+# @arg value2
+set-bios-setting() {
+    :;
+}
+# }} fwupdmgr set-bios-setting
 
 # {{ fwupdmgr switch-branch
 # @cmd Switch the firmware branch on the device
@@ -253,8 +381,15 @@ switch-branch() {
 }
 # }} fwupdmgr switch-branch
 
+# {{ fwupdmgr sync
+# @cmd Sync firmware versions to the chosen configuration
+sync() {
+    :;
+}
+# }} fwupdmgr sync
+
 # {{ fwupdmgr sync-bkc
-# @cmd Sync firmware versions to the host best known configuration
+# @cmd Alias to sync
 sync-bkc() {
     :;
 }
@@ -267,6 +402,14 @@ unblock-firmware() {
     :;
 }
 # }} fwupdmgr unblock-firmware
+
+# {{ fwupdmgr uninhibit
+# @cmd Uninhibit the system to allow upgrades
+# @arg inhibit-id
+uninhibit() {
+    :;
+}
+# }} fwupdmgr uninhibit
 
 # {{ fwupdmgr unlock
 # @cmd Unlocks the device for firmware access

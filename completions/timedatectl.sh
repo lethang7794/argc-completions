@@ -81,6 +81,20 @@ show-timesync() {
 }
 # }} timedatectl show-timesync
 
+# {{ timedatectl ntp-servers
+# @cmd INTERFACE SERVER… Set the interface specific NTP servers
+ntp-servers() {
+    :;
+}
+# }} timedatectl ntp-servers
+
+# {{ timedatectl revert
+# @cmd Revert the interface specific NTP servers
+revert() {
+    :;
+}
+# }} timedatectl revert
+
 _choice_timezone() {
     timedatectl list-timezones   
 }

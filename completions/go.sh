@@ -410,6 +410,13 @@ work::use() {
     :;
 }
 # }}} go work use
+
+# {{{ go work vendor
+# @cmd make vendored copy of dependencies
+work::vendor() {
+    :;
+}
+# }}} go work vendor
 # }} go work
 
 # {{ go run

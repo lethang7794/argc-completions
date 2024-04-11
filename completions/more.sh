@@ -6,6 +6,7 @@
 # @flag -l --no-pause            suppress pause after form feed
 # @flag -c --print-over          do not scroll, display text and clean line ends
 # @flag -p --clean-print         do not scroll, clean screen and display text
+# @flag -e --exit-on-eof         exit on end-of-file
 # @flag -s --squeeze             squeeze multiple blank lines into one
 # @flag -u --plain               suppress underlining and bold
 # @option -n --lines <number>    the number of lines per screenful

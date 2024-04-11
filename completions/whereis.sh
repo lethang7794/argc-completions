@@ -9,6 +9,7 @@
 # @option -S <dirs>     define sources lookup path
 # @flag -f              terminate <dirs> argument list
 # @flag -u              search for unusual entries
+# @flag -g              interpret name as glob (pathnames pattern)
 # @flag -l              output effective lookup paths
 # @flag -h --help       display this help
 # @flag -V --version    display version

@@ -8,7 +8,7 @@
 # @option -S --split-string <S>                   process and split S into separate arguments; used to pass multiple arguments on shebang lines
 # @option --block-signal[`_module_os_signal`] <SIG>  block delivery of SIG signal(s) to COMMAND
 # @option --default-signal[`_module_os_signal`] <SIG>  reset handling of SIG signal(s) to the default
-# @option --ignore-signal[`_module_os_signal`] <SIG>  set handling of SIG signals(s) to do nothing
+# @option --ignore-signal[`_module_os_signal`] <SIG>  set handling of SIG signal(s) to do nothing
 # @flag --list-signal-handling                    list non default signal handling to stderr
 # @flag -v --debug                                print verbose information for each processing step
 # @flag --help                                    display this help and exit

@@ -2,11 +2,13 @@
 # Automatic generated, DON'T MODIFY IT.
 
 # @flag --abort-on-uncaught-exception              aborting instead of exiting causes a core file to be generated for analysis
+# @flag --allow-addons                             allow use of addons when any permissions are set
 # @flag --allow-child-process                      allow use of child process when any permissions are set
 # @option --allow-fs-read <value>                  allow permissions to read the filesystem
 # @option --allow-fs-write <value>                 allow permissions to write in the filesystem
 # @flag --allow-worker                             allow worker threads when any permissions are set
 # @flag --build-snapshot                           Generate a snapshot blob when the process exits.
+# @option --build-snapshot-config <value>          Generate a snapshot blob when the process exits using aJSON configuration in the specified path.
 # @flag -c --check                                 syntax check script without executing
 # @flag --completion-bash                          print source-able bash completion script
 # @option -C --conditions <value>                  additional user conditions for conditional exports and imports
@@ -16,6 +18,7 @@
 # @option --cpu-prof-name <value>                  specified file name of the V8 CPU profile generated with --cpu-prof
 # @option --diagnostic-dir <dir>                   set dir for all output files (default: current working directory)
 # @option --disable-proto <value>                  disable Object.prototype.__proto__
+# @option --disable-warning <value>                silence specific process warnings
 # @flag --disallow-code-generation-from-strings    disallow eval and friends
 # @option --dns-result-order <value>               set default value of verbatim in dns.lookup.
 # @flag --enable-etw-stack-walking                 provides heap data to ETW Windows native tracing
@@ -64,6 +67,7 @@
 # @flag --no-deprecation                           silence deprecation warnings
 # @flag --no-experimental-fetch                    experimental Fetch API
 # @flag --no-experimental-global-customevent       expose experimental CustomEvent on the global scope
+# @flag --no-experimental-global-navigator         expose experimental Navigator API on the global scope
 # @flag --no-experimental-global-webcrypto         expose experimental Web Crypto API on the global scope
 # @flag --no-experimental-repl-await               experimental await keyword support in REPL
 # @flag --no-experimental-websocket                experimental WebSocket API (currently set)
@@ -104,6 +108,7 @@
 # @option --test-reporter <value>                  report test output using the given reporter
 # @option --test-reporter-destination <value>      report given reporter to the given destination
 # @option --test-shard <value>                     run test at specific shard
+# @option --test-timeout <value>                   specify test runner timeout
 # @flag --throw-deprecation                        throw an exception on deprecations
 # @option --title <value>                          the process title to use on startup
 # @option --tls-cipher-list <value>                use an alternative default TLS cipher list
@@ -119,6 +124,7 @@
 # @option --trace-event-categories <value>         comma separated list of trace event categories to record
 # @option --trace-event-file-pattern <value>       Template string specifying the filepath for the trace-events data, it supports ${rotation} and ${pid}.
 # @flag --trace-exit                               show stack trace when an environment exits
+# @flag --trace-promises                           show stack traces on promise initialization and resolution
 # @flag --trace-sigint                             enable printing JavaScript stacktrace on SIGINT
 # @flag --trace-sync-io                            show stack trace when use of sync IO is detected after the first tick
 # @flag --trace-tls                                prints TLS packet trace information to stderr
