@@ -23,7 +23,7 @@
 # @flag --no-hscroll                             Disable horizontal scroll
 # @option --hscroll-off <COLS>                   Number of screen columns to keep to the right of the highlighted substring (default: 10)
 # @flag --filepath-word                          Make word-wise movements respect path separators
-# @option --jump-labels <CHARS>                  Label characters for jump and jump-accept
+# @option --jump-labels <CHARS>                  Label characters for jump mode
 # @option --height <[~]HEIGHT[%]>                Display fzf window below the cursor with the given height instead of using fullscreen.
 # @option --min-height <HEIGHT>                  Minimum height when --height is given in percent (default: 10)
 # @option --layout[default|reverse|reverse-list]  Choose layout:

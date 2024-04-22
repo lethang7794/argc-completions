@@ -9,11 +9,12 @@
 # @option --colors <off|force>               Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                         Connect to a running instance of the Biome daemon server.
 # @flag --verbose                            Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>               Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>               Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>         Cap the amount of diagnostics displayed.
 # @flag --skip-errors                        Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched             Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                  Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>      Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]    How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -28,11 +29,12 @@ version() {
 # @option --colors <off|force>               Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                         Connect to a running instance of the Biome daemon server.
 # @flag --verbose                            Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>               Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>               Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>         Cap the amount of diagnostics displayed.
 # @flag --skip-errors                        Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched             Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                  Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>      Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]    How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -47,7 +49,7 @@ rage() {
 
 # {{ biome start
 # @cmd Start the Biome daemon server process
-# @option --config-path <PATH>    Allows to set a custom path when discovering the configuration file `biome.json` [env:BIOME_CONFIG_PATH: N/A]
+# @option --config-path <PATH>    Allows to set a custom file path to the configuration file, or a custom directory path to find `biome.json` or `biome.jsonc` [env:BIOME_CONFIG_PATH: N/A]
 # @flag -h --help                 Prints help information
 start() {
     :;
@@ -102,11 +104,12 @@ stop() {
 # @option --colors <off|force>                     Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                               Connect to a running instance of the Biome daemon server.
 # @flag --verbose                                  Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>                     Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>                     Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>               Cap the amount of diagnostics displayed.
 # @flag --skip-errors                              Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched                   Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                        Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>            Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]          How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -116,6 +119,7 @@ stop() {
 # @option --linter-enabled <true|false>            Allow to enable or disable the linter check.
 # @option --organize-imports-enabled <true|false>  Allow to enable or disable the organize imports.
 # @option --stdin-file-path <PATH>                 Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
+# @flag --staged                                   When set to true, only the files that have been staged (the ones prepared to be committed) will be linted.
 # @flag --changed                                  When set to true, only the files that have been changed compared to your `defaultBranch` configuration will be linted.
 # @option --since <REF>                            Use this to specify the base branch to compare against when you're using the --changed flag and the `defaultBranch` is not set in your biome.json
 # @flag -h --help                                  Prints help information
@@ -137,17 +141,19 @@ check() {
 # @option --colors <off|force>                   Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                             Connect to a running instance of the Biome daemon server.
 # @flag --verbose                                Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>                   Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>                   Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>             Cap the amount of diagnostics displayed.
 # @flag --skip-errors                            Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched                 Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                      Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>          Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]        How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
 # @flag --apply                                  Apply safe fixes, formatting and import sorting
 # @flag --apply-unsafe                           Apply safe fixes and unsafe fixes, formatting and import sorting
 # @option --stdin-file-path <PATH>               Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
+# @flag --staged                                 When set to true, only the files that have been staged (the ones prepared to be committed) will be linted.
 # @flag --changed                                When set to true, only the files that have been changed compared to your `defaultBranch` configuration will be linted.
 # @option --since <REF>                          Use this to specify the base branch to compare against when you're using the --changed flag and the `defaultBranch` is not set in your biome.json
 # @flag -h --help                                Prints help information
@@ -190,11 +196,12 @@ lint() {
 # @option --colors <off|force>                     Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                               Connect to a running instance of the Biome daemon server.
 # @flag --verbose                                  Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>                     Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>                     Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>               Cap the amount of diagnostics displayed.
 # @flag --skip-errors                              Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched                   Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                        Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>            Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]          How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -207,6 +214,7 @@ lint() {
 # @option --json-formatter-trailing-commas <none|all>  Print trailing commas wherever possible in multi-line comma-separated syntactic structures.
 # @option --stdin-file-path <PATH>                 Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
 # @flag --write                                    Writes formatted files to file system.
+# @flag --staged                                   When set to true, only the files that have been staged (the ones prepared to be committed) will be linted.
 # @flag --changed                                  When set to true, only the files that have been changed compared to your `defaultBranch` configuration will be linted.
 # @option --since <REF>                            Use this to specify the base branch to compare against when you're using the --changed flag and the `defaultBranch` is not set in your biome.json
 # @flag -h --help                                  Prints help information
@@ -256,11 +264,12 @@ format() {
 # @option --colors <off|force>                     Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                               Connect to a running instance of the Biome daemon server.
 # @flag --verbose                                  Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>                     Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>                     Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>               Cap the amount of diagnostics displayed.
 # @flag --skip-errors                              Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched                   Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                        Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>            Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]          How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -286,7 +295,7 @@ init() {
 
 # {{ biome lsp-proxy
 # @cmd Acts as a server for the Language Server Protocol over stdin/stdout
-# @option --config-path <PATH>    Allows to set a custom path when discovering the configuration file `biome.json` [env:BIOME_CONFIG_PATH: N/A]
+# @option --config-path <PATH>    Allows to set a custom file path to the configuration file, or a custom directory path to find `biome.json` or `biome.jsonc` [env:BIOME_CONFIG_PATH: N/A]
 # @flag -h --help                 Prints help information
 lsp-proxy() {
     :;
@@ -298,11 +307,12 @@ lsp-proxy() {
 # @option --colors <off|force>               Set the formatting mode for markup: "off" prints everything as plain text, "force" forces the formatting of markup using ANSI even if the console output is determined to be incompatible
 # @flag --use-server                         Connect to a running instance of the Biome daemon server.
 # @flag --verbose                            Print additional diagnostics, and some diagnostics show more information.
-# @option --config-path <PATH>               Set the directory of the biome.json or biome.jsonc configuration file and disable default configuration file resolution.
+# @option --config-path <PATH>               Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
 # @option --max-diagnostics <NUMBER>         Cap the amount of diagnostics displayed.
 # @flag --skip-errors                        Skip over files containing syntax errors instead of emitting an error diagnostic.
 # @flag --no-errors-on-unmatched             Silence errors that would be emitted in case no files were processed during the execution of the command.
 # @flag --error-on-warnings                  Tell Biome to exit with an error code if some diagnostics emit warnings.
+# @option --reporter <json|json-pretty>      Allows to change how diagnostics and summary are reported.
 # @option --log-level[debug|info|warn|error] <none|debug|info|warn|error>  The level of logging.
 # @option --log-kind[pretty|compact|json]    How the log should look like.
 # @option --diagnostic-level[info|warn|error] <info|warn|error>  The level of diagnostics to show.
@@ -319,6 +329,16 @@ migrate::prettier() {
     :;
 }
 # }}} biome migrate prettier
+
+# {{{ biome migrate eslint
+# @cmd It attempts to find the ESLint configuration file in the working directory, and update the Biome's configuration file as a result.
+# @flag --include-inspired    Includes rules inspired from an eslint rule in the migration
+# @flag --include-nursery     Includes nursery rules in the migration
+# @flag -h --help             Prints help information
+migrate::eslint() {
+    :;
+}
+# }}} biome migrate eslint
 # }} biome migrate
 
 # {{ biome explain

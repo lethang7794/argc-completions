@@ -20,7 +20,7 @@
 # @flag --save-workspace-protocol       Save packages from the workspace with a "workspace:" protocol.
 # @flag --no-save-workspace-protocol    Save packages from the workspace with a "workspace:" protocol.
 # @flag --aggregate-output              Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>                Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>                Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/ argc-completions)
 # @flag -g --global                     Install as a global package
 # @flag --global-dir                    Specify a custom directory to store global packages
 # @flag -h --help                       Output usage information
@@ -69,7 +69,7 @@ import() {
 # @flag --aggregate-output                    Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --child-concurrency <number>        Controls the number of child processes run parallelly to build node modules
 # @flag -D --dev                              Only `devDependencies` are installed regardless of the `NODE_ENV`
-# @option -C --dir <dir>                      Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/ argc-completions)
+# @option -C --dir <dir>                      Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/ argc-completions)
 # @flag --fix-lockfile                        Fix broken lockfile entries automatically
 # @option --force[cpu|os|arch]                Force reinstall dependencies: refetch packages modified in store, recreate a lockfile and/or modules directory created by a non-compatible version of pnpm.
 # @flag --global-dir                          Specify a custom directory to store global packages
@@ -131,7 +131,7 @@ it() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -g --global            Link package to/from global node_modules
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -149,7 +149,7 @@ ln() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag --no-optional          Remove the packages specified in `optionalDependencies`
@@ -168,7 +168,7 @@ prune() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag --pending                     Rebuild packages that were not build during installation.
@@ -194,7 +194,7 @@ rb() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -221,7 +221,7 @@ rm() {
 # @flag --color                Controls colors in the output.
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag -r --recursive         Unlink in every package found in subdirectories or in every workspace package, when executed inside a workspace.
@@ -242,7 +242,7 @@ unlink() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            How deep should levels of dependencies be inspected.
 # @flag -D --dev                      Update packages only in "devDependencies"
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -g --global                   Update globally installed packages
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -307,7 +307,7 @@ licenses() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            Max display depth of the dependency tree
 # @flag -D --dev                      Display only the dependency graph for packages in `devDependencies`
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -g --global                   List packages in the global install prefix instead of in the current project
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -340,7 +340,7 @@ ls() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag --compatible                  Print only versions that satisfy specs in package.json
 # @flag -D --dev                      Check only "devDependencies"
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -382,7 +382,7 @@ exec() {
 # @flag --color                       Controls colors in the output.
 # @flag --no-color                    Controls colors in the output.
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help                     Output usage information
 # @flag --if-present                  Avoid exiting with a non-zero exit code when the script is undefined
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -543,7 +543,7 @@ store::status() {
 # @flag --no-color             Controls colors in the output.
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag -D --dev               Only development packages will be fetched
-# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help              Output usage information
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag -P --prod              Development packages will not be fetched
@@ -588,7 +588,7 @@ dedup() {
 # @flag --aggregate-output            Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option --depth <number>            Max display depth of the dependency graph
 # @flag -D --dev                      Display only the dependency graph for packages in `devDependencies`
-# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>              Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -g --global                   List packages in the global install prefix instead of in the current project
 # @flag --global-dir                  Specify a custom directory to store global packages
 # @flag -h --help                     Output usage information
@@ -685,7 +685,7 @@ env::use() {
 # @flag --no-verify-store-integrity         If false, doesn't check whether packages in the store were mutated
 # @flag --aggregate-output                  Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @flag --background                        Runs the server in the background
-# @option -C --dir <dir>                    Change to directory <dir> (default: /home/lqt/go/src/github.com/sigoden/argc-completions)
+# @option -C --dir <dir>                    Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/ argc-completions)
 # @flag -h --help                           Output usage information
 # @flag --ignore-stop-requests              Disallows stopping the server using `pnpm server stop`
 # @flag --ignore-upload-requests            Disallows creating new side effect cache during install

@@ -303,7 +303,7 @@ create::cronjob() {
 # @option --field-manager <kubectl-create>        Name of the manager used to track field ownership.
 # @option --image* <value>                        Image names to run.
 # @option -o --output[json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-as-json|jsonpath-file] <value>  Output format.
-# @option --port <-1>                             The port that this container exposes.
+# @option --port <-1>                             The containerPort that this deployment exposes.
 # @option -r --replicas <1>                       Number of replicas to create.
 # @flag --save-config                             If true, the configuration of current object will be saved in its annotation.
 # @flag --show-managed-fields                     If true, keep the managedFields when printing objects in JSON or YAML format.
@@ -3192,7 +3192,7 @@ auth::whoami() {
 # @option -f --filename <file>                    identifying the resource to debug
 # @option --image[`_module_oci_docker_image`] <value>  Container image to use for debug container.
 # @option --image-pull-policy <value>             The image pull policy for the container.
-# @option --profile[legacy|general|baseline|netadmin|restricted] <legacy>  Debugging profile.
+# @option --profile[legacy|general|baseline|netadmin|restricted] <legacy>  Options are "legacy", "general", "baseline", "netadmin", "restricted" or "sysadmin".
 # @flag -q --quiet                                If true, suppress informational messages.
 # @flag --replace                                 When used with '--copy-to', delete the original Pod.
 # @flag --same-node                               When used with '--copy-to', schedule the copy of target Pod on the same node.
@@ -3287,7 +3287,7 @@ events() {
 # @flag --force-conflicts                         If true, server-side apply will force the changes against conflicts.
 # @option -k --kustomize <dir>                    Process the kustomization directory.
 # @flag --prune                                   Include resources that would be deleted by pruning.
-# @option --prune-allowlist* <value>              Overwrite the default whitelist with <group/version/kind> for --prune
+# @option --prune-allowlist* <value>              Overwrite the default allowlist with <group/version/kind> for --prune
 # @flag -R --recursive                            Process the directory used in -f, --filename recursively.
 # @option -l --selector <value>                   Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).
 # @flag --server-side                             If true, apply runs in the server instead of the client.
@@ -3889,6 +3889,42 @@ ns() {
 }
 # }} kubectl ns
 
+# {{ kubectl tree
+# @cmd The command tree is a plugin installed by the user
+# @option --as <value>                            Username to impersonate for the operation.
+# @option --as-group* <value>                     Group to impersonate for the operation, this flag can be repeated to specify multiple groups.
+# @option --as-uid <value>                        UID to impersonate for the operation.
+# @option --cache-dir <dir>                       Default cache directory
+# @option --certificate-authority <path>          Path to a cert file for the certificate authority
+# @option --client-certificate <path>             Path to a client certificate file for TLS
+# @option --client-key <path>                     Path to a client key file for TLS
+# @option --cluster[`_choice_cluster`] <value>    The name of the kubeconfig cluster to use
+# @option --context[`_choice_context`] <value>    The name of the kubeconfig context to use
+# @flag --disable-compression                     If true, opt-out of response compression for all requests to the server
+# @flag --insecure-skip-tls-verify                If true, the server's certificate will not be checked for validity.
+# @option --kubeconfig <path>                     Path to the kubeconfig file to use for CLI requests.
+# @option --log-flush-frequency <5s>              Maximum number of seconds between log flushes
+# @flag --match-server-version                    Require server version to match client version
+# @option -n --namespace[`_choice_namespace`] <value>  If present, the namespace scope for this CLI request
+# @option --password <value>                      Password for basic authentication to the API server
+# @option --profile <none>                        Name of profile to capture.
+# @option --profile-output <profile.pprof>        Name of the file to write the profile to
+# @option --request-timeout <0>                   The length of time to wait before giving up on a single server request.
+# @option -s --server <value>                     The address and port of the Kubernetes API server
+# @option --tls-server-name <value>               Server name to use for server certificate validation.
+# @option --token <value>                         Bearer token for authentication to the API server
+# @option --user[`_choice_user`] <value>          The name of the kubeconfig user to use
+# @option --username <value>                      Username for basic authentication to the API server
+# @option -v --v <0>                              number for the log level verbosity
+# @option --vmodule*, <value>                     comma-separated list of pattern=N settings for file-filtered logging (only works for the default text log format)
+# @flag --warnings-as-errors                      Treat warnings received from the server as errors and exit with a non-zero exit code
+# @arg kind
+# @arg name
+tree() {
+    :;
+}
+# }} kubectl tree
+
 # {{ kubectl api-resources
 # @cmd Print the supported API resources on the server
 # @option --as <value>                            Username to impersonate for the operation.
@@ -4420,6 +4456,8 @@ config::set-context() {
 # @option --exec-arg* <value>                     New arguments for the exec credential plugin command for the user entry in kubeconfig
 # @option --exec-command <value>                  Command for the exec credential plugin for the user entry in kubeconfig
 # @option --exec-env* <value>                     'key=value' environment values for the exec credential plugin
+# @option --exec-interactive-mode <value>         InteractiveMode of the exec credentials plugin for the user entry in kubeconfig
+# @flag --exec-provide-cluster-info               ProvideClusterInfo of the exec credentials plugin for the user entry in kubeconfig
 # @option --password <value>                      password for the user entry in kubeconfig
 # @option --token <value>                         token for the user entry in kubeconfig
 # @option --username <value>                      username for the user entry in kubeconfig

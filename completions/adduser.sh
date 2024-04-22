@@ -28,10 +28,15 @@
 # @flag -U --user-group                     Create a group with the same name as the user, and add the user to this group.
 # @option -Z --selinux-user <SEUSER>        defines the SELinux user for the new account.
 # @option --selinux-range <SERANGE>         defines the SELinux MLS range for the new account.
+# @option -b --base-dir <BASE_DIR>          sets the path prefix for a new user's home directory.
+# @option -e --expiredate <EXPIRE_DATE>     sets the date on which newly created user accounts are disabled.
+# @option -f --inactive                     defines the number of days after the password exceeded its maximum age where the user is expected to replace this password.
+# @option -g --gid <GROUP>                  sets the default primary group for newly created users, accepting group names or a numerical group ID.
+# @option -s --shell                        defines the default login shell for new users.
 # @arg login
 
 _module_os_shell() {
-    command cat /etc/shells | sed -n '/^\// p'
+    command cat /etc/shells | sed -n '/^\// p'   
 }
 
 command eval "$(argc --argc-eval "$0" "$@")"

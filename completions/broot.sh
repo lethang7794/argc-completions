@@ -11,7 +11,7 @@
 # @option --show-root-fs <Show filesystem info on top>
 # @option -g --show-git-info <Show git statuses on files and stats on repo>
 # @option -G --no-show-git-info <<Don't show git statuses on files and stats on repo>     #>
-# @option --git-status <Only show files having an interesting git status,>
+# @option --git-status <Only show files having an interesting git status including hidden ones>
 # @option -h --hidden <Show hidden files>
 # @option -H --no-hidden <<Don't show hidden files>     #>
 # @option -i --git-ignored <Show git ignored files>
@@ -24,10 +24,10 @@
 # @option --sort-by-date <Sort by date (only show one level of the tree)>
 # @option --sort-by-size <Sort by size (only show one level of the tree)>
 # @option --sort-by-type <Same as sort-by-type-dirs-first>
-# @option --no-tree <Do not show the tree even if allowed by sorting>
+# @option --no-tree <Do not show the tree even if allowed by sorting mode>
 # @option --tree <Show the tree when allowed by sorting mode>
-# @option --sort-by-type-dirs-first <<Sort by type directories first (only show one level>     #>
-# @option --sort-by-type-dirs-last <<Sort by type directories last (only show one level>     #>
+# @option --sort-by-type-dirs-first <Sort by type directories first (only show one level of the tree)>
+# @option --sort-by-type-dirs-last <Sort by type directories last (only show one level of the tree)>
 # @option --no-sort <<Don't sort>     #>
 # @option -w --whale-spotting <Sort by size show ignored and hidden files>
 # @option -t --trim-root <<Trim the root too and don't show a scrollbar>     #>
@@ -36,7 +36,7 @@
 # @option --verb-output <verb-output> <Optional path for verbs using :write_output>
 # @option -c --cmd <cmd> <Semicolon separated commands to execute>
 # @option --color <color> <Whether to have styles and colors>
-# @option --height <height> <<Height (if you don't want to fill the screen or for>     #>
+# @option --height <height> <<Height (if you don't want to fill the screen or for file export)>     #>
 # @option --install <Install or reinstall the br shell function>
 # @option --set-install-state <state> <Manually set installation state>
 # @option --print-shell-function <shell> <Print to stdout the br function for a given shell>

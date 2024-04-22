@@ -1292,7 +1292,8 @@ pr-publish() {
 # @option --retain-bottle-dir <dir>             Does not clean up the tmp directory for the bottle so it can be used later.
 # @option --committer <value>                   Specify a committer name and email in git's standard author format.
 # @option --message <value>                     Message to include when autosquashing revision bumps, deletions and rebuilds.
-# @option --artifact <value>                    Download artifacts with the specified name (default: bottles).
+# @option --artifact-pattern <value>            Download artifacts with the specified pattern (default: bottles{,_*}).
+# @option --artifact <value>                    Download artifacts with the specified pattern (default: bottles{,_*}).
 # @option --tap <value>                         Target tap repository (default: homebrew/core).
 # @option --root-url <value>                    Use the specified URL as the root of the bottle's URL instead of Homebrew's default.
 # @option --root-url-using <value>              Use the specified download strategy class for downloading the bottle's URL instead of Homebrew's default.
@@ -1444,13 +1445,13 @@ test() {
 # @flag --coverage            Generate code coverage reports.
 # @flag --generic             Run only OS-agnostic tests.
 # @flag --online              Include tests that use the GitHub API and tests that use any of the taps for official external commands.
-# @flag --byebug              Enable debugging using byebug.
+# @flag --debug               Enable debugging using ruby/debug, or surface the standard odebug output.
 # @flag --changed             Only runs tests on files that were changed from the master branch.
 # @flag --fail-fast           Exit early on the first failing test.
 # @flag --only                Run only test_script_spec.rb.
 # @option --profile <file>    Run the test suite serially to find the n slowest tests.
 # @flag --seed                Randomise tests with the specified value instead of a random seed.
-# @flag -d --debug            Display any debugging information.
+# @flag -d                    Display any debugging information.
 # @flag -q --quiet            Make some output more quiet.
 # @flag -v --verbose          Make some output more verbose.
 # @flag -h --help             Show this message.
@@ -1789,6 +1790,7 @@ services::cleanup() {
 # @flag --only-cleanup-before             Only run the pre-cleanup step.
 # @flag --only-setup                      Only run the local system setup check step.
 # @flag --only-tap-syntax                 Only run the tap syntax check step.
+# @flag --stable                          Only run the tap syntax checks needed on stable brew.
 # @flag --only-formulae                   Only run the formulae steps.
 # @flag --only-formulae-detect            Only run the formulae detection steps.
 # @flag --only-formulae-dependents        Only run the formulae dependents steps.

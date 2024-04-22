@@ -132,9 +132,9 @@
 # @flag --trace-warnings                           show stack traces on process warnings
 # @flag --track-heap-objects                       track heap object allocations for heap snapshots
 # @option --unhandled-rejections[strict|warn|none] <value>  define unhandled rejections behavior.
-# @flag --use-bundled-ca                           use bundled CA store (default)
+# @flag --use-bundled-ca                           use bundled CA store
 # @option --use-largepages[off|on|silent] <value>  Map the Node.js static code to large pages.
-# @flag --use-openssl-ca                           use OpenSSL's default CA store
+# @flag --use-openssl-ca                           use OpenSSL's default CA store (default)
 # @flag --v8-options                               print V8 command line options
 # @option --v8-pool-size <value>                   set V8's thread pool size
 # @flag -v --version                               print Node.js version

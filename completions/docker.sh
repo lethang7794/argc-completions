@@ -185,7 +185,7 @@ ps() {
 # @flag -q --quiet                               Suppress the build output and print image ID on success
 # @option --sbom <string>                        Shorthand for "--attest=type=sbom"
 # @option --secret* <string>                     Secret to expose to the build (format: "id=mysecret[,src=/local/secret]")
-# @option --shm-size <bytes>                     Size of "/dev/shm"
+# @option --shm-size <bytes>                     Shared memory size for build containers
 # @option --ssh* <string>                        SSH agent socket or keys to expose to the build (format: "default|<id>[=<socket>|<key>[,<key>]]")
 # @option -t --tag* <string>                     Name and optionally a tag (format: "name:tag")
 # @option --target <string>                      Set the target build stage to build
@@ -394,7 +394,7 @@ builder::bake() {
 # @flag -q --quiet                               Suppress the build output and print image ID on success
 # @option --sbom <string>                        Shorthand for "--attest=type=sbom"
 # @option --secret* <string>                     Secret to expose to the build (format: "id=mysecret[,src=/local/secret]")
-# @option --shm-size <bytes>                     Size of "/dev/shm"
+# @option --shm-size <bytes>                     Shared memory size for build containers
 # @option --ssh* <string>                        SSH agent socket or keys to expose to the build (format: "default|<id>[=<socket>|<key>[,<key>]]")
 # @option -t --tag* <string>                     Name and optionally a tag (format: "name:tag")
 # @option --target <string>                      Set the target build stage to build
@@ -409,8 +409,8 @@ builder::build() {
 # @cmd Create a new builder instance
 # @flag --append                        Append a node to builder instead of changing it
 # @flag --bootstrap                     Boot builder after creation
-# @option --buildkitd-flags <string>    Flags for buildkitd daemon
-# @option --config <file>               BuildKit config file
+# @option --buildkitd-config <file>     BuildKit daemon config file
+# @option --buildkitd-flags <string>    BuildKit daemon flags
 # @option --driver[cloud|docker-container|kubernetes|remote] <string>  Driver to use
 # @option --driver-opt* <string>        Options for the driver
 # @flag --leave                         Remove a node from builder instead of changing it
@@ -423,6 +423,16 @@ builder::create() {
     :;
 }
 # }}} docker builder create
+
+# {{{ docker builder dial-stdio
+# @cmd Proxy current stdio streams to builder instance
+# @option --builder <string>                     Override the configured builder instance (default "default")
+# @option --platform[`_module_oci_docker_platform`] <string>  Target platform: this is used for node selection
+# @option --progress[auto|plain|tty] <string>    Set type of progress output.
+builder::dial-stdio() {
+    :;
+}
+# }}} docker builder dial-stdio
 
 # {{{ docker builder du
 # @cmd Disk usage
@@ -446,6 +456,7 @@ builder::inspect() {
 
 # {{{ docker builder ls
 # @cmd List builder instances
+# @option --format <string>    Format the output (default "table")
 builder::ls() {
     :;
 }
@@ -465,13 +476,13 @@ builder::prune() {
 # }}} docker builder prune
 
 # {{{ docker builder rm
-# @cmd Remove a builder instance
+# @cmd Remove one or more builder instances
 # @flag --all-inactive          Remove all inactive builders
 # @option --builder <string>    Override the configured builder instance (default "default")
 # @flag -f --force              Do not prompt for confirmation
-# @flag --keep-daemon           Keep the buildkitd daemon running
+# @flag --keep-daemon           Keep the BuildKit daemon running
 # @flag --keep-state            Keep BuildKit state
-# @arg name[`_choice_builder`]
+# @arg name*[`_choice_builder`]
 builder::rm() {
     :;
 }
@@ -595,7 +606,7 @@ buildx::bake() {
 # @flag -q --quiet                               Suppress the build output and print image ID on success
 # @option --sbom <string>                        Shorthand for "--attest=type=sbom"
 # @option --secret* <string>                     Secret to expose to the build (format: "id=mysecret[,src=/local/secret]")
-# @option --shm-size <bytes>                     Size of "/dev/shm"
+# @option --shm-size <bytes>                     Shared memory size for build containers
 # @option --ssh* <string>                        SSH agent socket or keys to expose to the build (format: "default|<id>[=<socket>|<key>[,<key>]]")
 # @option -t --tag* <string>                     Name and optionally a tag (format: "name:tag")
 # @option --target <string>                      Set the target build stage to build
@@ -610,8 +621,8 @@ buildx::build() {
 # @cmd Create a new builder instance
 # @flag --append                        Append a node to builder instead of changing it
 # @flag --bootstrap                     Boot builder after creation
-# @option --buildkitd-flags <string>    Flags for buildkitd daemon
-# @option --config <file>               BuildKit config file
+# @option --buildkitd-config <file>     BuildKit daemon config file
+# @option --buildkitd-flags <string>    BuildKit daemon flags
 # @option --driver[cloud|docker-container|kubernetes|remote] <string>  Driver to use
 # @option --driver-opt* <string>        Options for the driver
 # @flag --leave                         Remove a node from builder instead of changing it
@@ -624,6 +635,16 @@ buildx::create() {
     :;
 }
 # }}} docker buildx create
+
+# {{{ docker buildx dial-stdio
+# @cmd Proxy current stdio streams to builder instance
+# @option --builder <string>                     Override the configured builder instance
+# @option --platform[`_module_oci_docker_platform`] <string>  Target platform: this is used for node selection
+# @option --progress[auto|plain|tty] <string>    Set type of progress output.
+buildx::dial-stdio() {
+    :;
+}
+# }}} docker buildx dial-stdio
 
 # {{{ docker buildx du
 # @cmd Disk usage
@@ -647,6 +668,7 @@ buildx::inspect() {
 
 # {{{ docker buildx ls
 # @cmd List builder instances
+# @option --format <string>    Format the output (default "table")
 buildx::ls() {
     :;
 }
@@ -666,13 +688,13 @@ buildx::prune() {
 # }}} docker buildx prune
 
 # {{{ docker buildx rm
-# @cmd Remove a builder instance
+# @cmd Remove one or more builder instances
 # @flag --all-inactive          Remove all inactive builders
 # @option --builder <string>    Override the configured builder instance
 # @flag -f --force              Do not prompt for confirmation
-# @flag --keep-daemon           Keep the buildkitd daemon running
+# @flag --keep-daemon           Keep the BuildKit daemon running
 # @flag --keep-state            Keep BuildKit state
-# @arg name[`_choice_builder`]
+# @arg name*[`_choice_builder`]
 buildx::rm() {
     :;
 }
@@ -757,18 +779,19 @@ compose::build() {
 # @cmd Parse, resolve and render compose file in canonical format
 # @flag --dry-run                  Execute command in dry run mode
 # @option --format <string>        Format the output.
-# @option --hash <string>          Print the service config hash, one per line
-# @flag --images                   Print the image names, one per line
+# @option --hash <string>          Print the service config hash, one per line.
+# @flag --images                   Print the image names, one per line.
 # @flag --no-consistency           Don't check model consistency - warning: may produce invalid Compose output
 # @flag --no-interpolate           Don't interpolate environment variables
 # @flag --no-normalize             Don't normalize compose model
 # @flag --no-path-resolution       Don't resolve file paths
 # @option -o --output <file>       Save to file (default to stdout)
-# @flag --profiles                 Print the profile names, one per line
+# @flag --profiles                 Print the profile names, one per line.
 # @flag -q --quiet                 Only validate the configuration, don't print anything
 # @flag --resolve-image-digests    Pin image tags to digests
-# @flag --services                 Print the service names, one per line
-# @flag --volumes                  Print the volume names, one per line
+# @flag --services                 Print the service names, one per line.
+# @flag --variables                Print model variables and default values.
+# @flag --volumes                  Print the volume names, one per line.
 # @arg service*[`_choice_compose_service`]
 compose::config() {
     :;
@@ -796,6 +819,7 @@ compose::cp() {
 # @flag --no-build           Don't build an image, even if it's policy
 # @flag --no-recreate        If containers already exist, don't recreate them.
 # @option --pull[always|missing|never|build] <string>  Pull image before running (default "policy")
+# @flag --quiet-pull         Pull without printing progress information
 # @flag --remove-orphans     Remove containers for services not defined in the Compose file
 # @option --scale <scale>    Scale SERVICE to NUM instances.
 # @arg service*[`_choice_compose_service`]
@@ -1101,6 +1125,7 @@ compose::unpause() {
 # @flag --timestamps                               Show timestamps
 # @flag --wait                                     Wait for services to be running|healthy.
 # @option --wait-timeout <int>                     Maximum duration to wait for the project to be running|healthy
+# @flag -w --watch                                 Watch source code and rebuild/refresh containers when files are updated.
 # @arg service*[`_choice_compose_service`]
 compose::up() {
     :;
@@ -2019,7 +2044,7 @@ image() {
 # @flag -q --quiet                               Suppress the build output and print image ID on success
 # @option --sbom <string>                        Shorthand for "--attest=type=sbom"
 # @option --secret* <string>                     Secret to expose to the build (format: "id=mysecret[,src=/local/secret]")
-# @option --shm-size <bytes>                     Size of "/dev/shm"
+# @option --shm-size <bytes>                     Shared memory size for build containers
 # @option --ssh* <string>                        SSH agent socket or keys to expose to the build (format: "default|<id>[=<socket>|<key>[,<key>]]")
 # @option -t --tag* <string>                     Name and optionally a tag (format: "name:tag")
 # @option --target <string>                      Set the target build stage to build
@@ -2524,6 +2549,9 @@ scout::config() {
 # @cmd Display CVEs identified in a software artifact
 # @flag --details                          Print details on default text output
 # @option --env <string>                   Name of environment
+# @flag --epss                             Display the EPSS scores and organize the package's CVEs according to their EPSS score
+# @option --epss-percentile <float32>      Exclude CVEs with EPSS scores less than the specified percentile (0 to 1)
+# @option --epss-score <float32>           Exclude CVEs with EPSS scores less than the specified value (0 to 1)
 # @flag -e --exit-code                     Return exit code '2' if vulnerabilities are detected
 # @option --format <string>                Output format of the generated vulnerability report:
 # @flag --ignore-base                      Filter out CVEs introduced from base image

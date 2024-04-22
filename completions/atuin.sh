@@ -262,7 +262,7 @@ status() {
 # }} atuin status
 
 # {{ atuin account
-# @cmd
+# @cmd Manage your sync account
 # @flag -h --help    Print help
 account() {
     :;
@@ -299,7 +299,7 @@ account::logout() {
 # }}} atuin account logout
 
 # {{{ atuin account delete
-# @cmd
+# @cmd Delete your account, and all synced data
 # @flag -h --help    Print help
 account::delete() {
     :;
@@ -307,7 +307,7 @@ account::delete() {
 # }}} atuin account delete
 
 # {{{ atuin account change-password
-# @cmd
+# @cmd Change your password
 # @option -c --current-password <CURRENT_PASSWORD>
 # @option -n --new-password <NEW_PASSWORD>
 # @flag -h --help    Print help
@@ -318,7 +318,7 @@ account::change-password() {
 # }} atuin account
 
 # {{ atuin kv
-# @cmd
+# @cmd Get or set small key-value pairs
 # @flag -h --help    Print help
 kv() {
     :;
@@ -357,7 +357,7 @@ kv::list() {
 # }} atuin kv
 
 # {{ atuin store
-# @cmd
+# @cmd Manage the atuin data store
 # @flag -h --help    Print help
 store() {
     :;
@@ -428,21 +428,21 @@ store::pull() {
 # }} atuin store
 
 # {{ atuin dotfiles
-# @cmd
+# @cmd Manage your dotfiles with Atuin
 # @flag -h --help    Print help
 dotfiles() {
     :;
 }
 
 # {{{ atuin dotfiles alias
-# @cmd
+# @cmd Manage shell aliases with Atuin
 # @flag -h --help    Print help
 dotfiles::alias() {
     :;
 }
 
 # {{{{ atuin dotfiles alias set
-# @cmd
+# @cmd Set an alias
 # @flag -h --help    Print help
 # @arg name!
 # @arg value!
@@ -452,7 +452,7 @@ dotfiles::alias::set() {
 # }}}} atuin dotfiles alias set
 
 # {{{{ atuin dotfiles alias delete
-# @cmd
+# @cmd Delete an alias
 # @flag -h --help    Print help
 # @arg name!
 dotfiles::alias::delete() {
@@ -461,17 +461,25 @@ dotfiles::alias::delete() {
 # }}}} atuin dotfiles alias delete
 
 # {{{{ atuin dotfiles alias list
-# @cmd
+# @cmd List all aliases
 # @flag -h --help    Print help
 dotfiles::alias::list() {
     :;
 }
 # }}}} atuin dotfiles alias list
+
+# {{{{ atuin dotfiles alias import
+# @cmd Import aliases set in the current shell
+# @flag -h --help    Print help
+dotfiles::alias::import() {
+    :;
+}
+# }}}} atuin dotfiles alias import
 # }}} atuin dotfiles alias
 # }} atuin dotfiles
 
 # {{ atuin init
-# @cmd
+# @cmd Print Atuin's shell init script
 # @flag --disable-ctrl-r      Disable the binding of CTRL-R to atuin
 # @flag --disable-up-arrow    Disable the binding of the Up Arrow key to atuin
 # @flag -h --help             Print help (see a summary with '-h')
@@ -490,7 +498,7 @@ info() {
 # }} atuin info
 
 # {{ atuin doctor
-# @cmd
+# @cmd Run the doctor to check for common issues
 # @flag -h --help    Print help
 doctor() {
     :;

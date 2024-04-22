@@ -56,6 +56,7 @@
 # @flag -usage                                   Print usage information and exit.
 # @option --version <file>                       Print version number and exit.
 # @option -version <file>                        Print version number and exit.
+# @option --help <keyword> <file>                Print help for one keyword and exit.
 # @option --help-full <file>                     Print all help manuals and exit.
 # @option --help-manual[`_choice_help_manual`] <man> <file>  Print one help manual and exit.
 # @option --help-manual-list <file>              List help manuals available and exit.

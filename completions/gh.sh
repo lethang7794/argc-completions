@@ -12,11 +12,12 @@ auth() {
 }
 
 # {{{ gh auth login
-# @cmd Authenticate with a GitHub host
-# @option -p --git-protocol[ssh|https] <string>    The protocol to use for git operations:
+# @cmd Log in to a GitHub account
+# @option -p --git-protocol[ssh|https] <string>    The protocol to use for git operations on this host:
 # @option -h --hostname[`_choice_hostname`] <string>  The hostname of the GitHub instance to authenticate with
 # @flag --insecure-storage                         Save authentication credentials in plain text instead of credential store
 # @option -s --scopes*,[`_choice_auth_scope`] <string>  Additional authentication scopes to request
+# @flag --skip-ssh-key                             Skip generate/upload SSH key prompt
 # @flag -w --web                                   Open a browser to authenticate
 # @flag --with-token                               Read token from standard input
 # @flag --help                                     Show help for command
@@ -26,9 +27,10 @@ auth::login() {
 # }}} gh auth login
 
 # {{{ gh auth logout
-# @cmd Log out of a GitHub host
+# @cmd Log out of a GitHub account
 # @option -h --hostname[`_choice_hostname`] <string>  The hostname of the GitHub instance to log out of
-# @flag --help    Show help for command
+# @option -u --user <string>    The account to log out of
+# @flag --help                  Show help for command
 auth::logout() {
     :;
 }
@@ -49,15 +51,17 @@ auth::refresh() {
 
 # {{{ gh auth setup-git
 # @cmd Setup git with GitHub CLI
-# @option -h --hostname[`_choice_hostname`] <string>  The hostname to configure git for
-# @flag --help    Show help for command
+# @option -f[`_choice_hostname`]            Force setup even if the host is not known.
+# @option --force[`_choice_hostname`]       Force setup even if the host is not known.
+# @option --hostname[`_choice_hostname`]    Force setup even if the host is not known.
+# @flag --help                              Show help for command
 auth::setup-git() {
     :;
 }
 # }}} gh auth setup-git
 
 # {{{ gh auth status
-# @cmd View authentication status
+# @cmd View all accounts and authentication status
 # @option -h --hostname[`_choice_hostname`] <string>  Check a specific hostname's auth status
 # @flag -t --show-token    Display the auth token
 # @flag --help             Show help for command
@@ -66,10 +70,21 @@ auth::status() {
 }
 # }}} gh auth status
 
+# {{{ gh auth switch
+# @cmd Switch active GitHub account
+# @option -h --hostname[`_choice_hostname`] <string>  The hostname of the GitHub instance to switch account for
+# @option -u --user <string>    The account to switch to
+# @flag --help                  Show help for command
+auth::switch() {
+    :;
+}
+# }}} gh auth switch
+
 # {{{ gh auth token
-# @cmd Print the auth token gh is configured to use
+# @cmd Print the authentication token gh uses for a hostname and account
 # @option -h --hostname[`_choice_hostname`] <string>  The hostname of the GitHub instance authenticated with
-# @flag --help    Show help for command
+# @option -u --user <string>    The account to output the token for
+# @flag --help                  Show help for command
 auth::token() {
     :;
 }
@@ -134,7 +149,7 @@ codespace::cp() {
 # @option -b --branch[`_choice_branch`] <string>  repository branch
 # @flag --default-permissions              do not prompt to accept additional permissions requested by the codespace
 # @option --devcontainer-path <file>       path to the devcontainer.json file to use when creating codespace
-# @option -d --display-name <string>       display name for the codespace
+# @option -d --display-name <string>       display name for the codespace (48 characters or less)
 # @option --idle-timeout <duration>        allowed inactivity before codespace is stopped, e.g. "10m", "1h"
 # @option -l --location[EastUs|SouthEastAsia|WestEurope|WestUs2] <path>  location:  (determined automatically if not provided)
 # @option -m --machine <string>            hardware specifications for the VM
@@ -332,7 +347,7 @@ gist::clone() {
 # @cmd Create a new gist
 # @option -d --desc <string>      A description for this gist
 # @option -f --filename <file>    Provide a filename to be used when reading from standard input
-# @flag -p --public               List the gist publicly (default: secret)
+# @flag -p --public               List the gist publicly (default "secret")
 # @flag -w --web                  Open the web browser with created gist
 # @flag --help                    Show help for command
 # @arg filename <<filename>...|->
@@ -645,9 +660,11 @@ pr() {
 # @option -b --body <string>                      Body for the pull request
 # @option -F --body-file <file>                   Read body text from file (use "-" to read from standard input)
 # @flag -d --draft                                Mark pull request as a draft
+# @flag --dry-run                                 Print details instead of creating the PR.
 # @flag -f --fill                                 Use commit info for title and body
 # @flag --fill-first                              Use first commit info for title and body
-# @option -H --head[`_choice_branch`] <branch>    The branch that contains commits for your pull request (default: current branch)
+# @flag --fill-verbose                            Use commits msg+body for description
+# @option -H --head[`_choice_branch`] <branch>    The branch that contains commits for your pull request (default [current branch])
 # @option -l --label*,[`_choice_label`] <name>    Add labels by name
 # @option -m --milestone[`_choice_milestone`] <name>  Add the pull request to a milestone by name
 # @flag --no-maintainer-edit                      Disable maintainer's ability to modify pull request
@@ -702,7 +719,7 @@ pr::status() {
 
 # {{{ gh pr checkout
 # @cmd Check out a pull request in git
-# @option -b --branch[`_choice_branch`] <string>  Local branch name to use (default: the name of the head branch)
+# @option -b --branch[`_choice_branch`] <string>  Local branch name to use (default [the name of the head branch])
 # @flag --detach                Checkout PR with a detached HEAD
 # @flag -f --force              Reset the existing local branch to the latest state of the pull request
 # @flag --recurse-submodules    Update all submodules after checkout
@@ -897,8 +914,10 @@ project() {
 
 # {{{ gh project close
 # @cmd Close a project
-# @option --format[json] <string>              Output format, must be 'json'
+# @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --undo                                 Reopen a closed project
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -911,8 +930,10 @@ project::close() {
 # @cmd Copy a project
 # @flag --drafts                     Include draft issues when copying
 # @option --format[json] <string>    Output format: {json}
+# @option -q --jq <expression>       Filter JSON output using a jq expression
 # @option --source-owner[`_choice_owner`] <string>  Login of the source owner.
 # @option --target-owner[`_choice_owner`] <string>  Login of the target owner.
+# @option -t --template <string>     Format JSON output using a Go template; see "gh help formatting"
 # @option --title <string>           Title for the new project
 # @flag --help                       Show help for command
 # @arg project[`_choice_project`]
@@ -924,7 +945,9 @@ project::copy() {
 # {{{ gh project create
 # @cmd Create a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @option --title <string>                     Title for the project
 # @flag --help                                 Show help for command
 project::create() {
@@ -935,7 +958,9 @@ project::create() {
 # {{{ gh project delete
 # @cmd Delete a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::delete() {
@@ -947,8 +972,10 @@ project::delete() {
 # @cmd Edit a project
 # @option -d --description <string>                New description of the project
 # @option --format[json] <string>                  Output format: {json}
+# @option -q --jq <expression>                     Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>        Login of the owner.
 # @option --readme <string>                        New readme for the project
+# @option -t --template <string>                   Format JSON output using a Go template; see "gh help formatting"
 # @option --title <string>                         New title for the project
 # @option --visibility[PUBLIC|PRIVATE] <string>    Change project visibility:
 # @flag --help                                     Show help for command
@@ -962,9 +989,11 @@ project::edit() {
 # @cmd Create a field in a project
 # @option --data-type[TEXT|SINGLE_SELECT|DATE|NUMBER] <string>  DataType of the new field.:
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --name <string>                      Name of the new field
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
 # @option --single-select-options* <string>    Options for SINGLE_SELECT data type
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::field-create() {
@@ -976,6 +1005,8 @@ project::field-create() {
 # @cmd Delete a field in a project
 # @option --format[json] <string>    Output format: {json}
 # @option --id <string>              ID of the field to delete
+# @option -q --jq <expression>       Filter JSON output using a jq expression
+# @option -t --template <string>     Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                       Show help for command
 project::field-delete() {
     :;
@@ -985,8 +1016,10 @@ project::field-delete() {
 # {{{ gh project field-list
 # @cmd List the fields in a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option -L --limit <int>                     Maximum number of fields to fetch (default 30)
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::field-list() {
@@ -997,7 +1030,9 @@ project::field-list() {
 # {{{ gh project item-add
 # @cmd Add a pull request or an issue to a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @option --url <string>                       URL of the issue or pull request to add to the project
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -1010,7 +1045,9 @@ project::item-add() {
 # @cmd Archive an item in a project
 # @option --format[json] <string>              Output format: {json}
 # @option --id <string>                        ID of the item to archive
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --undo                                 Unarchive an item
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -1023,7 +1060,9 @@ project::item-archive() {
 # @cmd Create a draft issue item in a project
 # @option --body <string>                      Body for the draft issue
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @option --title <string>                     Title for the draft issue
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -1036,7 +1075,9 @@ project::item-create() {
 # @cmd Delete an item from a project by ID
 # @option --format[json] <string>              Output format: {json}
 # @option --id <string>                        ID of the item to delete
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-delete() {
@@ -1053,9 +1094,11 @@ project::item-delete() {
 # @option --format[json] <string>               Output format: {json}
 # @option --id <string>                         ID of the item to edit
 # @option --iteration-id <string>               ID of the iteration value to set on the field
+# @option -q --jq <expression>                  Filter JSON output using a jq expression
 # @option --number <float32>                    Number value for the field
 # @option --project-id <string>                 ID of the project to which the field belongs to
 # @option --single-select-option-id <string>    ID of the single select option value to set on the field
+# @option -t --template <string>                Format JSON output using a Go template; see "gh help formatting"
 # @option --text <string>                       Text value for the field
 # @option --title <string>                      Title of the draft issue item
 # @flag --help                                  Show help for command
@@ -1067,8 +1110,10 @@ project::item-edit() {
 # {{{ gh project item-list
 # @cmd List the items in a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option -L --limit <int>                     Maximum number of items to fetch (default 30)
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-list() {
@@ -1076,12 +1121,26 @@ project::item-list() {
 }
 # }}} gh project item-list
 
+# {{{ gh project link
+# @cmd Link a project to a repository or a team
+# @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -R --repo[`_choice_search_repo`] <string>  The repository to be linked to this project
+# @option -T --team <string>                   The team to be linked to this project
+# @flag --help                                 Show help for command
+# @arg project[`_choice_project`]
+project::link() {
+    :;
+}
+# }}} gh project link
+
 # {{{ gh project list
 # @cmd List the projects for an owner
 # @flag --closed                               Include closed projects
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option -L --limit <int>                     Maximum number of projects to fetch (default 30)
 # @option --owner[`_choice_owner`] <string>    Login of the owner
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag -w --web                               Open projects list in the browser
 # @flag --help                                 Show help for command
 project::list() {
@@ -1092,7 +1151,9 @@ project::list() {
 # {{{ gh project mark-template
 # @cmd Mark a project as a template
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the org owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag --undo                                 Unmark the project as a template.
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -1101,10 +1162,24 @@ project::mark-template() {
 }
 # }}} gh project mark-template
 
+# {{{ gh project unlink
+# @cmd Unlink a project from a repository or a team
+# @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -R --repo[`_choice_search_repo`] <string>  The repository to be unlinked from this project
+# @option -T --team <string>                   The team to be unlinked from this project
+# @flag --help                                 Show help for command
+# @arg project[`_choice_project`]
+project::unlink() {
+    :;
+}
+# }}} gh project unlink
+
 # {{{ gh project view
 # @cmd View a project
 # @option --format[json] <string>              Output format: {json}
+# @option -q --jq <expression>                 Filter JSON output using a jq expression
 # @option --owner[`_choice_owner`] <string>    Login of the owner.
+# @option -t --template <string>               Format JSON output using a Go template; see "gh help formatting"
 # @flag -w --web                               Open a project in the browser
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
@@ -1127,13 +1202,13 @@ release() {
 # @option --discussion-category[`_choice_discussion_category`] <string>  Start a discussion in the specified category
 # @flag -d --draft                                 Save the release as a draft instead of publishing it
 # @flag --generate-notes                           Automatically generate title and notes for the release
-# @flag --latest                                   Mark this release as "Latest" (default: automatic based on date and version)
+# @flag --latest                                   Mark this release as "Latest" (default [automatic based on date and version])
 # @option -n --notes <string>                      Release notes
 # @option -F --notes-file <file>                   Read release notes from file (use "-" to read from standard input)
 # @flag --notes-from-tag                           Automatically generate notes from annotated tag
 # @option --notes-start-tag <string>               Tag to use as the starting point for generating release notes
 # @flag -p --prerelease                            Mark the release as a prerelease
-# @option --target*,[`_choice_branch`] <branch>    Target branch or full commit SHA (default: main branch)
+# @option --target*,[`_choice_branch`] <branch>    Target branch or full commit SHA (default [main branch])
 # @option -t --title <string>                      Release title
 # @flag --verify-tag                               Abort in case the git tag doesn't already exist in the remote repository
 # @flag --help                                     Show help for command
@@ -1147,10 +1222,14 @@ release::create() {
 
 # {{{ gh release list
 # @cmd List releases in a repository
-# @flag --exclude-drafts          Exclude draft releases
-# @flag --exclude-pre-releases    Exclude pre-releases
-# @option -L --limit <int>        Maximum number of items to fetch (default 30)
-# @flag --help                    Show help for command
+# @flag --exclude-drafts                   Exclude draft releases
+# @flag --exclude-pre-releases             Exclude pre-releases
+# @option -q --jq <expression>             Filter JSON output using a jq expression
+# @option --json <fields>                  Output JSON with the specified fields
+# @option -L --limit <int>                 Maximum number of items to fetch (default 30)
+# @option -O --order[asc|desc] <string>    Order of releases returned:  (default "desc")
+# @option -t --template <string>           Format JSON output using a Go template; see "gh help formatting"
+# @flag --help                             Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 release::list() {
     :;
@@ -1206,7 +1285,7 @@ release::download() {
 # @option -F --notes-file <file>                   Read release notes from file (use "-" to read from standard input)
 # @flag --prerelease                               Mark the release as a prerelease
 # @option --tag <string>                           The name of the tag
-# @option --target*,[`_choice_branch`] <branch>    Target branch or full commit SHA (default: main branch)
+# @option --target*,[`_choice_branch`] <branch>    Target branch or full commit SHA (default [main branch])
 # @option -t --title <string>                      Release title
 # @flag --verify-tag                               Abort in case the git tag doesn't already exist in the remote repository
 # @flag --help                                     Show help for command
@@ -1437,7 +1516,7 @@ repo::set-default() {
 
 # {{{ gh repo sync
 # @cmd Sync a repository
-# @option -b --branch[`_choice_branch`] <string>  Branch to sync (default: main branch)
+# @option -b --branch[`_choice_branch`] <string>  Branch to sync (default [default branch])
 # @flag --force    Hard reset the branch of the destination repository to match the source repository
 # @option -s --source[`_choice_search_repo`] <string>  Source repository
 # @flag --help     Show help for command
@@ -1495,8 +1574,10 @@ cache::delete() {
 # @cmd List Github Actions caches
 # @option -q --jq <expression>             Filter JSON output using a jq expression
 # @option --json <fields>                  Output JSON with the specified fields
+# @option -k --key <string>                Filter by cache key prefix
 # @option -L --limit <int>                 Maximum number of caches to fetch (default 30)
 # @option -O --order[asc|desc] <string>    Order of caches returned:  (default "desc")
+# @option -r --ref <string>                Filter by ref, formatted as refs/heads/<branch name> or refs/pull/<number>/merge
 # @option -S --sort[created_at|last_accessed_at|size_in_bytes] <string>  Sort fetched caches:  (default "last_accessed_at")
 # @option -t --template <string>           Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                             Show help for command
@@ -1551,6 +1632,7 @@ run::download() {
 # {{{ gh run list
 # @cmd List recent workflow runs
 # @option -b --branch[`_choice_branch`] <string>  Filter runs by branch
+# @option -c --commit <SHA>         Filter runs by the SHA of the commit
 # @option --created <date>          Filter runs by the date it was created
 # @option -e --event*,[`_choice_workflow_event`] <event>  Filter runs by which event triggered the run
 # @option -q --jq <expression>      Filter JSON output using a jq expression
@@ -1657,7 +1739,7 @@ workflow::list() {
 
 # {{{ gh workflow run
 # @cmd Run a workflow by creating a workflow_dispatch event
-# @option -F --field <key=value>        Add a string parameter in key=value format, respecting @ syntax
+# @option -F --field <key=value>        Add a string parameter in key=value format, respecting @ syntax (see "gh help api").
 # @flag --json                          Read workflow inputs as JSON via STDIN
 # @option -f --raw-field <key=value>    Add a string parameter in key=value format
 # @option -r --ref <file>               The branch or tag name which contains the version of the workflow file you'd like to run
@@ -1753,9 +1835,14 @@ alias::set() {
 # @option -p --preview <names>          GitHub API preview names to request (without the "-preview" suffix)
 # @option -f --raw-field <key=value>    Add a string parameter in key=value format
 # @flag --silent                        Do not print the response body
+# @flag --slurp                         Use with "--paginate" to return an array of all pages of either JSON arrays or objects
 # @option -t --template <string>        Format JSON output using a Go template; see "gh help formatting"
 # @flag --verbose                       Include full HTTP request and response in the output
 # @flag --help                          Show help for command
+# @option -F <properties[][property_name]=environment>
+# @option -F <properties[][default_value]=production>
+# @option -F <properties[][allowed_values][]=staging>
+# @option -F <properties[][allowed_values][]=production>
 # @arg endpoint!
 api() {
     :;
@@ -2130,7 +2217,7 @@ search::commits() {
 # {{{ gh search issues
 # @cmd Search for issues
 # @option --app <string>                   Filter by GitHub App author
-# @flag --archived                         Restrict search to archived repositories
+# @option --archived[true|false]           Filter based on the repository archived state
 # @option --assignee <string>              Filter by assignee
 # @option --author[`_choice_search_user`] <string>  Filter by author
 # @option --closed <date>                  Filter on closed at date
@@ -2175,7 +2262,7 @@ search::issues() {
 # {{{ gh search prs
 # @cmd Search for pull requests
 # @option --app <string>                           Filter by GitHub App author
-# @flag --archived                                 Restrict search to archived repositories
+# @option --archived[true|false]                   Filter based on the repository archived state
 # @option --assignee <string>                      Filter by assignee
 # @option --author[`_choice_search_user`] <string>  Filter by author
 # @option -B --base <string>                       Filter on base branch name
@@ -2227,7 +2314,7 @@ search::prs() {
 
 # {{{ gh search repos
 # @cmd Search for repositories
-# @flag --archived                         Filter based on archive state
+# @option --archived[true|false]           Filter based on the repository archived state
 # @option --created <date>                 Filter based on created at date
 # @option --followers <number>             Filter based on number of followers
 # @option --forks <number>                 Filter on number of forks
@@ -2387,7 +2474,10 @@ variable::delete() {
 # {{{ gh variable list
 # @cmd List variables
 # @option -e --env[`_choice_env`] <string>    List variables for an environment
+# @option -q --jq <expression>                Filter JSON output using a jq expression
+# @option --json <fields>                     Output JSON with the specified fields
 # @option -o --org[`_choice_search_org`] <string>  List variables for an organization
+# @option -t --template <string>              Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                                Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 variable::list() {

@@ -14,7 +14,7 @@
 # @flag --extractor-descriptions                   Output descriptions of all supported extractors and exit
 # @option --use-extractors <NAMES>                 Extractor names to use separated by commas.
 # @option --default-search <PREFIX>                Use this prefix for unqualified URLs.
-# @flag --ignore-config                            Don't load any more configuration files except those given by --config-locations.
+# @flag --ignore-config                            Don't load any more configuration files except those given to --config-locations.
 # @flag --no-config-locations                      Do not load any custom configuration files (default).
 # @option --config-locations <PATH>                Location of the main configuration file; either the path to the config or its containing directory ("-" for stdin).
 # @flag --flat-playlist                            Do not extract the videos of a playlist, only list them
@@ -84,7 +84,7 @@
 # @flag --no-batch-file                            Do not read URLs from batch file (default)
 # @option -P --paths <[TYPES:]PATH>                The paths where the files should be downloaded.
 # @option -o --output <[TYPES:]TEMPLATE>           Output filename template; see "OUTPUT TEMPLATE" for details
-# @option --output-na-placeholder <TEXT>           Placeholder for unavailable fields in "OUTPUT TEMPLATE" (default: "NA")
+# @option --output-na-placeholder <TEXT>           Placeholder for unavailable fields in --output (default: "NA")
 # @flag --restrict-filenames                       Restrict filenames to only ASCII characters, and avoid "&" and spaces in filenames
 # @flag --no-restrict-filenames                    Allow Unicode characters, "&" and spaces in filenames (default)
 # @flag --windows-filenames                        Force filenames to be Windows-compatible
