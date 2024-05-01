@@ -189,6 +189,7 @@
 - [curl](completions/curl.sh): transfer a URL [🔗](https://github.com/curl/curl)
 - [cut](completions/cut.sh): remove sections from each line of files [🔗](http://gnu.org/software/coreutils)
 - [cwebp](completions/cwebp.sh): Compress an image file to a WebP file [🔗](https://github.com/webmproject/libwebp)
+- [dagger](completions/dagger.sh)
 - [darcs](completions/darcs.sh): distributed, interactive, smart revision control system [🔗](https://darcs.net)
 - [darktable](completions/darktable.sh): an open source photography workflow application and raw developer. [🔗](https://github.com/darktable-org/darktable)
 - [darktable-cli](completions/darktable-cli.sh): a command line darktable variant [🔗](https://github.com/darktable-org/darktable)
