@@ -43,6 +43,7 @@
 - [ar](completions/ar.sh): create, modify, and extract from archives [🔗](https://www.gnu.org/software/binutils)
 - [arecord](completions/arecord.sh): command-line sound recorder and player for ALSA soundcard driver [🔗](https://github.com/alsa-project/alsa-utils)
 - [argo](completions/argo.sh): Workflow engine for Kubernetes [🔗](https://github.com/argoproj/argo-workflows)
+- [argocd](completions/argocd.sh)
 - [aria2c](completions/aria2c.sh): The ultra fast download utility [🔗](https://github.com/aria2/aria2)
 - [arp](completions/arp.sh): manipulate the system ARP cache [🔗](https://github.com/ecki/net-tools)
 - [arping](completions/arping.sh): send ARP REQUEST to a neighbour host [🔗](https://github.com/iputils/iputils)
