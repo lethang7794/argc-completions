@@ -304,6 +304,7 @@
 - [flatpak](completions/flatpak.sh): Linux application sandboxing and distribution framework [🔗](https://github.com/flatpak/flatpak)
 - [flex](completions/flex.sh): the fast lexical analyser generator [🔗](https://github.com/westes/flex)
 - [flutter](completions/flutter.sh): Build apps for any screen [🔗](https://github.com/flutter/flutter)
+- [flux](completions/flux.sh)
 - [fmt](completions/fmt.sh): simple optimal text formatter [🔗](http://gnu.org/software/coreutils)
 - [fnm](completions/fnm.sh): Fast and simple Node.js version manager, built in Rust [🔗](https://github.com/Schniz/fnm)
 - [fold](completions/fold.sh): wrap each input line to fit in specified width [🔗](http://gnu.org/software/coreutils)
