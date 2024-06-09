@@ -61,7 +61,7 @@
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 build() {
-    :;
+    :
 }
 # }} cargo build
 
@@ -107,7 +107,7 @@ build() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 check() {
-    :;
+    :
 }
 # }} cargo check
 
@@ -131,7 +131,7 @@ check() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 clean() {
-    :;
+    :
 }
 # }} cargo clean
 
@@ -174,7 +174,7 @@ clean() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 doc() {
-    :;
+    :
 }
 # }} cargo doc
 
@@ -197,7 +197,7 @@ doc() {
 # @flag --offline                                  Run without accessing the network
 # @arg path!
 new() {
-    :;
+    :
 }
 # }} cargo new
 
@@ -220,7 +220,7 @@ new() {
 # @flag --offline                                  Run without accessing the network
 # @arg path                                        [default: .]
 init() {
-    :;
+    :
 }
 # }} cargo init
 
@@ -231,8 +231,8 @@ init() {
 # @option -F --features*,[`_choice_add_feature`]  Space or comma separated list of features to activate
 # @flag --optional                             Mark the dependency as optional
 # @flag --no-optional                          Mark the dependency as required
-# @flag --public                               Mark the dependency as public
-# @flag --no-public                            Mark the dependency as private
+# @flag --public                               Mark the dependency as public (unstable)
+# @flag --no-public                            Mark the dependency as private (unstable)
 # @option --rename <NAME>                      Rename the dependency
 # @flag --ignore-rust-version                  Ignore `rust-version` specification in packages (unstable)
 # @flag -n --dry-run                           Don't actually write the manifest
@@ -258,7 +258,7 @@ init() {
 # @option --target[`_choice_target`]           Add as dependency to the given target platform
 # @arg dep_id*[`_choice_remote_crate`]         Reference to a package to add as a dependency
 add() {
-    :;
+    :
 }
 # }} cargo add
 
@@ -281,7 +281,7 @@ add() {
 # @flag --offline                              Run without accessing the network
 # @arg dep_id+[`_choice_depid`]                Dependencies to be removed
 remove() {
-    :;
+    :
 }
 # }} cargo remove
 
@@ -316,7 +316,7 @@ remove() {
 # @flag --offline                                Run without accessing the network
 # @arg args*                                     Arguments for the binary or example to run
 run() {
-    :;
+    :
 }
 # }} cargo run
 
@@ -339,7 +339,7 @@ run() {
 # @flag --workspace                              Test all packages in the workspace
 # @option --exclude <SPEC>                       Exclude packages from the test
 # @flag --all                                    Alias for --workspace (deprecated)
-# @flag --lib                                    Test only this package's library unit tests
+# @flag --lib                                    Test only this package's library
 # @flag --bins                                   Test all binaries
 # @option --bin[`_choice_bin`] <NAME>            Test only the specified binary
 # @flag --examples                               Test all examples
@@ -366,7 +366,7 @@ run() {
 # @arg testname[`_choice_testname`]              If specified, only run tests containing this string in their names
 # @arg args*                                     Arguments for the test binary
 test() {
-    :;
+    :
 }
 # }} cargo test
 
@@ -412,7 +412,7 @@ test() {
 # @arg benchname                                 If specified, only run benches containing this string in their names
 # @arg args*                                     Arguments for the bench binary
 bench() {
-    :;
+    :
 }
 # }} cargo bench
 
@@ -434,7 +434,7 @@ bench() {
 # @flag --offline                              Run without accessing the network
 # @arg spec*
 update() {
-    :;
+    :
 }
 # }} cargo update
 
@@ -454,7 +454,7 @@ update() {
 # @flag --offline                              Run without accessing the network
 # @arg query*[`_choice_remote_crate`]
 search() {
-    :;
+    :
 }
 # }} cargo search
 
@@ -485,12 +485,12 @@ search() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 publish() {
-    :;
+    :
 }
 # }} cargo publish
 
 # {{ cargo install
-# @cmd Install a Rust binary.
+# @cmd Install a Rust binary
 # @option --version                              Specify a version to install
 # @option --index                                Registry index to install from
 # @option --registry                             Registry to use
@@ -498,11 +498,11 @@ publish() {
 # @option --branch                               Branch to use when installing from git
 # @option --tag                                  Tag to use when installing from git
 # @option --rev <SHA>                            Specific commit to use when installing from git
-# @option --path                                 Filesystem path to local crate to install
+# @option --path                                 Filesystem path to local crate to install from
 # @option --root <DIR>                           Directory to install packages into
 # @flag -f --force                               Force overwriting existing crates or binaries
 # @flag --no-track                               Do not save tracking information
-# @flag --list                                   list all installed packages and their versions
+# @flag --list                                   List all installed packages and their versions
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
 # @flag --debug                                  Build in debug mode (with the 'dev' profile) instead of release mode
@@ -530,7 +530,7 @@ publish() {
 # @flag --offline                                Run without accessing the network
 # @arg crate-ver* <CRATE[@<VER>]>                Select the package from the given source
 install() {
-    :;
+    :
 }
 # }} cargo install
 
@@ -550,7 +550,7 @@ install() {
 # @flag --offline                              Run without accessing the network
 # @arg spec*
 uninstall() {
-    :;
+    :
 }
 # }} cargo uninstall
 
@@ -583,7 +583,6 @@ uninstall() {
 # @flag --benches                                Fix all bench targets
 # @option --bench[`_choice_bench`] <NAME>        Fix only the specified bench target
 # @flag --all-targets                            Fix all targets (default)
-# @option -F --features*,[`_choice_feature`]     Space or comma separated list of features to activate
 # @flag --all-features                           Activate all available features
 # @flag --no-default-features                    Do not activate the `default` feature
 # @option -j --jobs <N>                          Number of parallel jobs, defaults to ♯ of CPUs.
@@ -608,7 +607,7 @@ uninstall() {
 # @option -F --forbid <LINT>                     Set lint forbidden
 # @arg args*
 clippy() {
-    :;
+    :
 }
 # }} cargo clippy
 
@@ -624,7 +623,7 @@ clippy() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 config() {
-    :;
+    :
 }
 
 # {{{ cargo config get
@@ -643,7 +642,7 @@ config() {
 # @flag --offline                              Run without accessing the network
 # @arg key                                     The config key to display
 config::get() {
-    :;
+    :
 }
 # }}} cargo config get
 # }} cargo config
@@ -662,7 +661,7 @@ config::get() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 fetch() {
-    :;
+    :
 }
 # }} cargo fetch
 
@@ -711,7 +710,7 @@ fetch() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 fix() {
-    :;
+    :
 }
 # }} cargo fix
 
@@ -728,7 +727,7 @@ fix() {
 # @flag -h --help                              Print help
 # @arg rustfmt_options~[`_choice_fmt`]         Options passed to rustfmt
 fmt() {
-    :;
+    :
 }
 # }} cargo fmt
 
@@ -745,14 +744,14 @@ fmt() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 generate-lockfile() {
-    :;
+    :
 }
 # }} cargo generate-lockfile
 
 # {{ cargo git-checkout
 # @cmd This command has been removed
 git-checkout() {
-    :;
+    :
 }
 # }} cargo git-checkout
 
@@ -771,7 +770,7 @@ git-checkout() {
 # @flag --locked                                Require Cargo.lock is up to date
 # @flag --offline                               Run without accessing the network
 locate-project() {
-    :;
+    :
 }
 # }} cargo locate-project
 
@@ -790,7 +789,7 @@ locate-project() {
 # @arg token
 # @arg args*                                   Additional arguments for the credential provider
 login() {
-    :;
+    :
 }
 # }} cargo login
 
@@ -807,7 +806,7 @@ login() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 logout() {
-    :;
+    :
 }
 # }} cargo logout
 
@@ -830,7 +829,7 @@ logout() {
 # @flag --locked                                Require Cargo.lock is up to date
 # @flag --offline                               Run without accessing the network
 metadata() {
-    :;
+    :
 }
 # }} cargo metadata
 
@@ -853,7 +852,7 @@ metadata() {
 # @flag --offline                              Run without accessing the network
 # @arg crate
 owner() {
-    :;
+    :
 }
 # }} cargo owner
 
@@ -884,7 +883,7 @@ owner() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 package() {
-    :;
+    :
 }
 # }} cargo package
 
@@ -903,7 +902,7 @@ package() {
 # @flag --offline                              Run without accessing the network
 # @arg spec
 pkgid() {
-    :;
+    :
 }
 # }} cargo pkgid
 
@@ -920,7 +919,7 @@ pkgid() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 read-manifest() {
-    :;
+    :
 }
 # }} cargo read-manifest
 
@@ -936,7 +935,7 @@ read-manifest() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 report() {
-    :;
+    :
 }
 
 # {{{ cargo report future-incompatibilities
@@ -953,7 +952,7 @@ report() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 report::future-incompatibilities() {
-    :;
+    :
 }
 # }}} cargo report future-incompatibilities
 # }} cargo report
@@ -999,7 +998,7 @@ report::future-incompatibilities() {
 # @flag --offline                                Run without accessing the network
 # @arg args*                                     Extra rustc flags
 rustc() {
-    :;
+    :
 }
 # }} cargo rustc
 
@@ -1008,6 +1007,7 @@ rustc() {
 # @flag --open                                   Opens the docs in a browser after the operation
 # @flag --ignore-rust-version                    Ignore `rust-version` specification in packages
 # @option --message-format <FMT>                 Error format
+# @option --output-format[html|json] <FMT>       The output type to write (unstable)
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
 # @flag -q --quiet                               Do not print cargo log messages
 # @option --color[auto|always|never] <WHEN>      Coloring: auto, always, never
@@ -1042,7 +1042,7 @@ rustc() {
 # @flag --offline                                Run without accessing the network
 # @arg args*                                     Extra rustdoc flags
 rustdoc() {
-    :;
+    :
 }
 # }} cargo rustdoc
 
@@ -1055,7 +1055,7 @@ rustdoc() {
 # @option --prefix[depth|indent|none]            Change the prefix (indentation) of how each entry is displayed [default: indent]
 # @flag --no-dedupe                              Do not de-duplicate (repeats all shared dependencies)
 # @flag -d --duplicates                          Show only dependencies which come in multiple versions (implies -i)
-# @option --charset[utf8|ascii]                  Character set to use in output [default: utf8]
+# @option --charset[utf8|ascii]                  Character set to use in output
 # @option -f --format                            Format string used for printing dependencies [default: {p}]
 # @flag -v --verbose*                            Use verbose output (-vv very verbose/build.rs output)
 # @flag -q --quiet                               Do not print cargo log messages
@@ -1075,7 +1075,7 @@ rustdoc() {
 # @flag --locked                                 Require Cargo.lock is up to date
 # @flag --offline                                Run without accessing the network
 tree() {
-    :;
+    :
 }
 # }} cargo tree
 
@@ -1097,7 +1097,7 @@ tree() {
 # @flag --offline                              Run without accessing the network
 # @arg path                                    Where to vendor crates (`vendor` by default)
 vendor() {
-    :;
+    :
 }
 # }} cargo vendor
 
@@ -1114,7 +1114,7 @@ vendor() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 verify-project() {
-    :;
+    :
 }
 # }} cargo verify-project
 
@@ -1130,7 +1130,7 @@ verify-project() {
 # @flag --locked                               Require Cargo.lock is up to date
 # @flag --offline                              Run without accessing the network
 version() {
-    :;
+    :
 }
 # }} cargo version
 
@@ -1152,7 +1152,7 @@ version() {
 # @flag --offline                              Run without accessing the network
 # @arg crate
 yank() {
-    :;
+    :
 }
 # }} cargo yank
 
@@ -1198,8 +1198,8 @@ _choice_add_feature() {
 
 _choice_remote_crate() {
     if [[ "${#ARGC_CWORD}" -gt 2 ]]; then
-        curl -fsSL "https://crates.io/api/v1/crates?q=${ARGC_CWORD}&per_page=50" | \
-        yq '.crates[] | .name + "	" + .description'
+        curl -fsSL "https://crates.io/api/v1/crates?q=${ARGC_CWORD}&per_page=50" |
+            yq '.crates[] | .name + "	" + .description'
     fi
 }
 
@@ -1208,7 +1208,7 @@ _choice_depid() {
 }
 
 _choice_testname() {
-    cargo t -- --list | gawk '/: test$/ { print substr($1, 1, length($1) - 1) }' 
+    cargo t -- --list | gawk '/: test$/ { print substr($1, 1, length($1) - 1) }'
 }
 
 _choice_fmt() {

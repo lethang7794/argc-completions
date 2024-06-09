@@ -56,6 +56,7 @@
 # @option -ctime <[-+]N>                         Find files accessed/Birthed/changed/modified N days ago.
 # @option -mtime <[-+]N>                         Find files accessed/Birthed/changed/modified N days ago.
 # @flag -capable                                 Find files with POSIX.1e capabilities(7) set.
+# @option -context <GLOB>                        Find files whose SELinux context matches the GLOB.
 # @option -depth <[-+]N>                         Find files with depth N.
 # @flag -empty                                   Find empty files/directories.
 # @flag -executable                              Find files the current user can execute/read/write.
@@ -105,6 +106,7 @@
 # @option -fprint <FILE> <FORMAT>                Like -ls/-print/-print0/-printf, but write to FILE instead of standard output.
 # @option -fprint0 <FILE> <FORMAT>               Like -ls/-print/-print0/-printf, but write to FILE instead of standard output.
 # @option -fprintf <FILE> <FORMAT>               Like -ls/-print/-print0/-printf, but write to FILE instead of standard output.
+# @option -limit <N>                             Quit once this action is evaluated N times.
 # @flag -ls                                      List files like ls -dils.
 # @flag -print                                   Print the path to the found file.
 # @flag -print0                                  Like -print, but use the null character ('\0') as a separator rather than newlines.

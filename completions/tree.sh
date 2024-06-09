@@ -23,8 +23,6 @@
 # @option --charset <X>     Use charset X for terminal/HTML and indentation line output.
 # @option --filelimitDo not descend dirs with more than ♯ files in them.
 # @option -o <filename>     Output to file instead of stdout.
-# @flag --du                Print directory sizes.
-# @flag --prune             Prune empty directories from the output.
 # @flag -q                  Print non-printable characters as '?'.
 # @flag -N                  Print non-printable characters as is.
 # @flag -Q                  Quote filenames with double quotes.
