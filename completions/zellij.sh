@@ -180,6 +180,14 @@ action::launch-plugin() {
 }
 # }}} zellij action launch-plugin
 
+# {{{ zellij action list-clients
+# @cmd
+# @flag -h --help    Print help information
+action::list-clients() {
+    :;
+}
+# }}} zellij action list-clients
+
 # {{{ zellij action move-focus
 # @cmd Move the focused pane in the specified direction.
 # @flag -h --help    Print help information

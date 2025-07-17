@@ -363,7 +363,6 @@ set::auto-self-update() {
 # {{ rustup completions
 # @cmd Generate tab-completion scripts for your shell
 # @flag -h --help    Print help
-# @option --prefix <)/etc/bash_completion.d/rustup.bash-completion>
 # @arg shell[bash|elvish|fish|powershell|zsh]
 # @arg command[rustup|cargo]
 completions() {

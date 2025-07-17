@@ -9,7 +9,7 @@
 # @flag -T                                 test configuration, dump it and exit
 # @flag -q                                 suppress non-error messages during configuration testing
 # @option -s[`_choice_signal`] <signal>    send signal to a master process: stop, quit, reopen, reload
-# @option -p <prefix>                      set prefix path (default: /home/linuxbrew/.linuxbrew/Cellar/nginx/1.25.5/)
+# @option -p <prefix>                      set prefix path (default: /home/linuxbrew/.linuxbrew/Cellar/nginx/1.27.0/)
 # @option -e <filename>                    set error log file (default: /home/linuxbrew/.linuxbrew/var/log/nginx/error.log)
 # @option -c <filename>                    set configuration file (default: /home/linuxbrew/.linuxbrew/etc/nginx/nginx.conf)
 # @option -g <directives>                  set global directives out of configuration file

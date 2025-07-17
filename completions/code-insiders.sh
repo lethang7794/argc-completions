@@ -31,6 +31,7 @@
 # @option --sync <on | off>                      Turn sync on or off.
 # @option --inspect-extensions <port>            Allow debugging and profiling of extensions.
 # @option --inspect-brk-extensions <port>        Allow debugging and profiling of extensions with the extension host being paused after start.
+# @flag --disable-lcd-text                       Disable LCD font rendering.
 # @flag --disable-gpu                            Disable GPU hardware acceleration.
 # @flag --disable-chromium-sandbox               Use this option only when there is requirement to launch the application as sudo user on Linux or when running as an elevated user in an applocker environment on Windows.
 # @flag --telemetry                              Shows all telemetry events which VS code collects.
@@ -132,11 +133,12 @@ tunnel::user() {
 
 # {{{{ code-insiders tunnel user login
 # @cmd Log in to port forwarding service
-# @option --access-token <ACCESS_TOKEN>    An access token to store for authentication.
-# @option --provider[microsoft|github]     The auth provider to use.
-# @flag -h --help                          Print help
-# @option --cli-data-dir <CLI_DATA_DIR>    Directory where CLI metadata should be stored [env: VSCODE_CLI_DATA_DIR=]
-# @flag --verbose                          Print verbose output (implies --wait)
+# @option --access-token <ACCESS_TOKEN>      An access token to store for authentication [env: VSCODE_CLI_ACCESS_TOKEN=]
+# @option --refresh-token <REFRESH_TOKEN>    An access token to store for authentication [env: VSCODE_CLI_REFRESH_TOKEN=]
+# @option --provider[microsoft|github]       The auth provider to use.
+# @flag -h --help                            Print help
+# @option --cli-data-dir <CLI_DATA_DIR>      Directory where CLI metadata should be stored [env: VSCODE_CLI_DATA_DIR=]
+# @flag --verbose                            Print verbose output (implies --wait)
 # @option --log[trace|debug|info|warn|error|critical|off] <level>  Log level to use
 tunnel::user::login() {
     :;

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-# @option --socket <string>    path to tailscaled socket (default /var/run/tailscale/tailscaled.sock)
+# @option --socket <value>    path to tailscaled socket (default /var/run/tailscale/tailscaled.sock)
 
 # {{ tailscale up
 # @cmd Connect to Tailscale, logging in if needed
@@ -26,6 +26,7 @@
 # @option --shields-up <false>                    don't allow incoming connections (default false)
 # @option --snat-subnet-routes <false>            source NAT traffic to local routes advertised with --advertise-routes (default true)
 # @option --ssh <false>                           run an SSH server, permitting access per tailnet admin's declared policy (default false)
+# @option --stateful-filtering <false>            apply stateful filtering to forwarded packets (subnet routers, exit nodes, etc.) (default false)
 # @option --timeout <duration>                    maximum amount of time to wait for tailscaled to enter a Running state; default (0s) blocks forever (default 0s)
 up() {
     :;
@@ -52,10 +53,13 @@ down() {
 # @option --exit-node <string>                    Tailscale exit node (IP or base name) for internet traffic, or empty string to not use an exit node
 # @option --exit-node-allow-lan-access <false>    Allow direct access to the local network when routing traffic via an exit node
 # @option --hostname <string>                     hostname to use instead of the one provided by the OS
+# @option --netfilter-mode <string>               netfilter mode (one of on, nodivert, off)
 # @option --nickname <string>                     nickname for the current account
 # @option --operator <string>                     Unix username to allow to operate on tailscaled without sudo
 # @option --shields-up <false>                    don't allow incoming connections
+# @option --snat-subnet-routes <false>            source NAT traffic to local routes advertised with --advertise-routes
 # @option --ssh <false>                           run an SSH server, permitting access per tailnet admin's declared policy
+# @option --stateful-filtering <false>            apply stateful filtering to forwarded packets (subnet routers, exit nodes, etc.)
 # @option --update-check <false>                  notify about available Tailscale updates
 # @option --webclient <false>                     expose the web interface for managing this node over Tailscale at port 5252
 set() {
@@ -83,6 +87,7 @@ set() {
 # @option --shields-up <false>                    don't allow incoming connections (default false)
 # @option --snat-subnet-routes <false>            source NAT traffic to local routes advertised with --advertise-routes (default true)
 # @option --ssh <false>                           run an SSH server, permitting access per tailnet admin's declared policy (default false)
+# @option --stateful-filtering <false>            apply stateful filtering to forwarded packets (subnet routers, exit nodes, etc.) (default false)
 # @option --timeout <duration>                    maximum amount of time to wait for tailscaled to enter a Running state; default (0s) blocks forever (default 0s)
 login() {
     :;
@@ -413,6 +418,13 @@ exit-node::list() {
     :;
 }
 # }}} tailscale exit-node list
+
+# {{{ tailscale exit-node suggest
+# @cmd Suggests the best available exit node
+exit-node::suggest() {
+    :;
+}
+# }}} tailscale exit-node suggest
 # }} tailscale exit-node
 
 # {{ tailscale update
@@ -441,32 +453,75 @@ drive() {
 }
 
 # {{{ tailscale drive share
-# @cmd [ALPHA] create or modify a share
+# @cmd [ALPHA] Create or modify a share
 drive::share() {
     :;
 }
 # }}} tailscale drive share
 
 # {{{ tailscale drive rename
-# @cmd [ALPHA] rename a share
+# @cmd [ALPHA] Rename a share
 drive::rename() {
     :;
 }
 # }}} tailscale drive rename
 
 # {{{ tailscale drive unshare
-# @cmd [ALPHA] remove a share
+# @cmd [ALPHA] Remove a share
 drive::unshare() {
     :;
 }
 # }}} tailscale drive unshare
 
 # {{{ tailscale drive list
-# @cmd [ALPHA] list current shares
+# @cmd [ALPHA] List current shares
 drive::list() {
     :;
 }
 # }}} tailscale drive list
 # }} tailscale drive
+
+# {{ tailscale completion
+# @cmd Shell tab-completion scripts
+completion() {
+    :;
+}
+
+# {{{ tailscale completion bash
+# @cmd Generate bash shell completion script
+# @option --descs <false>    Include flag, subcommand, and other descriptions in completions (default true)
+# @option --flags <false>    Suggest flag completions with subcommands (default true)
+completion::bash() {
+    :;
+}
+# }}} tailscale completion bash
+
+# {{{ tailscale completion zsh
+# @cmd Generate zsh shell completion script
+# @option --descs <false>    Include flag, subcommand, and other descriptions in completions (default true)
+# @option --flags <false>    Suggest flag completions with subcommands (default true)
+completion::zsh() {
+    :;
+}
+# }}} tailscale completion zsh
+
+# {{{ tailscale completion fish
+# @cmd Generate fish shell completion script
+# @option --descs <false>    Include flag, subcommand, and other descriptions in completions (default true)
+# @option --flags <false>    Suggest flag completions with subcommands (default true)
+completion::fish() {
+    :;
+}
+# }}} tailscale completion fish
+
+# {{{ tailscale completion powershell
+# @cmd Generate powershell completion script
+# @option --descs <false>    Include flag, subcommand, and other descriptions in completions (default true)
+# @option --flags <false>    Suggest flag completions with subcommands (default true)
+completion::powershell() {
+    :;
+}
+# }}} tailscale completion powershell
+# }} tailscale completion
 
 command eval "$(argc --argc-eval "$0" "$@")"

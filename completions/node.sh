@@ -34,6 +34,8 @@
 # @flag --experimental-network-imports             experimental https: support for the ES Module loader
 # @flag --experimental-permission                  enable the permission system
 # @option --experimental-policy <file>             use the specified file as a security policy
+# @flag --experimental-print-required-tla          Print pending top-level await.
+# @flag --experimental-require-module              Allow loading explicit ES Modules in require().
 # @option --experimental-sea-config <value>        Generate a blob that can be embedded into the single executable application
 # @flag --experimental-test-coverage               enable code coverage in the test runner
 # @flag --experimental-vm-modules                  experimental ES Module support in vm module
@@ -63,6 +65,7 @@
 # @flag --interpreted-frames-native-stack          help system profilers to translate JavaScript interpreted frames
 # @flag --jitless                                  disable runtime allocation of executable memory
 # @option --max-http-header-size <value>           set the maximum size of HTTP headers (default: 16384 (16KB))
+# @option --network-family-autoselection-attempt-timeout <value>  Sets the default value for the network family autoselection attempt timeout.
 # @flag --no-addons                                disable loading native addons
 # @flag --no-deprecation                           silence deprecation warnings
 # @flag --no-experimental-fetch                    experimental Fetch API
@@ -70,7 +73,7 @@
 # @flag --no-experimental-global-navigator         expose experimental Navigator API on the global scope
 # @flag --no-experimental-global-webcrypto         expose experimental Web Crypto API on the global scope
 # @flag --no-experimental-repl-await               experimental await keyword support in REPL
-# @flag --no-experimental-websocket                experimental WebSocket API (currently set)
+# @flag --no-experimental-websocket                experimental WebSocket API
 # @flag --no-extra-info-on-fatal-exception         hide extra information on fatal exception that causes exit
 # @flag --no-force-async-hooks-checks              disable checks for async_hooks
 # @flag --no-global-search-paths                   disable global module search paths
@@ -92,22 +95,26 @@
 # @flag --report-compact                           output compact single-line JSON
 # @option --report-directory <dir>                 define custom report pathname.
 # @option --report-dir <dir>                       define custom report pathname.
+# @flag --report-exclude-network                   exclude network interface diagnostics.
 # @option --report-filename <value>                define custom report file name.
 # @flag --report-on-fatalerror                     generate diagnostic report on fatal (internal) errors
 # @flag --report-on-signal                         generate diagnostic report upon receiving signals
 # @option --report-signal <value>                  causes diagnostic report to be produced on provided signal, unsupported in Windows.
 # @flag --report-uncaught-exception                generate diagnostic report on uncaught exceptions
 # @option -r --require <value>                     CommonJS module to preload (option can be repeated)
+# @option --run <value>                            Run a script specified in package.json
 # @option --secure-heap <value>                    total size of the OpenSSL secure heap
 # @option --secure-heap-min <value>                minimum allocation size from the OpenSSL secure heap
 # @option --snapshot-blob <value>                  Path to the snapshot blob that's either the result of snapshotbuilding, or the blob that is used to restore the application state
 # @flag --test                                     launch test runner on startup
 # @option --test-concurrency <value>               specify test runner concurrency
+# @flag --test-force-exit                          force test runner to exit upon completion
 # @option --test-name-pattern <value>              run tests whose name matches this regular expression
 # @flag --test-only                                run tests with 'only' option set
 # @option --test-reporter <value>                  report test output using the given reporter
 # @option --test-reporter-destination <value>      report given reporter to the given destination
 # @option --test-shard <value>                     run test at specific shard
+# @option --test-skip-pattern <value>              run tests whose name do not match this regular expression
 # @option --test-timeout <value>                   specify test runner timeout
 # @flag --throw-deprecation                        throw an exception on deprecations
 # @option --title <value>                          the process title to use on startup
@@ -132,9 +139,9 @@
 # @flag --trace-warnings                           show stack traces on process warnings
 # @flag --track-heap-objects                       track heap object allocations for heap snapshots
 # @option --unhandled-rejections[strict|warn|none] <value>  define unhandled rejections behavior.
-# @flag --use-bundled-ca                           use bundled CA store
+# @flag --use-bundled-ca                           use bundled CA store (default)
 # @option --use-largepages[off|on|silent] <value>  Map the Node.js static code to large pages.
-# @flag --use-openssl-ca                           use OpenSSL's default CA store (default)
+# @flag --use-openssl-ca                           use OpenSSL's default CA store
 # @flag --v8-options                               print V8 command line options
 # @option --v8-pool-size <value>                   set V8's thread pool size
 # @flag -v --version                               print Node.js version

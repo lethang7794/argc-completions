@@ -56,6 +56,7 @@
 # @flag -% --stateflags                Show some states on the title bar
 # @flag -_ --minibar                   Show a feedback bar at the bottom
 # @flag -0 --zero                      Hide all bars, use whole terminal
+# @flag -/ --modernbindings            Use better-known key bindings
 # @arg files*
 
 command eval "$(argc --argc-eval "$0" "$@")"

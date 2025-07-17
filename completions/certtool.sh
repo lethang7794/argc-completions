@@ -71,6 +71,7 @@
 # @flag --cprint                         In certain operations it prints the information in C-friendly format
 # @option --hash <str>                   Hash algorithm to use for signing
 # @option --salt-size <num>              Specify the RSA-PSS key default salt size
+# @option --label <str>                  Specify the RSA-OAEP label, encoded in hexadecimal
 # @flag --inder                          Use DER format for input certificates, private keys, and DH parameters
 # @flag --inraw                          an alias for the 'inder' option
 # @flag --outder                         Use DER format for output certificates, private keys, and DH parameters

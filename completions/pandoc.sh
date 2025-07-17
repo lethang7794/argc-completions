@@ -26,7 +26,7 @@
 # @flag -h --help                                  Show usage message.
 # @option --shift-heading-level-by <NUMBER>        Shift heading levels by a positive or negative integer.
 # @option --base-header-level <NUMBER>             Deprecated.
-# @option --indented-code-classes <CLASSES>        Specify classes to use for indented code blocks–for example, perl,numberLines or haskell.
+# @option --indented-code-classes <CLASSES>        Specify classes to use for indented code blocks—for example, perl,numberLines or haskell.
 # @option --default-image-extension <EXTENSION>    Specify a default extension to use when image paths/URLs have no extension.
 # @option --file-scope[true|false]                 Parse each file individually before combining for multifile documents.
 # @option -F --filter <PROGRAM>                    Specify an executable to be used as a filter transforming the pandoc AST after the input is parsed and before the output is written.
@@ -64,7 +64,7 @@
 # @option --request-header <NAME:VAL>              Set the request header NAME to the value VAL when making HTTP requests (for example, when a URL is given on the command line, or when resources used in a document must be downloaded).
 # @option --no-check-certificate[true|false]       Disable the certificate verification to allow access to unsecure HTTP resources (for example when the certificate is no longer valid or self signed).
 # @option --self-contained[true|false]             Deprecated synonym for --embed-resources --standalone.
-# @option --embed-resources[true|false]            Produce a standalone HTML file with no external dependencies, using data: URIs to incorporate the contents of linked scripts, stylesheets, images, and videos.
+# @option --embed-resources[true|false]            Produce  a  standalone  HTML  file with no external dependencies, using data: URIs to incorporate the contents of linked scripts, stylesheets, images, and videos.
 # @option --html-q-tags[true|false]                Use <q> tags for quotes in HTML.
 # @option --ascii[true|false]                      Use only ASCII characters in output.
 # @option --reference-links[true|false]            Use reference-style links, rather than inline links, in writing Markdown or reStructuredText.
@@ -76,7 +76,7 @@
 # @option --number-offset <NUMBER[,NUMBER,...]>    Offset for section headings in HTML output (ignored in other output formats).
 # @option --listings[true|false]                   Use the listings package for LaTeX code blocks.
 # @option -i --incremental[true|false]             Make list items in slide shows display incrementally (one by one).
-# @option --slide-level <NUMBER>                   Specifies that headings with the specified level create slides (for beamer, s5, slidy, slideous, dzslides).
+# @option --slide-level <NUMBER>                   Specifies that headings with the specified level create slides (for beamer, revealjs, pptx, s5, slidy, slideous, dzslides).
 # @option --section-divs[true|false]               Wrap sections in <section> tags (or <div> tags for html4), and attach identifiers to the enclosing <section> (or <div>) rather than the heading itself (see Heading identifiers, below).
 # @option --email-obfuscation[none|javascript|references]  Specify a method for obfuscating mailto: links in HTML documents.
 # @option --id-prefix <STRING>                     Specify a prefix to be added to all identifiers and internal links in HTML and DocBook output, and to footnote numbers in Markdown and Haddock output.

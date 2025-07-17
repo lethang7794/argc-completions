@@ -22,7 +22,8 @@
 # @flag -w                                         turn warnings on for your script
 # @option -W-*[`_choice_warning_level_combined`] <level=2|:category>  set warning level; 0=silence, 1=medium, 2=verbose
 # @option -x-* <directory>                         strip off text before ♯!ruby line and perhaps cd to directory
-# @flag --jit                                      enable JIT for the platform, same as --rjit (experimental)
+# @flag --jit                                      enable JIT for the platform, same as --yjit
+# @flag --yjit                                     enable in-process JIT compiler
 # @flag --rjit                                     enable pure-Ruby JIT compiler (experimental)
 # @flag --copyright                                print the copyright
 # @option --dump*[`_choice_dump`] <value>          dump debug information.
@@ -30,7 +31,6 @@
 # @option --disable*[`_choice_feature`] <value>    enable or disable features.
 # @option --external-encoding[`_choice_encoding`] <encoding>
 # @option --internal-encoding[`_choice_encoding`] <encoding>  specify the default external or internal character encoding
-# @option --parser <parse.y|prism>
 # @option --parser <prism>                         the parser used to parse Ruby code (experimental)
 # @option --backtrace-limit <num>                  limit the maximum length of backtrace
 # @flag --verbose                                  turn on verbose mode and disable script from stdin
@@ -38,6 +38,15 @@
 # @option --crash-report <TEMPLATE>                template of crash report files
 # @flag -y --yydebug                               print log of parser.
 # @flag --help                                     show this message, -h for short message
+# @option --yjit-exec-mem-size <num>               Size of executable memory block in MiB (default: 48)
+# @option --yjit-call-threshold <num>              Number of calls to trigger JIT
+# @option --yjit-cold-threshold <num>              Global calls after which ISEQs not compiled (default: 200K)
+# @flag --yjit-stats                               Enable collecting YJIT statistics
+# @flag --yjit-disable                             Disable YJIT for lazily enabling it with RubyVM::YJIT.enable
+# @flag --yjit-code-gc                             Run code GC when the code size reaches the limit
+# @flag --yjit-perf                                Enable frame pointers and perf profiling
+# @flag --yjit-trace-exits                         Record Ruby source location when exiting from generated code
+# @option --yjit-trace-exits-sample-rate <num>     Trace exit locations only every Nth occurrence
 # @option --rjit-exec-mem-size <num>               Size of executable memory block in MiB (default: 64)
 # @option --rjit-call-threshold <num>              Number of calls to trigger JIT (default: 10)
 # @flag --rjit-stats                               Enable collecting RJIT statistics
@@ -49,25 +58,25 @@
 . "$ARGC_COMPLETIONS_ROOT/utils/_argc_utils.sh"
 
 _choice_encoding_combined() {
-    _argc_util_mode_kv :
-    if [[ -z "$argc__kv_prefix" ]]; then
-        _choice_encoding
-        return
-    fi
+  _argc_util_mode_kv :
+  if [[ -z "$argc__kv_prefix" ]]; then
     _choice_encoding
+    return
+  fi
+  _choice_encoding
 }
 
 _choice_warning_level_combined() {
-    _argc_util_mode_kv :
-    if [[ -z "$argc__kv_prefix" ]]; then
-        _choice_warning_level
-        return
-    fi
-    _choice_warning_category
+  _argc_util_mode_kv :
+  if [[ -z "$argc__kv_prefix" ]]; then
+    _choice_warning_level
+    return
+  fi
+  _choice_warning_category
 }
 
 _choice_dump() {
-    cat <<-'EOF'
+  cat <<-'EOF'
 insns	instruction sequences
 yydebug	yydebug of yacc parser generator
 parsetree	AST
@@ -76,7 +85,7 @@ EOF
 }
 
 _choice_feature() {
-    cat <<-'EOF'
+  cat <<-'EOF'
 gems	rubygems (default: enabled)
 did_you_mean	did_you_mean (default: enabled)
 rubyopt	RUBYOPT environment variable (default: enabled)
@@ -86,7 +95,7 @@ EOF
 }
 
 _choice_encoding() {
-    cat <<-'EOF'
+  cat <<-'EOF'
 ASCII	Specifies the ASCII encoding.
 UTF-8	Specifies the UTF-8 encoding (default).
 ISO-8859-1	Specifies the ISO-8859-1 (Latin-1) encoding.
@@ -96,14 +105,14 @@ EOF
 }
 
 _choice_warning_category() {
-    cat <<-'EOF'
+  cat <<-'EOF'
 deprecated	deprecated features
 experimental	experimental features
 EOF
 }
 
 _choice_warning_level() {
-    cat <<-'EOF'
+  cat <<-'EOF'
 0	silence
 1	medium
 2	verbose

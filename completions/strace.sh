@@ -49,6 +49,7 @@
 # @option --strings-in-hex[`_choice_string_in_hex`] <option>  Control usage of escape sequences with hexadecimal numbers in the printed strings.
 # @option -X --const-print-style[`_choice_const_print_style`] <format>  Set the format for printing of named constants and flags.
 # @option -e --secontext <secontext=format>        When SELinux is available and is not disabled, print in square brackets SELinux contexts of processes, files, and descriptors.
+# @flag --always-show-pid                          Show PID prefix also for the process started by strace.
 # @flag -c --summary-only                          Count time, calls, and errors for each system call and report a summary on program exit, suppressing the regular output.
 # @flag -C --summary                               Like -c but also print regular output while processes are running.
 # @option -O --summary-syscall-overhead <overhead>  Set the overhead for tracing system calls to overhead.

@@ -64,6 +64,7 @@
 # @flag -writable                                Find files the current user can execute/read/write.
 # @flag -false                                   Always false/true.
 # @flag -true                                    Always false/true.
+# @option -flags <[-+]FLAGS>                     Find files with matching inode FLAGS.
 # @option -fstype <TYPE>                         Find files on file systems with the given TYPE.
 # @option -gid <[-+]N>                           Find files owned by group/user ID N.
 # @option -uid <[-+]N>                           Find files owned by group/user ID N.
@@ -85,7 +86,7 @@
 # @flag -nouser                                  Find files owned by nonexistent groups/users.
 # @option -path <GLOB>                           Find files whose entire path matches the GLOB.
 # @option -wholename <GLOB>                      Find files whose entire path matches the GLOB.
-# @option -perm <[-]MODE>                        Find files with a matching mode.
+# @option -perm <[-+/]MODE>                      Find files with a matching mode.
 # @option -regex                                 Find files whose entire path matches the regular expression REGEX.
 # @option -samefile <FILE>                       Find hard links to FILE.
 # @option -since <TIME>                          Find files modified since the ISO 8601-style timestamp TIME.

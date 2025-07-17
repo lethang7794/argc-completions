@@ -30,6 +30,13 @@ logout() {
 
 # {{ dagger call
 # @cmd Call a module function
+# @flag --json                                   Present result as JSON
+# @option -m --mod <string>                      Path to dagger.json config file for the module or a directory containing that file.
+# @option -o --output <string>                   Path in the host to save the result to
+# @flag -d --debug                               show debug logs and full verbosity
+# @option --progress[auto|plain|tty] <string>    progress output format (default "auto")
+# @flag -s --silent                              disable terminal UI and progress output
+# @option -v --verbose <count>                   increase verbosity (use -vv or -vvv for more)
 call() {
     :
 }
@@ -64,6 +71,11 @@ develop() {
 
 # {{ dagger functions
 # @cmd List available functions
+# @option -m --mod <string>                      Path to dagger.json config file for the module or a directory containing that file.
+# @flag -d --debug                               show debug logs and full verbosity
+# @option --progress[auto|plain|tty] <string>    progress output format (default "auto")
+# @flag -s --silent                              disable terminal UI and progress output
+# @option -v --verbose <count>                   increase verbosity (use -vv or -vvv for more)
 functions() {
     :
 }
@@ -114,6 +126,8 @@ query() {
 
 # {{ dagger run
 # @cmd Run a command in a Dagger session
+# @option -u <$DAGGER_SESSION_TOKEN:>
+# @option -H <"content-type:application/json">
 # @option --cleanup-timeout <duration>            max duration to wait between SIGTERM and SIGKILL on interrupt (default 10s)
 # @flag --focus                                   Only show output for focused commands.
 # @flag -d --debug                                show debug logs and full verbosity

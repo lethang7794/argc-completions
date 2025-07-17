@@ -10,6 +10,8 @@
 # @flag -a --adjust                        adjust the RTC to account for systematic drift
 # @option --param-get <param>              display the RTC parameter
 # @option --param-set <<param>=<value>>    set the RTC parameter
+# @flag --vl-read                          read voltage low information
+# @flag --vl-clear                         clear voltage low information
 # @flag --predict                          predict the drifted RTC time according to --date
 # @flag -u --utc                           the RTC timescale is UTC
 # @flag -l --localtime                     the RTC timescale is Local

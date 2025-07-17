@@ -6,6 +6,7 @@
 # @flag -D --console-off                          disable printing messages to console
 # @flag -E --console-on                           enable printing messages to console
 # @option -F --file <file>                        use the file instead of the kernel log buffer
+# @option -K --kmsg-file <file>                   use the file in kmsg format
 # @option -f --facility[`_choice_facility`] <list>  restrict output to defined facilities
 # @flag -H --human                                human readable output
 # @flag -J --json                                 use JSON output format

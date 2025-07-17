@@ -6,6 +6,5 @@
 # @arg install
 # @arg and
 # @arg set
-# @arg version!
 
 command eval "$(argc --argc-eval "$0" "$@")"

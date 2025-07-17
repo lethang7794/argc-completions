@@ -6,6 +6,7 @@
 # @option -n --namespace <ns>    generate hash-based uuid in this namespace available namespaces: @dns @url @oid @x500
 # @option -N --name <name>       generate hash-based uuid from this name
 # @flag -m --md5                 generate md5 hash
+# @option -C --count <num>       generate more uuids in loop
 # @flag -s --sha1                generate sha1 hash
 # @flag -x --hex                 interpret name as hex string
 # @flag -h --help                display this help

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-
-
 # {{ distrobox assemble
 # @cmd
 # @flag --file:               path to the distrobox manifest/ini file
@@ -13,7 +11,7 @@
 # @option --version </-V:>    show version
 # @arg create
 assemble() {
-    :;
+    :
 }
 # }} distrobox assemble
 
@@ -21,7 +19,7 @@ assemble() {
 # @cmd
 # @option --image </-i:>                   image to use for the container  default: registry.fedoraproject.org/fedora-toolbox:39
 # @option --name </-n:>                    name for the distrobox  default: my-distrobox
-# @flag --hostname:                        hostname for the distrobox  default: <container-name>.lg-gram
+# @flag --hostname:                        hostname for the distrobox  default: lg-gram
 # @option --pull </-p:>                    pull the image even if it exists locally (implies --yes)
 # @option --yes </-Y:>                     non-interactive, pull images without asking
 # @option --root </-r:>                    launch podman/docker/lilipod with root privileges.
@@ -46,15 +44,14 @@ assemble() {
 # @option --dry-run </-d:>                 only print the container manager command generated
 # @option --verbose </-v:>                 show more verbosity
 # @option --version </-V:>                 show version
-# @option --absolutely-disable-root-password-i-am-really-positively-sure: <⚠️> <⚠️>  when setting up a rootful distrobox, this will skip user password setup, leaving it blank.
+# @option --absolutely-disable-root-password-i-am-really-positively-sure: ⚠️ ⚠️  when setting up a rootful distrobox, this will skip user password setup, leaving it blank.
 # @arg alpine-latest <alpine:latest>
 # @arg test
-# @arg touch <"touch>
 # @arg var-tmp-test1 </var/tmp/test1>
 # @arg touch
 # @arg var-tmp-test2 </var/tmp/test2">
 create() {
-    :;
+    :
 }
 # }} distrobox create
 
@@ -62,6 +59,7 @@ create() {
 # @cmd
 # @option --name </-n:>                name for the distrobox  default: my-distrobox
 # @option ---e: <:>                    end arguments execute the rest as command to execute at login  default: default lqt's shell
+# @flag --clean-path:                  reset PATH inside container to FHS standard
 # @option --no-tty </-T:>              do not instantiate a tty
 # @option --no-workdir </-nw:>         always start the container from container's home directory
 # @option --additional-flags </-a:>    additional flags to pass to the container manager command
@@ -73,7 +71,7 @@ create() {
 # @arg fedora-39
 # @arg bash
 enter() {
-    :;
+    :
 }
 # }} distrobox enter
 
@@ -85,7 +83,7 @@ enter() {
 # @option --verbose </-v:>    show more verbosity
 # @option --version </-V:>    show version
 list() {
-    :;
+    :
 }
 # }} distrobox list
 
@@ -101,7 +99,7 @@ list() {
 # @arg container-name
 # @arg container-name1-container-name2* <container-name1 container-name2>
 rm() {
-    :;
+    :
 }
 # }} distrobox rm
 
@@ -115,7 +113,7 @@ rm() {
 # @option --version </-V:>    show version
 # @arg container-name
 stop() {
-    :;
+    :
 }
 # }} distrobox stop
 
@@ -128,7 +126,7 @@ stop() {
 # @option --verbose </-v:>    show more verbosity
 # @option --version </-V:>    show version
 upgrade() {
-    :;
+    :
 }
 # }} distrobox upgrade
 
@@ -141,10 +139,9 @@ upgrade() {
 # @option --version </-V:>                 show version
 # @option --image </-i:>                   image to use for the container  default: registry.fedoraproject.org/fedora-toolbox:39
 # @option --name </-n:>                    name for the distrobox  default: my-distrobox
-# @flag --hostname:                        hostname for the distrobox  default: <container-name>.lg-gram
+# @flag --hostname:                        hostname for the distrobox  default: lg-gram
 # @option --pull </-p:>                    pull the image even if it exists locally (implies --yes)
 # @option --yes </-Y:>                     non-interactive, pull images without asking
-# @option --root </-r:>                    launch podman/docker/lilipod with root privileges.
 # @option --clone </-c:>                   name of the distrobox container to use as base for a new container this will be useful to either rename an existing distrobox or have multiple copies of the same environment.
 # @option --home </-H:>                    select a custom HOME directory for the container.
 # @flag --volume:                          additional volumes to add to the container
@@ -161,14 +158,11 @@ upgrade() {
 # @flag --unshare-process:                 do not share process namespace with host
 # @flag --unshare-all:                     activate all the unshare flags below
 # @option --compatibility </-C:>           show list of compatible images
-# @option --help </-h:>                    show this message
 # @flag --no-entry:                        do not generate a container entry in the application list
 # @option --dry-run </-d:>                 only print the container manager command generated
-# @option --verbose </-v:>                 show more verbosity
-# @option --version </-V:>                 show version
-# @option --absolutely-disable-root-password-i-am-really-positively-sure: <⚠️> <⚠️>  when setting up a rootful distrobox, this will skip user password setup, leaving it blank.
+# @option --absolutely-disable-root-password-i-am-really-positively-sure: ⚠️ ⚠️  when setting up a rootful distrobox, this will skip user password setup, leaving it blank.
 ephemeral() {
-    :;
+    :
 }
 # }} distrobox ephemeral
 
@@ -183,14 +177,14 @@ ephemeral() {
 # @option --version </-V:>    show version
 # @arg auto-path-to-icon <auto,/path/to/icon>
 generate-entry() {
-    :;
+    :
 }
 # }} distrobox generate-entry
 
 # {{ distrobox version
 # @cmd
 version() {
-    :;
+    :
 }
 # }} distrobox version
 

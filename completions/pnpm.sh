@@ -77,6 +77,7 @@ import() {
 # @option --hoist-pattern <pattern>           Hoist all dependencies matching the pattern to `node_modules/.pnpm/node_modules`.
 # @flag --ignore-pnpmfile                     Disable pnpm hooks defined in .pnpmfile.cjs
 # @flag --ignore-scripts                      Don't run lifecycle scripts
+# @flag --ignore-workspace                    Ignore pnpm-workspace.yaml if exists in the parent directory, and treat the installation as normal non-workspace installation.
 # @option --lockfile-dir <dir>                The directory in which the pnpm-lock.yaml of the package will be created.
 # @flag --lockfile-only                       Dependencies are not downloaded.
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
@@ -151,6 +152,7 @@ ln() {
 # @flag --aggregate-output     Aggregate output from child processes that are run in parallel, and only print output when child process is finished.
 # @option -C --dir <dir>       Change to directory <dir> (default: /home/lqt/go/src/github.com/lethang7794/argc-completions)
 # @flag -h --help              Output usage information
+# @flag --ignore-scripts       Don't run lifecycle scripts
 # @option --loglevel[debug|info|warn|error|silent] <level>  What level of logs to report.
 # @flag --no-optional          Remove the packages specified in `optionalDependencies`
 # @flag --prod                 Remove the packages specified in `devDependencies`
@@ -455,7 +457,7 @@ find-hash() {
 # }} pnpm find-hash
 
 # {{ pnpm pack
-# @cmd
+# @cmd Create a tarball from a package
 # @option --pack-destination <dir>    Directory in which `pnpm pack` will save tarballs.
 pack() {
     :;
@@ -487,7 +489,7 @@ publish() {
 # }} pnpm publish
 
 # {{ pnpm root
-# @cmd
+# @cmd Prints the effective modules directory
 # @flag -g --global    Print the global `node_modules` directory
 root() {
     :;

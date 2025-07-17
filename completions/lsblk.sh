@@ -9,6 +9,10 @@
 # @flag -M --merge                                group parents of sub-trees (usable for RAIDs, Multi-path)
 # @flag -O --output-all                           output all columns
 # @flag -P --pairs                                use key="value" output format
+# @option -Q --filter <expr>                      print only lines maching the expression
+# @option --highlight <expr>                      colorize lines maching the expression
+# @option --ct-filter <expr>                      restrict the next counter
+# @option --ct <<name>[:<param>[:<func>]]>        define a custom counter
 # @flag -S --scsi                                 output info about SCSI devices
 # @flag -N --nvme                                 output info about NVMe devices
 # @flag -v --virtio                               output info about virtio devices
@@ -22,7 +26,7 @@
 # @flag -l --list                                 use list format output
 # @flag -m --perms                                output info about permissions
 # @flag -n --noheadings                           don't print headings
-# @option -o --output*,[`_choice_column`] <list>  output columns
+# @option -o --output*,[`_choice_column`] <list>  output columns (see --list-columns)
 # @flag -p --paths                                print complete device path
 # @flag -r --raw                                  use raw output format
 # @flag -s --inverse                              inverse dependencies
@@ -32,6 +36,7 @@
 # @flag -y --shell                                use column names to be usable as shell variable identifiers
 # @flag -z --zoned                                print zone related information
 # @option --sysroot <dir>                         use specified directory as system root
+# @flag -H --list-columns                         list the available columns
 # @flag -h --help                                 display this help
 # @flag -V --version                              display version
 # @arg device*[`_choice_block_device`]

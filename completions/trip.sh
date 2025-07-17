@@ -8,6 +8,7 @@
 # @flag --udp                                      Trace using the UDP protocol
 # @flag --tcp                                      Trace using the TCP protocol
 # @flag --icmp                                     Trace using the ICMP protocol
+# @option -F --addr-family <ADDR_FAMILY>           The address family [default: Ipv4thenIpv6]
 # @flag -4 --ipv4                                  Use IPv4 only
 # @flag -6 --ipv6                                  Use IPv6 only
 # @option -P --target-port <TARGET_PORT>           The target port (TCP & UDP only) [default: 80]
@@ -33,6 +34,7 @@
 # @flag -z --dns-lookup-as-info                    Lookup autonomous system (AS) information during DNS queries [default: false]
 # @option -a --tui-address-mode <TUI_ADDRESS_MODE>  How to render addresses [default: host]
 # @option --tui-as-mode <TUI_AS_MODE>              How to render AS information [default: asn]
+# @option --tui-custom-columns <TUI_CUSTOM_COLUMNS>  Custom columns to be displayed in the TUI hops table [default: holsravbwdt]
 # @option --tui-icmp-extension-mode <TUI_ICMP_EXTENSION_MODE>  How to render ICMP extensions [default: off]
 # @option --tui-geoip-mode <TUI_GEOIP_MODE>        How to render GeoIp information [default: short]
 # @option -M --tui-max-addrs <TUI_MAX_ADDRS>       The maximum number of addresses to show per hop [default: auto]
@@ -46,7 +48,7 @@
 # @option --tui-key-bindings <TUI_KEY_BINDINGS>    The TUI key bindings [command=key,command=key,..]
 # @flag --print-tui-binding-commands               Print all TUI commands that can be bound and exit
 # @option -C --report-cycles <REPORT_CYCLES>       The number of report cycles to run [default: 10]
-# @option -G --geoip-mmdb-file <GEOIP_MMDB_FILE>   The MaxMind City GeoLite2 mmdb file
+# @option -G --geoip-mmdb-file <GEOIP_MMDB_FILE>   The supported MaxMind or IPinfo GeoIp mmdb file
 # @option --generate[bash|elvish|fish|powershell|zsh]  Generate shell completion
 # @flag --print-config-template                    Print a template toml config file and exit
 # @option --log-format <LOG_FORMAT>                The debug log format [default: pretty]

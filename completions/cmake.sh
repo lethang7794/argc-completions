@@ -56,7 +56,6 @@
 # @flag -usage                                   Print usage information and exit.
 # @option --version <file>                       Print version number and exit.
 # @option -version <file>                        Print version number and exit.
-# @option --help <keyword> <file>                Print help for one keyword and exit.
 # @option --help-full <file>                     Print all help manuals and exit.
 # @option --help-manual[`_choice_help_manual`] <man> <file>  Print one help manual and exit.
 # @option --help-manual-list <file>              List help manuals available and exit.
@@ -112,19 +111,19 @@ _choice_remove_cache_entry() {
 }
 
 _choice_generator() {
-    cmake --help 2>&1 | \
-    sed -n \
-        -e "1,/^Generators/d" \
-        -e "/^\s*(/d" \
-        -e "/^  *[^ =]/{s|^ *\([^=]*[^ =]\).*$|\1|;p}" \
+    cmake --help 2>&1 |
+        sed -n \
+            -e "1,/^Generators/d" \
+            -e "/^\s*(/d" \
+            -e "/^  *[^ =]/{s|^ *\([^=]*[^ =]\).*$|\1|;p}"
 
 }
 
 _choice_preset() {
-    cmake --list-presets 2>/dev/null | \
-    sed -n \
-        -e 's,^[[:space:]]*"\([^"]*\)"[[:space:]]*-[[:space:]]*\(.*\),\1:\2,p' \
-        -e 's,^[[:space:]]*"\([^"]*\)"[[:space:]]*$,\1,p' \
+    cmake --list-presets 2>/dev/null |
+        sed -n \
+            -e 's,^[[:space:]]*"\([^"]*\)"[[:space:]]*-[[:space:]]*\(.*\),\1:\2,p' \
+            -e 's,^[[:space:]]*"\([^"]*\)"[[:space:]]*$,\1,p'
 
 }
 
@@ -133,7 +132,7 @@ _choice_list_preset() {
 }
 
 _choice_cmd() {
-    cmake -E help 2>&1 | sed -n  '/^  [^ ]/{s|^  \([^ ]\{1,\}\) .*$|\1|;p}' 
+    cmake -E help 2>&1 | sed -n '/^  [^ ]/{s|^  \([^ ]\{1,\}\) .*$|\1|;p}'
 }
 
 _choice_help_manual() {

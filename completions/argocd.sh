@@ -72,7 +72,7 @@
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account() {
-    :;
+    :
 }
 
 # {{{ argocd account bcrypt
@@ -103,7 +103,7 @@ account() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::bcrypt() {
-    :;
+    :
 }
 # }}} argocd account bcrypt
 
@@ -137,7 +137,7 @@ account::bcrypt() {
 # @arg resource
 # @arg subresource
 account::can-i() {
-    :;
+    :
 }
 # }}} argocd account can-i
 
@@ -169,7 +169,7 @@ account::can-i() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::delete-token() {
-    :;
+    :
 }
 # }}} argocd account delete-token
 
@@ -203,7 +203,7 @@ account::delete-token() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::generate-token() {
-    :;
+    :
 }
 # }}} argocd account generate-token
 
@@ -236,7 +236,7 @@ account::generate-token() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::get() {
-    :;
+    :
 }
 # }}} argocd account get
 
@@ -268,7 +268,7 @@ account::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::get-user-info() {
-    :;
+    :
 }
 # }}} argocd account get-user-info
 
@@ -300,7 +300,7 @@ account::get-user-info() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::list() {
-    :;
+    :
 }
 # }}} argocd account list
 
@@ -334,7 +334,7 @@ account::list() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 account::update-password() {
-    :;
+    :
 }
 # }}} argocd account update-password
 # }} argocd account
@@ -366,7 +366,7 @@ account::update-password() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin() {
-    :;
+    :
 }
 
 # {{{ argocd admin app
@@ -396,7 +396,7 @@ admin() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::app() {
-    :;
+    :
 }
 
 # {{{{ argocd admin app diff-reconcile-results
@@ -428,7 +428,7 @@ admin::app() {
 # @arg path1
 # @arg path2
 admin::app::diff-reconcile-results() {
-    :;
+    :
 }
 # }}}} argocd admin app diff-reconcile-results
 
@@ -466,6 +466,7 @@ admin::app::diff-reconcile-results() {
 # @flag --kustomize-force-common-annotation       Force common annotations in Kustomize
 # @flag --kustomize-force-common-label            Force common labels in Kustomize
 # @option --kustomize-image <stringArray>         Kustomize images (e.g. --kustomize-image node:8.15.0 --kustomize-image mysql=mariadb,alpine@sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d)
+# @flag --kustomize-label-without-selector        Do not apply common label to selectors or templates
 # @option --kustomize-namespace <string>          Kustomize namespace
 # @option --kustomize-replica <stringArray>       Kustomize replicas (e.g. --kustomize-replica my-development=2 --kustomize-replica my-statefulset=4)
 # @option --kustomize-version <string>            Kustomize version
@@ -478,13 +479,14 @@ admin::app::diff-reconcile-results() {
 # @option --path <string>                         Path in repository to the app directory, ignored if a file is set
 # @option --plugin-env <stringArray>              Additional plugin envs
 # @option --project <string>                      Application project name
+# @option --ref <string>                          Ref is reference to another source within sources field
 # @option --release-name <string>                 Helm release-name
 # @option --repo <string>                         Repository URL, ignored if a file is set
 # @option --revision <string>                     The tracking source branch, tag, commit or Helm chart version the application will sync to
 # @option --revision-history-limit <int>          How many items to keep in revision history (default 10)
 # @flag --self-heal                               Set self healing when sync is automated
 # @option --sync-option <Prune=false>             Add or remove a sync option, e.g add Prune=false.
-# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: none, automated)
+# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: manual (aliases of manual: none), automated)
 # @option --sync-retry-backoff-duration <duration>  Sync retry backoff base duration.
 # @option --sync-retry-backoff-factor <int>       Factor multiplies the base duration after each failed sync retry (default 2)
 # @option --sync-retry-backoff-max-duration <duration>  Max sync retry backoff duration.
@@ -517,7 +519,7 @@ admin::app::diff-reconcile-results() {
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 admin::app::generate-spec() {
-    :;
+    :
 }
 # }}}} argocd admin app generate-spec
 
@@ -574,7 +576,7 @@ admin::app::generate-spec() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg path
 admin::app::get-reconcile-results() {
-    :;
+    :
 }
 # }}}} argocd admin app get-reconcile-results
 # }}} argocd admin app
@@ -606,13 +608,14 @@ admin::app::get-reconcile-results() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::cluster() {
-    :;
+    :
 }
 
 # {{{{ argocd admin cluster generate-spec
 # @cmd Generate declarative config for a cluster
 # @option --annotation <stringArray>              Set metadata annotations (e.g. --annotation key=value)
 # @option --aws-cluster-name <string>             AWS Cluster name if set then aws cli eks token command will be used to access cluster
+# @option --aws-profile <string>                  Optional AWS profile.
 # @option --aws-role-arn <string>                 Optional AWS role arn.
 # @option --bearer-token <string>                 Authentication token that should be used to access K8S API server
 # @option --cluster-endpoint <string>             Cluster endpoint to use.
@@ -659,7 +662,7 @@ admin::cluster() {
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg context
 admin::cluster::generate-spec() {
-    :;
+    :
 }
 # }}}} argocd admin cluster generate-spec
 
@@ -711,7 +714,7 @@ admin::cluster::generate-spec() {
 # @arg cluster_url
 # @arg output_path
 admin::cluster::kubeconfig() {
-    :;
+    :
 }
 # }}}} argocd admin cluster kubeconfig
 
@@ -761,7 +764,7 @@ admin::cluster::kubeconfig() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::cluster::namespaces() {
-    :;
+    :
 }
 
 # {{{{{ argocd admin cluster namespaces disable-namespaced-mode
@@ -812,7 +815,7 @@ admin::cluster::namespaces() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg pattern
 admin::cluster::namespaces::disable-namespaced-mode() {
-    :;
+    :
 }
 # }}}}} argocd admin cluster namespaces disable-namespaced-mode
 
@@ -866,7 +869,7 @@ admin::cluster::namespaces::disable-namespaced-mode() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg pattern
 admin::cluster::namespaces::enable-namespaced-mode() {
-    :;
+    :
 }
 # }}}}} argocd admin cluster namespaces enable-namespaced-mode
 # }}}} argocd admin cluster namespaces
@@ -933,7 +936,7 @@ admin::cluster::namespaces::enable-namespaced-mode() {
 # @option --server-crt <string>                    Server certificate file
 # @option --server-name <string>                   Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::cluster::shards() {
-    :;
+    :
 }
 # }}}} argocd admin cluster shards
 
@@ -999,7 +1002,7 @@ admin::cluster::shards() {
 # @option --server-crt <string>                    Server certificate file
 # @option --server-name <string>                   Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::cluster::stats() {
-    :;
+    :
 }
 # }}}} argocd admin cluster stats
 # }}} argocd admin cluster
@@ -1053,7 +1056,7 @@ admin::cluster::stats() {
 # @option --server-crt <string>                   Server certificate file
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::dashboard() {
-    :;
+    :
 }
 # }}} argocd admin dashboard
 
@@ -1104,7 +1107,7 @@ admin::dashboard() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::export() {
-    :;
+    :
 }
 # }}} argocd admin export
 
@@ -1159,7 +1162,7 @@ admin::export() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg source
 admin::import() {
-    :;
+    :
 }
 # }}} argocd admin import
 
@@ -1209,7 +1212,7 @@ admin::import() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::initial-password() {
-    :;
+    :
 }
 # }}} argocd admin initial-password
 
@@ -1264,7 +1267,7 @@ admin::initial-password() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::notifications() {
-    :;
+    :
 }
 
 # {{{{ argocd admin notifications template
@@ -1318,7 +1321,7 @@ admin::notifications() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::notifications::template() {
-    :;
+    :
 }
 
 # {{{{{ argocd admin notifications template get
@@ -1373,7 +1376,7 @@ admin::notifications::template() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::notifications::template::get() {
-    :;
+    :
 }
 # }}}}} argocd admin notifications template get
 
@@ -1431,7 +1434,7 @@ admin::notifications::template::get() {
 # @arg name
 # @arg resource_name
 admin::notifications::template::notify() {
-    :;
+    :
 }
 # }}}}} argocd admin notifications template notify
 # }}}} argocd admin notifications template
@@ -1487,7 +1490,7 @@ admin::notifications::template::notify() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::notifications::trigger() {
-    :;
+    :
 }
 
 # {{{{{ argocd admin notifications trigger get
@@ -1542,7 +1545,7 @@ admin::notifications::trigger() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::notifications::trigger::get() {
-    :;
+    :
 }
 # }}}}} argocd admin notifications trigger get
 
@@ -1599,7 +1602,7 @@ admin::notifications::trigger::get() {
 # @arg name
 # @arg resource_name
 admin::notifications::trigger::run() {
-    :;
+    :
 }
 # }}}}} argocd admin notifications trigger run
 # }}}} argocd admin notifications trigger
@@ -1632,7 +1635,7 @@ admin::notifications::trigger::run() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::proj() {
-    :;
+    :
 }
 
 # {{{{ argocd admin proj generate-allow-list
@@ -1684,7 +1687,7 @@ admin::proj() {
 # @arg clusterrole_path
 # @arg proj_name
 admin::proj::generate-allow-list() {
-    :;
+    :
 }
 # }}}} argocd admin proj generate-allow-list
 
@@ -1730,7 +1733,7 @@ admin::proj::generate-allow-list() {
 # @option --server-name <string>                   Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 admin::proj::generate-spec() {
-    :;
+    :
 }
 # }}}} argocd admin proj generate-spec
 
@@ -1788,7 +1791,7 @@ admin::proj::generate-spec() {
 # @arg modification
 # @arg action
 admin::proj::update-role-policy() {
-    :;
+    :
 }
 # }}}} argocd admin proj update-role-policy
 # }}} argocd admin proj
@@ -1820,7 +1823,7 @@ admin::proj::update-role-policy() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::repo() {
-    :;
+    :
 }
 
 # {{{{ argocd admin repo generate-spec
@@ -1871,7 +1874,7 @@ admin::repo() {
 # @option --server-name <string>                 Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg repourl
 admin::repo::generate-spec() {
-    :;
+    :
 }
 # }}}} argocd admin repo generate-spec
 # }}} argocd admin repo
@@ -1925,7 +1928,7 @@ admin::repo::generate-spec() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::settings() {
-    :;
+    :
 }
 
 # {{{{ argocd admin settings rbac
@@ -1977,7 +1980,7 @@ admin::settings() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::settings::rbac() {
-    :;
+    :
 }
 
 # {{{{{ argocd admin settings rbac can
@@ -2038,7 +2041,7 @@ admin::settings::rbac() {
 # @arg resource
 # @arg sub-resource
 admin::settings::rbac::can() {
-    :;
+    :
 }
 # }}}}} argocd admin settings rbac can
 
@@ -2092,7 +2095,7 @@ admin::settings::rbac::can() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 admin::settings::rbac::validate() {
-    :;
+    :
 }
 # }}}}} argocd admin settings rbac validate
 # }}}} argocd admin settings rbac
@@ -2146,7 +2149,7 @@ admin::settings::rbac::validate() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::settings::resource-overrides() {
-    :;
+    :
 }
 
 # {{{{{ argocd admin settings resource-overrides health
@@ -2199,7 +2202,7 @@ admin::settings::resource-overrides() {
 # @option --username <string>                  Username for basic authentication to the API server
 # @arg resource_yaml_path
 admin::settings::resource-overrides::health() {
-    :;
+    :
 }
 # }}}}} argocd admin settings resource-overrides health
 
@@ -2253,7 +2256,7 @@ admin::settings::resource-overrides::health() {
 # @option --username <string>                  Username for basic authentication to the API server
 # @arg resource_yaml_path
 admin::settings::resource-overrides::ignore-differences() {
-    :;
+    :
 }
 # }}}}} argocd admin settings resource-overrides ignore-differences
 
@@ -2308,7 +2311,7 @@ admin::settings::resource-overrides::ignore-differences() {
 # @option --username <string>                  Username for basic authentication to the API server
 # @arg resource_yaml_path
 admin::settings::resource-overrides::ignore-resource-updates() {
-    :;
+    :
 }
 # }}}}} argocd admin settings resource-overrides ignore-resource-updates
 
@@ -2362,7 +2365,7 @@ admin::settings::resource-overrides::ignore-resource-updates() {
 # @option --username <string>                  Username for basic authentication to the API server
 # @arg resource_yaml_path
 admin::settings::resource-overrides::list-actions() {
-    :;
+    :
 }
 # }}}}} argocd admin settings resource-overrides list-actions
 
@@ -2417,7 +2420,7 @@ admin::settings::resource-overrides::list-actions() {
 # @arg resource_yaml_path
 # @arg action
 admin::settings::resource-overrides::run-action() {
-    :;
+    :
 }
 # }}}}} argocd admin settings resource-overrides run-action
 # }}}} argocd admin settings resource-overrides
@@ -2472,7 +2475,7 @@ admin::settings::resource-overrides::run-action() {
 # @option --user <string>                      The name of the kubeconfig user to use
 # @option --username <string>                  Username for basic authentication to the API server
 admin::settings::validate() {
-    :;
+    :
 }
 # }}}} argocd admin settings validate
 # }}} argocd admin settings
@@ -2524,7 +2527,7 @@ admin::settings::validate() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 app() {
-    :;
+    :
 }
 
 # {{{ argocd app actions
@@ -2554,7 +2557,7 @@ app() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 app::actions() {
-    :;
+    :
 }
 
 # {{{{ argocd app actions list
@@ -2590,7 +2593,7 @@ app::actions() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::actions::list() {
-    :;
+    :
 }
 # }}}} argocd app actions list
 
@@ -2628,10 +2631,96 @@ app::actions::list() {
 # @arg appname
 # @arg action
 app::actions::run() {
-    :;
+    :
 }
 # }}}} argocd app actions run
 # }}} argocd app actions
+
+# {{{ argocd app add-source
+# @cmd Adds a source to the list of sources in the application
+# @flag --allow-empty                             Set allow zero live resources when sync is automated
+# @option -N --app-namespace <string>             Namespace of the target application where the source will be appended
+# @flag --auto-prune                              Set automatic pruning when sync is automated
+# @option --config-management-plugin <string>     Config management plugin name
+# @option --dest-name <string>                    K8s cluster Name (e.g. minikube)
+# @option --dest-namespace <string>               K8s target namespace
+# @option --dest-server <string>                  K8s cluster URL (e.g. https://kubernetes.default.svc)
+# @option --directory-exclude <string>            Set glob expression used to exclude files from application source path
+# @option --directory-include <string>            Set glob expression used to include files from application source path
+# @flag --directory-recurse                       Recurse directory
+# @option --env <string>                          Application environment to monitor
+# @option --helm-chart <string>                   Helm Chart name
+# @flag --helm-pass-credentials                   Pass credentials to all domain
+# @option --helm-set <stringArray>                Helm set values on the command line (can be repeated to set several values: --helm-set key1=val1 --helm-set key2=val2)
+# @option --helm-set-file <stringArray>           Helm set values from respective files specified via the command line (can be repeated to set several values: --helm-set-file key1=path1 --helm-set-file key2=path2)
+# @option --helm-set-string <stringArray>         Helm set STRING values on the command line (can be repeated to set several values: --helm-set-string key1=val1 --helm-set-string key2=val2)
+# @flag --helm-skip-crds                          Skip helm crd installation step
+# @option --helm-version <string>                 Helm version
+# @flag -h --help                                 help for add-source
+# @flag --ignore-missing-value-files              Ignore locally missing valueFiles when setting helm template --values
+# @option --jsonnet-ext-var-code <stringArray>    Jsonnet ext var
+# @option --jsonnet-ext-var-str <stringArray>     Jsonnet string ext var
+# @option --jsonnet-libs <stringArray>            Additional jsonnet libs (prefixed by repoRoot)
+# @option --jsonnet-tla-code <stringArray>        Jsonnet top level code arguments
+# @option --jsonnet-tla-str <stringArray>         Jsonnet top level string arguments
+# @option --kustomize-common-annotation <stringArray>  Set common labels in Kustomize
+# @option --kustomize-common-label <stringArray>  Set common labels in Kustomize
+# @flag --kustomize-force-common-annotation       Force common annotations in Kustomize
+# @flag --kustomize-force-common-label            Force common labels in Kustomize
+# @option --kustomize-image <stringArray>         Kustomize images (e.g. --kustomize-image node:8.15.0 --kustomize-image mysql=mariadb,alpine@sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d)
+# @flag --kustomize-label-without-selector        Do not apply common label to selectors or templates
+# @option --kustomize-namespace <string>          Kustomize namespace
+# @option --kustomize-replica <stringArray>       Kustomize replicas (e.g. --kustomize-replica my-development=2 --kustomize-replica my-statefulset=4)
+# @option --kustomize-version <string>            Kustomize version
+# @option --nameprefix <string>                   Kustomize nameprefix
+# @option --namesuffix <string>                   Kustomize namesuffix
+# @option -p --parameter <stringArray>            set a parameter override (e.g. -p guestbook=image=example/guestbook:latest)
+# @option --path <string>                         Path in repository to the app directory, ignored if a file is set
+# @option --plugin-env <stringArray>              Additional plugin envs
+# @option --project <string>                      Application project name
+# @option --ref <string>                          Ref is reference to another source within sources field
+# @option --release-name <string>                 Helm release-name
+# @option --repo <string>                         Repository URL, ignored if a file is set
+# @option --revision <string>                     The tracking source branch, tag, commit or Helm chart version the application will sync to
+# @option --revision-history-limit <int>          How many items to keep in revision history (default 10)
+# @flag --self-heal                               Set self healing when sync is automated
+# @option --sync-option <Prune=false>             Add or remove a sync option, e.g add Prune=false.
+# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: manual (aliases of manual: none), automated)
+# @option --sync-retry-backoff-duration <duration>  Sync retry backoff base duration.
+# @option --sync-retry-backoff-factor <int>       Factor multiplies the base duration after each failed sync retry (default 2)
+# @option --sync-retry-backoff-max-duration <duration>  Max sync retry backoff duration.
+# @option --sync-retry-limit <int>                Max number of allowed sync retries
+# @flag --validate                                Validation of repo and cluster (default true)
+# @option --values <stringArray>                  Helm values file(s) to use
+# @option --values-literal-file <string>          Filename or URL to import as a literal Helm values block
+# @option --auth-token <string>                   Authentication token
+# @option --client-crt <string>                   Client certificate file
+# @option --client-crt-key <string>               Client certificate key file
+# @option --config <string>                       Path to Argo CD config (default "/home/lqt/.config/argocd/config")
+# @option --controller-name <string>              Name of the Argo CD Application controller; set this or the ARGOCD_APPLICATION_CONTROLLER_NAME environment variable when the controller's name label differs from the default, for example when installing via the Helm chart (default "argocd-application-controller")
+# @flag --core                                    If set to true then CLI talks directly to Kubernetes instead of talking to Argo CD API server
+# @flag --grpc-web                                Enables gRPC-web protocol.
+# @option --grpc-web-root-path <string>           Enables gRPC-web protocol.
+# @option -H --header <strings>                   Sets additional header to all requests made by Argo CD CLI.
+# @option --http-retry-max <int>                  Maximum number of retries to establish http connection to Argo CD server
+# @flag --insecure                                Skip server certificate and domain verification
+# @option --kube-context <string>                 Directs the command to the given kube-context
+# @option --logformat <string>                    Set the logging format.
+# @option --loglevel <string>                     Set the logging level.
+# @flag --plaintext                               Disable TLS
+# @flag --port-forward                            Connect to a random argocd-server port using port forwarding
+# @option --port-forward-namespace <string>       Namespace name which should be used for port forwarding
+# @option --redis-haproxy-name <string>           Name of the Redis HA Proxy; set this or the ARGOCD_REDIS_HAPROXY_NAME environment variable when the HA Proxy's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis-ha-haproxy")
+# @option --redis-name <string>                   Name of the Redis deployment; set this or the ARGOCD_REDIS_NAME environment variable when the Redis's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis")
+# @option --repo-server-name <string>             Name of the Argo CD Repo server; set this or the ARGOCD_REPO_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-repo-server")
+# @option --server <string>                       Argo CD server address
+# @option --server-crt <string>                   Server certificate file
+# @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
+# @arg appname
+app::add-source() {
+    :
+}
+# }}} argocd app add-source
 
 # {{{ argocd app create
 # @cmd Create an application
@@ -2667,6 +2756,7 @@ app::actions::run() {
 # @flag --kustomize-force-common-annotation       Force common annotations in Kustomize
 # @flag --kustomize-force-common-label            Force common labels in Kustomize
 # @option --kustomize-image <stringArray>         Kustomize images (e.g. --kustomize-image node:8.15.0 --kustomize-image mysql=mariadb,alpine@sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d)
+# @flag --kustomize-label-without-selector        Do not apply common label to selectors or templates
 # @option --kustomize-namespace <string>          Kustomize namespace
 # @option --kustomize-replica <stringArray>       Kustomize replicas (e.g. --kustomize-replica my-development=2 --kustomize-replica my-statefulset=4)
 # @option --kustomize-version <string>            Kustomize version
@@ -2678,6 +2768,7 @@ app::actions::run() {
 # @option --path <string>                         Path in repository to the app directory, ignored if a file is set
 # @option --plugin-env <stringArray>              Additional plugin envs
 # @option --project <string>                      Application project name
+# @option --ref <string>                          Ref is reference to another source within sources field
 # @option --release-name <string>                 Helm release-name
 # @option --repo <string>                         Repository URL, ignored if a file is set
 # @option --revision <string>                     The tracking source branch, tag, commit or Helm chart version the application will sync to
@@ -2685,7 +2776,7 @@ app::actions::run() {
 # @flag --self-heal                               Set self healing when sync is automated
 # @flag --set-finalizer                           Sets deletion finalizer on the application, application resources will be cascaded on deletion
 # @option --sync-option <Prune=false>             Add or remove a sync option, e.g add Prune=false.
-# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: none, automated)
+# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: manual (aliases of manual: none), automated)
 # @option --sync-retry-backoff-duration <duration>  Sync retry backoff base duration.
 # @option --sync-retry-backoff-factor <int>       Factor multiplies the base duration after each failed sync retry (default 2)
 # @option --sync-retry-backoff-max-duration <duration>  Max sync retry backoff duration.
@@ -2719,16 +2810,18 @@ app::actions::run() {
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::create() {
-    :;
+    :
 }
 # }}} argocd app create
 
 # {{{ argocd app delete
 # @cmd Delete an application
+# @option -N --app-namespace <string>          Namespace where the application will be deleted from
 # @flag --cascade                              Perform a cascaded deletion of all application resources (default true)
 # @flag -h --help                              help for delete
 # @option -p --propagation-policy <string>     Specify propagation policy for deletion of application's resources.
 # @option -l --selector <string>               Delete all apps with matching label.
+# @flag --wait                                 Wait until deletion of the application(s) completes
 # @flag -y --yes                               Turn off prompting to confirm cascaded deletion of application resources
 # @option --auth-token <string>                Authentication token
 # @option --client-crt <string>                Client certificate file
@@ -2755,7 +2848,7 @@ app::create() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::delete() {
-    :;
+    :
 }
 # }}} argocd app delete
 
@@ -2795,12 +2888,13 @@ app::delete() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::delete-resource() {
-    :;
+    :
 }
 # }}} argocd app delete-resource
 
 # {{{ argocd app diff
 # @cmd Perform a diff against the target and live state.
+# @option -N --app-namespace <string>          Only render the difference in namespace
 # @flag --exit-code                            Return non-zero exit code when there is a diff (default true)
 # @flag --hard-refresh                         Refresh application data as well as target manifests cache
 # @flag -h --help                              help for diff
@@ -2810,7 +2904,9 @@ app::delete-resource() {
 # @option --local-repo-root <string>           Path to the repository root.
 # @flag --refresh                              Refresh application data when retrieving
 # @option --revision <string>                  Compare live app to a particular revision
+# @option --revisions <stringArray>            Show manifests at specific revisions for source position in source-positions
 # @flag --server-side-generate                 Used with --local, this will send your manifests to the server for diffing
+# @option --source-positions <int64Slice>      List of source positions.
 # @option --auth-token <string>                Authentication token
 # @option --client-crt <string>                Client certificate file
 # @option --client-crt-key <string>            Client certificate key file
@@ -2836,12 +2932,13 @@ app::delete-resource() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::diff() {
-    :;
+    :
 }
 # }}} argocd app diff
 
 # {{{ argocd app edit
 # @cmd Edit application
+# @option -N --app-namespace <string>          Only edit application in namespace
 # @flag -h --help                              help for edit
 # @option --auth-token <string>                Authentication token
 # @option --client-crt <string>                Client certificate file
@@ -2868,12 +2965,13 @@ app::diff() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::edit() {
-    :;
+    :
 }
 # }}} argocd app edit
 
 # {{{ argocd app get
 # @cmd Get application details
+# @option -N --app-namespace <string>          Only get application from namespace
 # @flag --hard-refresh                         Refresh application data as well as target manifests cache
 # @flag -h --help                              help for get
 # @option -o --output <string>                 Output format.
@@ -2905,12 +3003,13 @@ app::edit() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::get() {
-    :;
+    :
 }
 # }}} argocd app get
 
 # {{{ argocd app history
 # @cmd Show application deployment history
+# @option -N --app-namespace <string>          Only show application deployment history in namespace
 # @flag -h --help                              help for history
 # @option -o --output <string>                 Output format.
 # @option --auth-token <string>                Authentication token
@@ -2938,7 +3037,7 @@ app::get() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::history() {
-    :;
+    :
 }
 # }}} argocd app history
 
@@ -2975,7 +3074,7 @@ app::history() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 app::list() {
-    :;
+    :
 }
 # }}} argocd app list
 
@@ -3018,7 +3117,7 @@ app::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::logs() {
-    :;
+    :
 }
 # }}} argocd app logs
 
@@ -3028,7 +3127,9 @@ app::logs() {
 # @option --local <string>                     If set, show locally-generated manifests.
 # @option --local-repo-root <string>           Path to the local repository root.
 # @option --revision <string>                  Show manifests at a specific revision
+# @option --revisions <stringArray>            Show manifests at specific revisions for the source at position in source-positions
 # @option --source <string>                    Source of manifests.
+# @option --source-positions <int64Slice>      List of source positions.
 # @option --auth-token <string>                Authentication token
 # @option --client-crt <string>                Client certificate file
 # @option --client-crt-key <string>            Client certificate key file
@@ -3054,12 +3155,13 @@ app::logs() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::manifests() {
-    :;
+    :
 }
 # }}} argocd app manifests
 
 # {{{ argocd app patch
 # @cmd Patch application
+# @option -N --app-namespace <string>          Only patch application in namespace
 # @flag -h --help                              help for patch
 # @option --patch <string>                     Patch body
 # @option --type <string>                      The type of patch being provided; one of [json merge] (default "json")
@@ -3088,7 +3190,7 @@ app::manifests() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::patch() {
-    :;
+    :
 }
 # }}} argocd app patch
 
@@ -3128,9 +3230,43 @@ app::patch() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::patch-resource() {
-    :;
+    :
 }
 # }}} argocd app patch-resource
+
+# {{{ argocd app remove-source
+# @cmd Remove a source from multiple sources application.
+# @option -N --app-namespace <string>          Namespace of the target application where the source will be appended
+# @flag -h --help                              help for remove-source
+# @option --source-position <int>              Position of the source from the list of sources of the app.
+# @option --auth-token <string>                Authentication token
+# @option --client-crt <string>                Client certificate file
+# @option --client-crt-key <string>            Client certificate key file
+# @option --config <string>                    Path to Argo CD config (default "/home/lqt/.config/argocd/config")
+# @option --controller-name <string>           Name of the Argo CD Application controller; set this or the ARGOCD_APPLICATION_CONTROLLER_NAME environment variable when the controller's name label differs from the default, for example when installing via the Helm chart (default "argocd-application-controller")
+# @flag --core                                 If set to true then CLI talks directly to Kubernetes instead of talking to Argo CD API server
+# @flag --grpc-web                             Enables gRPC-web protocol.
+# @option --grpc-web-root-path <string>        Enables gRPC-web protocol.
+# @option -H --header <strings>                Sets additional header to all requests made by Argo CD CLI.
+# @option --http-retry-max <int>               Maximum number of retries to establish http connection to Argo CD server
+# @flag --insecure                             Skip server certificate and domain verification
+# @option --kube-context <string>              Directs the command to the given kube-context
+# @option --logformat <string>                 Set the logging format.
+# @option --loglevel <string>                  Set the logging level.
+# @flag --plaintext                            Disable TLS
+# @flag --port-forward                         Connect to a random argocd-server port using port forwarding
+# @option --port-forward-namespace <string>    Namespace name which should be used for port forwarding
+# @option --redis-haproxy-name <string>        Name of the Redis HA Proxy; set this or the ARGOCD_REDIS_HAPROXY_NAME environment variable when the HA Proxy's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis-ha-haproxy")
+# @option --redis-name <string>                Name of the Redis deployment; set this or the ARGOCD_REDIS_NAME environment variable when the Redis's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis")
+# @option --repo-server-name <string>          Name of the Argo CD Repo server; set this or the ARGOCD_REPO_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-repo-server")
+# @option --server <string>                    Argo CD server address
+# @option --server-crt <string>                Server certificate file
+# @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
+# @arg appname
+app::remove-source() {
+    :
+}
+# }}} argocd app remove-source
 
 # {{{ argocd app resources
 # @cmd List resource of application
@@ -3163,12 +3299,13 @@ app::patch-resource() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::resources() {
-    :;
+    :
 }
 # }}} argocd app resources
 
 # {{{ argocd app rollback
 # @cmd Rollback application to a previous deployed version by History ID, omitted will Rollback to the previous version
+# @option -N --app-namespace <string>          Rollback application in namespace
 # @flag -h --help                              help for rollback
 # @option -o --output <string>                 Output format.
 # @flag --prune                                Allow deleting unexpected resources
@@ -3199,13 +3336,14 @@ app::resources() {
 # @arg appname
 # @arg id
 app::rollback() {
-    :;
+    :
 }
 # }}} argocd app rollback
 
 # {{{ argocd app set
 # @cmd Set application parameters
 # @flag --allow-empty                             Set allow zero live resources when sync is automated
+# @option -N --app-namespace <string>             Set application parameters in namespace
 # @flag --auto-prune                              Set automatic pruning when sync is automated
 # @option --config-management-plugin <string>     Config management plugin name
 # @option --dest-name <string>                    K8s cluster Name (e.g. minikube)
@@ -3234,6 +3372,7 @@ app::rollback() {
 # @flag --kustomize-force-common-annotation       Force common annotations in Kustomize
 # @flag --kustomize-force-common-label            Force common labels in Kustomize
 # @option --kustomize-image <stringArray>         Kustomize images (e.g. --kustomize-image node:8.15.0 --kustomize-image mysql=mariadb,alpine@sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d)
+# @flag --kustomize-label-without-selector        Do not apply common label to selectors or templates
 # @option --kustomize-namespace <string>          Kustomize namespace
 # @option --kustomize-replica <stringArray>       Kustomize replicas (e.g. --kustomize-replica my-development=2 --kustomize-replica my-statefulset=4)
 # @option --kustomize-version <string>            Kustomize version
@@ -3243,13 +3382,15 @@ app::rollback() {
 # @option --path <string>                         Path in repository to the app directory, ignored if a file is set
 # @option --plugin-env <stringArray>              Additional plugin envs
 # @option --project <string>                      Application project name
+# @option --ref <string>                          Ref is reference to another source within sources field
 # @option --release-name <string>                 Helm release-name
 # @option --repo <string>                         Repository URL, ignored if a file is set
 # @option --revision <string>                     The tracking source branch, tag, commit or Helm chart version the application will sync to
 # @option --revision-history-limit <int>          How many items to keep in revision history (default 10)
 # @flag --self-heal                               Set self healing when sync is automated
+# @option --source-position <int>                 Position of the source from the list of sources of the app.
 # @option --sync-option <Prune=false>             Add or remove a sync option, e.g add Prune=false.
-# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: none, automated)
+# @option --sync-policy[auto|automatic] <string>  Set the sync policy (one of: manual (aliases of manual: none), automated)
 # @option --sync-retry-backoff-duration <duration>  Sync retry backoff base duration.
 # @option --sync-retry-backoff-factor <int>       Factor multiplies the base duration after each failed sync retry (default 2)
 # @option --sync-retry-backoff-max-duration <duration>  Max sync retry backoff duration.
@@ -3282,12 +3423,13 @@ app::rollback() {
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::set() {
-    :;
+    :
 }
 # }}} argocd app set
 
 # {{{ argocd app sync
 # @cmd Sync an application to its target state
+# @option -N --app-namespace <string>            Only sync an application in namespace
 # @flag --apply-out-of-sync-only                 Sync only out-of-sync resources
 # @flag --assumeYes                              Assume yes as answer for all user queries or prompts
 # @flag --async                                  Do not wait for application to sync before continuing
@@ -3310,8 +3452,10 @@ app::set() {
 # @option --retry-backoff-max-duration <duration>  Max retry backoff duration.
 # @option --retry-limit <int>                    Max number of allowed sync retries
 # @option --revision <string>                    Sync to a specific revision.
+# @option --revisions <stringArray>              Show manifests at specific revisions for source position in source-positions
 # @option -l --selector <string>                 Sync apps that match this label.
 # @flag --server-side                            Use server-side apply while syncing the application
+# @option --source-positions <int64Slice>        List of source positions.
 # @option --strategy <string>                    Sync strategy (one of: apply|hook)
 # @option --timeout <uint>                       Time out after this many seconds
 # @option --auth-token <string>                  Authentication token
@@ -3339,7 +3483,7 @@ app::set() {
 # @option --server-name <string>                 Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname*
 app::sync() {
-    :;
+    :
 }
 # }}} argocd app sync
 
@@ -3371,12 +3515,13 @@ app::sync() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname
 app::terminate-op() {
-    :;
+    :
 }
 # }}} argocd app terminate-op
 
 # {{{ argocd app unset
 # @cmd Unset application parameters
+# @option -N --app-namespace <string>          Unset application parameters in namespace
 # @flag -h --help                              help for unset
 # @flag --ignore-missing-value-files           Unset the helm ignore-missing-value-files option (revert to false)
 # @option --kustomize-image <stringArray>      Kustomize images name (e.g. --kustomize-image node --kustomize-image mysql)
@@ -3388,6 +3533,8 @@ app::terminate-op() {
 # @option -p --parameter <stringArray>         Unset a parameter override (e.g. -p guestbook=image)
 # @flag --pass-credentials                     Unset passCredentials
 # @option --plugin-env <stringArray>           Unset plugin env variables (e.g --plugin-env name)
+# @flag --ref                                  Unset ref on the source
+# @option --source-position <int>              Position of the source from the list of sources of the app.
 # @option --values <stringArray>               Unset one or more Helm values files
 # @flag --values-literal                       Unset literal Helm values block
 # @option --auth-token <string>                Authentication token
@@ -3416,13 +3563,15 @@ app::terminate-op() {
 # @arg appname
 # @arg parameters*
 app::unset() {
-    :;
+    :
 }
 # }}} argocd app unset
 
 # {{{ argocd app wait
 # @cmd Wait for an application to reach a synced and healthy state
+# @option -N --app-namespace <string>          Only wait for an application  in namespace
 # @flag --degraded                             Wait for degraded
+# @flag --delete                               Wait for delete
 # @flag --health                               Wait for health
 # @flag -h --help                              help for wait
 # @flag --operation                            Wait for pending operations
@@ -3457,7 +3606,7 @@ app::unset() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appname*
 app::wait() {
-    :;
+    :
 }
 # }}} argocd app wait
 # }} argocd app
@@ -3508,7 +3657,7 @@ app::wait() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 appset() {
-    :;
+    :
 }
 
 # {{{ argocd appset create
@@ -3539,7 +3688,7 @@ appset() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 appset::create() {
-    :;
+    :
 }
 # }}} argocd appset create
 
@@ -3571,7 +3720,7 @@ appset::create() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 appset::delete() {
-    :;
+    :
 }
 # }}} argocd appset delete
 
@@ -3605,7 +3754,7 @@ appset::delete() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg appsetname
 appset::get() {
-    :;
+    :
 }
 # }}} argocd appset get
 
@@ -3640,7 +3789,7 @@ appset::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 appset::list() {
-    :;
+    :
 }
 # }}} argocd appset list
 # }} argocd appset
@@ -3691,7 +3840,7 @@ appset::list() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 cert() {
-    :;
+    :
 }
 
 # {{{ argocd cert add-ssh
@@ -3724,7 +3873,7 @@ cert() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 cert::add-ssh() {
-    :;
+    :
 }
 # }}} argocd cert add-ssh
 
@@ -3758,7 +3907,7 @@ cert::add-ssh() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg servername
 cert::add-tls() {
-    :;
+    :
 }
 # }}} argocd cert add-tls
 
@@ -3793,7 +3942,7 @@ cert::add-tls() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 cert::list() {
-    :;
+    :
 }
 # }}} argocd cert list
 
@@ -3827,7 +3976,7 @@ cert::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg reposerver
 cert::rm() {
-    :;
+    :
 }
 # }}} argocd cert rm
 # }} argocd cert
@@ -3878,13 +4027,14 @@ cert::rm() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 cluster() {
-    :;
+    :
 }
 
 # {{{ argocd cluster add
 # @cmd argocd cluster add CONTEXT
 # @option --annotation <stringArray>              Set metadata annotations (e.g. --annotation key=value)
 # @option --aws-cluster-name <string>             AWS Cluster name if set then aws cli eks token command will be used to access cluster
+# @option --aws-profile <string>                  Optional AWS profile.
 # @option --aws-role-arn <string>                 Optional AWS role arn.
 # @option --cluster-endpoint <string>             Cluster endpoint to use.
 # @flag --cluster-resources                       Indicates if cluster level resources should be managed.
@@ -3930,7 +4080,7 @@ cluster() {
 # @option --server-name <string>                  Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg context
 cluster::add() {
-    :;
+    :
 }
 # }}} argocd cluster add
 
@@ -3963,7 +4113,7 @@ cluster::add() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg server-name <SERVER/NAME>
 cluster::get() {
-    :;
+    :
 }
 # }}} argocd cluster get
 
@@ -3995,7 +4145,7 @@ cluster::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 cluster::list() {
-    :;
+    :
 }
 # }}} argocd cluster list
 
@@ -4028,7 +4178,7 @@ cluster::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg server-name <SERVER/NAME>
 cluster::rm() {
-    :;
+    :
 }
 # }}} argocd cluster rm
 
@@ -4060,7 +4210,7 @@ cluster::rm() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg server-name <SERVER/NAME>
 cluster::rotate-auth() {
-    :;
+    :
 }
 # }}} argocd cluster rotate-auth
 
@@ -4094,7 +4244,7 @@ cluster::rotate-auth() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg name
 cluster::set() {
-    :;
+    :
 }
 # }}} argocd cluster set
 # }} argocd cluster
@@ -4127,7 +4277,7 @@ cluster::set() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg shell
 completion() {
-    :;
+    :
 }
 # }} argocd completion
 
@@ -4160,7 +4310,7 @@ completion() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg context
 context() {
-    :;
+    :
 }
 # }} argocd context
 
@@ -4210,7 +4360,7 @@ context() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 gpg() {
-    :;
+    :
 }
 
 # {{{ argocd gpg add
@@ -4241,7 +4391,7 @@ gpg() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 gpg::add() {
-    :;
+    :
 }
 # }}} argocd gpg add
 
@@ -4274,7 +4424,7 @@ gpg::add() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg keyid
 gpg::get() {
-    :;
+    :
 }
 # }}} argocd gpg get
 
@@ -4306,7 +4456,7 @@ gpg::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 gpg::list() {
-    :;
+    :
 }
 # }}} argocd gpg list
 
@@ -4338,7 +4488,7 @@ gpg::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg keyid
 gpg::rm() {
-    :;
+    :
 }
 # }}} argocd gpg rm
 # }} argocd gpg
@@ -4377,7 +4527,7 @@ gpg::rm() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg server
 login() {
-    :;
+    :
 }
 # }} argocd login
 
@@ -4409,7 +4559,7 @@ login() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg context
 logout() {
-    :;
+    :
 }
 # }} argocd logout
 
@@ -4459,7 +4609,7 @@ logout() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 proj() {
-    :;
+    :
 }
 
 # {{{ argocd proj add-destination
@@ -4493,7 +4643,7 @@ proj() {
 # @arg server-name <SERVER/NAME>
 # @arg namespace
 proj::add-destination() {
-    :;
+    :
 }
 # }}} argocd proj add-destination
 
@@ -4528,7 +4678,7 @@ proj::add-destination() {
 # @arg group
 # @arg kind
 proj::add-orphaned-ignore() {
-    :;
+    :
 }
 # }}} argocd proj add-orphaned-ignore
 
@@ -4561,7 +4711,7 @@ proj::add-orphaned-ignore() {
 # @arg project
 # @arg key-id
 proj::add-signature-key() {
-    :;
+    :
 }
 # }}} argocd proj add-signature-key
 
@@ -4594,9 +4744,42 @@ proj::add-signature-key() {
 # @arg project
 # @arg url
 proj::add-source() {
-    :;
+    :
 }
 # }}} argocd proj add-source
+
+# {{{ argocd proj add-source-namespace
+# @cmd Add source namespace to the AppProject
+# @flag -h --help                              help for add-source-namespace
+# @option --auth-token <string>                Authentication token
+# @option --client-crt <string>                Client certificate file
+# @option --client-crt-key <string>            Client certificate key file
+# @option --config <string>                    Path to Argo CD config (default "/home/lqt/.config/argocd/config")
+# @option --controller-name <string>           Name of the Argo CD Application controller; set this or the ARGOCD_APPLICATION_CONTROLLER_NAME environment variable when the controller's name label differs from the default, for example when installing via the Helm chart (default "argocd-application-controller")
+# @flag --core                                 If set to true then CLI talks directly to Kubernetes instead of talking to Argo CD API server
+# @flag --grpc-web                             Enables gRPC-web protocol.
+# @option --grpc-web-root-path <string>        Enables gRPC-web protocol.
+# @option -H --header <strings>                Sets additional header to all requests made by Argo CD CLI.
+# @option --http-retry-max <int>               Maximum number of retries to establish http connection to Argo CD server
+# @flag --insecure                             Skip server certificate and domain verification
+# @option --kube-context <string>              Directs the command to the given kube-context
+# @option --logformat <string>                 Set the logging format.
+# @option --loglevel <string>                  Set the logging level.
+# @flag --plaintext                            Disable TLS
+# @flag --port-forward                         Connect to a random argocd-server port using port forwarding
+# @option --port-forward-namespace <string>    Namespace name which should be used for port forwarding
+# @option --redis-haproxy-name <string>        Name of the Redis HA Proxy; set this or the ARGOCD_REDIS_HAPROXY_NAME environment variable when the HA Proxy's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis-ha-haproxy")
+# @option --redis-name <string>                Name of the Redis deployment; set this or the ARGOCD_REDIS_NAME environment variable when the Redis's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis")
+# @option --repo-server-name <string>          Name of the Argo CD Repo server; set this or the ARGOCD_REPO_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-repo-server")
+# @option --server <string>                    Argo CD server address
+# @option --server-crt <string>                Server certificate file
+# @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
+# @arg project
+# @arg namespace
+proj::add-source-namespace() {
+    :
+}
+# }}} argocd proj add-source-namespace
 
 # {{{ argocd proj allow-cluster-resource
 # @cmd Adds a cluster-scoped API resource to the allow list and removes it from deny list
@@ -4629,7 +4812,7 @@ proj::add-source() {
 # @arg group
 # @arg kind
 proj::allow-cluster-resource() {
-    :;
+    :
 }
 # }}} argocd proj allow-cluster-resource
 
@@ -4664,7 +4847,7 @@ proj::allow-cluster-resource() {
 # @arg group
 # @arg kind
 proj::allow-namespace-resource() {
-    :;
+    :
 }
 # }}} argocd proj allow-namespace-resource
 
@@ -4709,7 +4892,7 @@ proj::allow-namespace-resource() {
 # @option --server-name <string>                   Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::create() {
-    :;
+    :
 }
 # }}} argocd proj create
 
@@ -4741,7 +4924,7 @@ proj::create() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::delete() {
-    :;
+    :
 }
 # }}} argocd proj delete
 
@@ -4776,7 +4959,7 @@ proj::delete() {
 # @arg group
 # @arg kind
 proj::deny-cluster-resource() {
-    :;
+    :
 }
 # }}} argocd proj deny-cluster-resource
 
@@ -4811,7 +4994,7 @@ proj::deny-cluster-resource() {
 # @arg group
 # @arg kind
 proj::deny-namespace-resource() {
-    :;
+    :
 }
 # }}} argocd proj deny-namespace-resource
 
@@ -4843,7 +5026,7 @@ proj::deny-namespace-resource() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::edit() {
-    :;
+    :
 }
 # }}} argocd proj edit
 
@@ -4876,7 +5059,7 @@ proj::edit() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::get() {
-    :;
+    :
 }
 # }}} argocd proj get
 
@@ -4908,7 +5091,7 @@ proj::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 proj::list() {
-    :;
+    :
 }
 # }}} argocd proj list
 
@@ -4942,7 +5125,7 @@ proj::list() {
 # @arg server
 # @arg namespace
 proj::remove-destination() {
-    :;
+    :
 }
 # }}} argocd proj remove-destination
 
@@ -4977,7 +5160,7 @@ proj::remove-destination() {
 # @arg group
 # @arg kind
 proj::remove-orphaned-ignore() {
-    :;
+    :
 }
 # }}} argocd proj remove-orphaned-ignore
 
@@ -5010,7 +5193,7 @@ proj::remove-orphaned-ignore() {
 # @arg project
 # @arg key-id
 proj::remove-signature-key() {
-    :;
+    :
 }
 # }}} argocd proj remove-signature-key
 
@@ -5043,9 +5226,42 @@ proj::remove-signature-key() {
 # @arg project
 # @arg url
 proj::remove-source() {
-    :;
+    :
 }
 # }}} argocd proj remove-source
+
+# {{{ argocd proj remove-source-namespace
+# @cmd Removes the source namespace from the AppProject
+# @flag -h --help                              help for remove-source-namespace
+# @option --auth-token <string>                Authentication token
+# @option --client-crt <string>                Client certificate file
+# @option --client-crt-key <string>            Client certificate key file
+# @option --config <string>                    Path to Argo CD config (default "/home/lqt/.config/argocd/config")
+# @option --controller-name <string>           Name of the Argo CD Application controller; set this or the ARGOCD_APPLICATION_CONTROLLER_NAME environment variable when the controller's name label differs from the default, for example when installing via the Helm chart (default "argocd-application-controller")
+# @flag --core                                 If set to true then CLI talks directly to Kubernetes instead of talking to Argo CD API server
+# @flag --grpc-web                             Enables gRPC-web protocol.
+# @option --grpc-web-root-path <string>        Enables gRPC-web protocol.
+# @option -H --header <strings>                Sets additional header to all requests made by Argo CD CLI.
+# @option --http-retry-max <int>               Maximum number of retries to establish http connection to Argo CD server
+# @flag --insecure                             Skip server certificate and domain verification
+# @option --kube-context <string>              Directs the command to the given kube-context
+# @option --logformat <string>                 Set the logging format.
+# @option --loglevel <string>                  Set the logging level.
+# @flag --plaintext                            Disable TLS
+# @flag --port-forward                         Connect to a random argocd-server port using port forwarding
+# @option --port-forward-namespace <string>    Namespace name which should be used for port forwarding
+# @option --redis-haproxy-name <string>        Name of the Redis HA Proxy; set this or the ARGOCD_REDIS_HAPROXY_NAME environment variable when the HA Proxy's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis-ha-haproxy")
+# @option --redis-name <string>                Name of the Redis deployment; set this or the ARGOCD_REDIS_NAME environment variable when the Redis's name label differs from the default, for example when installing via the Helm chart (default "argocd-redis")
+# @option --repo-server-name <string>          Name of the Argo CD Repo server; set this or the ARGOCD_REPO_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-repo-server")
+# @option --server <string>                    Argo CD server address
+# @option --server-crt <string>                Server certificate file
+# @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
+# @arg project
+# @arg namespace
+proj::remove-source-namespace() {
+    :
+}
+# }}} argocd proj remove-source-namespace
 
 # {{{ argocd proj role
 # @cmd Manage a project's roles
@@ -5074,7 +5290,7 @@ proj::remove-source() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 proj::role() {
-    :;
+    :
 }
 
 # {{{{ argocd proj role add-group
@@ -5107,7 +5323,7 @@ proj::role() {
 # @arg role-name
 # @arg group-claim
 proj::role::add-group() {
-    :;
+    :
 }
 # }}}} argocd proj role add-group
 
@@ -5143,7 +5359,7 @@ proj::role::add-group() {
 # @arg project
 # @arg role-name
 proj::role::add-policy() {
-    :;
+    :
 }
 # }}}} argocd proj role add-policy
 
@@ -5177,7 +5393,7 @@ proj::role::add-policy() {
 # @arg project
 # @arg role-name
 proj::role::create() {
-    :;
+    :
 }
 # }}}} argocd proj role create
 
@@ -5213,7 +5429,7 @@ proj::role::create() {
 # @arg project
 # @arg role-name
 proj::role::create-token() {
-    :;
+    :
 }
 # }}}} argocd proj role create-token
 
@@ -5246,7 +5462,7 @@ proj::role::create-token() {
 # @arg project
 # @arg role-name
 proj::role::delete() {
-    :;
+    :
 }
 # }}}} argocd proj role delete
 
@@ -5280,7 +5496,7 @@ proj::role::delete() {
 # @arg role-name
 # @arg issued-at
 proj::role::delete-token() {
-    :;
+    :
 }
 # }}}} argocd proj role delete-token
 
@@ -5313,7 +5529,7 @@ proj::role::delete-token() {
 # @arg project
 # @arg role-name
 proj::role::get() {
-    :;
+    :
 }
 # }}}} argocd proj role get
 
@@ -5346,7 +5562,7 @@ proj::role::get() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::role::list() {
-    :;
+    :
 }
 # }}}} argocd proj role list
 
@@ -5380,7 +5596,7 @@ proj::role::list() {
 # @arg project
 # @arg role-name
 proj::role::list-tokens() {
-    :;
+    :
 }
 # }}}} argocd proj role list-tokens
 
@@ -5414,7 +5630,7 @@ proj::role::list-tokens() {
 # @arg role-name
 # @arg group-claim
 proj::role::remove-group() {
-    :;
+    :
 }
 # }}}} argocd proj role remove-group
 
@@ -5450,7 +5666,7 @@ proj::role::remove-group() {
 # @arg project
 # @arg role-name
 proj::role::remove-policy() {
-    :;
+    :
 }
 # }}}} argocd proj role remove-policy
 # }}} argocd proj role
@@ -5494,7 +5710,7 @@ proj::role::remove-policy() {
 # @option --server-name <string>                   Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::set() {
-    :;
+    :
 }
 # }}} argocd proj set
 
@@ -5528,7 +5744,7 @@ proj::set() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 proj::windows() {
-    :;
+    :
 }
 
 # {{{{ argocd proj windows add
@@ -5567,7 +5783,7 @@ proj::windows() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::windows::add() {
-    :;
+    :
 }
 # }}}} argocd proj windows add
 
@@ -5600,7 +5816,7 @@ proj::windows::add() {
 # @arg project
 # @arg id
 proj::windows::delete() {
-    :;
+    :
 }
 # }}}} argocd proj windows delete
 
@@ -5633,7 +5849,7 @@ proj::windows::delete() {
 # @arg project
 # @arg id
 proj::windows::disable-manual-sync() {
-    :;
+    :
 }
 # }}}} argocd proj windows disable-manual-sync
 
@@ -5666,7 +5882,7 @@ proj::windows::disable-manual-sync() {
 # @arg project
 # @arg id
 proj::windows::enable-manual-sync() {
-    :;
+    :
 }
 # }}}} argocd proj windows enable-manual-sync
 
@@ -5699,7 +5915,7 @@ proj::windows::enable-manual-sync() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg project
 proj::windows::list() {
-    :;
+    :
 }
 # }}}} argocd proj windows list
 
@@ -5738,7 +5954,7 @@ proj::windows::list() {
 # @arg project
 # @arg id
 proj::windows::update() {
-    :;
+    :
 }
 # }}}} argocd proj windows update
 # }}} argocd proj windows
@@ -5773,7 +5989,7 @@ proj::windows::update() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 relogin() {
-    :;
+    :
 }
 # }} argocd relogin
 
@@ -5823,7 +6039,7 @@ relogin() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 repo() {
-    :;
+    :
 }
 
 # {{{ argocd repo add
@@ -5874,7 +6090,7 @@ repo() {
 # @option --server-name <string>                 Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg repourl
 repo::add() {
-    :;
+    :
 }
 # }}} argocd repo add
 
@@ -5907,7 +6123,7 @@ repo::add() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 repo::get() {
-    :;
+    :
 }
 # }}} argocd repo get
 
@@ -5940,7 +6156,7 @@ repo::get() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 repo::list() {
-    :;
+    :
 }
 # }}} argocd repo list
 
@@ -5972,7 +6188,7 @@ repo::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg repo
 repo::rm() {
-    :;
+    :
 }
 # }}} argocd repo rm
 # }} argocd repo
@@ -6023,7 +6239,7 @@ repo::rm() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 repocreds() {
-    :;
+    :
 }
 
 # {{{ argocd repocreds add
@@ -6068,7 +6284,7 @@ repocreds() {
 # @option --server-name <string>                 Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg repourl
 repocreds::add() {
-    :;
+    :
 }
 # }}} argocd repocreds add
 
@@ -6100,7 +6316,7 @@ repocreds::add() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 repocreds::list() {
-    :;
+    :
 }
 # }}} argocd repocreds list
 
@@ -6132,7 +6348,7 @@ repocreds::list() {
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 # @arg credsurl
 repocreds::rm() {
-    :;
+    :
 }
 # }}} argocd repocreds rm
 # }} argocd repocreds
@@ -6186,7 +6402,7 @@ repocreds::rm() {
 # @option --server-crt <string>                Server certificate file
 # @option --server-name <string>               Name of the Argo CD API server; set this or the ARGOCD_SERVER_NAME environment variable when the server's name label differs from the default, for example when installing via the Helm chart (default "argocd-server")
 version() {
-    :;
+    :
 }
 # }} argocd version
 

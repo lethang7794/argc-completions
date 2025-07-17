@@ -14,7 +14,7 @@
 # @flag --notruncate              don't truncate output
 # @option -o --output*,[`_choice_column`] <list>  define the columns to output
 # @flag --output-all              output all columns
-# @flag -p --pwd                  display information related to login by password.
+# @flag -p --pwd                  display information related to login by password
 # @flag -r --raw                  display in raw mode
 # @flag -s --system-accs          display system accounts
 # @option --time-format <type>    display dates in short, full or iso format

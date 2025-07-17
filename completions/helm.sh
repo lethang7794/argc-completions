@@ -527,6 +527,7 @@ history() {
 # @flag --force                                    force resource updates through a replacement strategy
 # @flag -g --generate-name                         generate the name (and omit the NAME parameter)
 # @flag -h --help                                  help for install
+# @flag --hide-secret                              hide Kubernetes Secrets when also using the --dry-run flag
 # @flag --insecure-skip-tls-verify                 skip tls certificate checks for the chart download
 # @option --key-file <file>                        identify HTTPS client using this SSL key file
 # @option --keyring <file>                         location of public keys used for verification (default "/home/lqt/.gnupg/pubring.gpg")
@@ -1657,6 +1658,7 @@ uninstall() {
 # @flag --enable-dns                               enable DNS lookups when rendering templates
 # @flag --force                                    force resource updates through a replacement strategy
 # @flag -h --help                                  help for upgrade
+# @flag --hide-secret                              hide Kubernetes Secrets when also using the --dry-run flag
 # @option --history-max <int>                      limit the maximum number of revisions saved per release.
 # @flag --insecure-skip-tls-verify                 skip tls certificate checks for the chart download
 # @flag -i --install                               if a release by this name doesn't already exist, run an install

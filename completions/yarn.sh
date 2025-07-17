@@ -4,35 +4,42 @@
 # @arg cmd[`_choice_script`]
 
 # {{ yarn add
-# @cmd Installs a package and any packages that it depends on.
+# @cmd dependencies to the project
+# @flag --json              Format the output as an NDJSON stream
+# @flag -F --fixed          Store dependency tags as-is instead of resolving them
+# @flag -E --exact          Don't use any semver modifier on the resolved range
+# @flag -T --tilde          Use the `~` semver modifier on the resolved range
+# @flag -C --caret          Use the `^` semver modifier on the resolved range
+# @flag -D --dev            Add a package as a dev dependency
+# @flag -P --peer           Add a package as a peer dependency
+# @flag -O --optional       Add / upgrade a package to an optional regular / peer dependency
+# @flag --prefer-dev        Add / upgrade a package to a dev dependency
+# @flag -i --interactive    Reuse the specified package from other workspaces in the project
+# @flag --cached            Reuse the highest version already used somewhere within the project
+# @option --modeChange what artifacts installs generate  0
 add() {
     :;
 }
 # }} yarn add
 
-# {{ yarn audit
-# @cmd Perform a vulnerability audit against the installed packages.
-audit() {
-    :;
-}
-# }} yarn audit
-
-# {{ yarn autoclean
-# @cmd Cleans and removes unnecessary files from package dependencies.
-autoclean() {
-    :;
-}
-# }} yarn autoclean
-
 # {{ yarn bin
-# @cmd Displays the location of the yarn bin folder.
+# @cmd
+# @flag -v --verbose    Print both the binary name and the locator of the package that provides the binary
+# @flag --json          Format the output as an NDJSON stream
 bin() {
     :;
 }
 # }} yarn bin
 
+# {{ yarn get
+# @cmd the path to a binary script
+get() {
+    :;
+}
+# }} yarn get
+
 # {{ yarn cache
-# @cmd Manage yarn cache.
+# @cmd
 cache() {
     :;
 }
@@ -62,15 +69,19 @@ cache::clean() {
 # }}} yarn cache clean
 # }} yarn cache
 
-# {{ yarn check
-# @cmd Verifies that versions of the package dependencies in the current project’s package.json match those in yarn’s lock file.
-check() {
+# {{ yarn remove
+# @cmd the shared cache files
+# @flag -A --all    Apply the operation to all workspaces from the current project
+# @option --modeChange what artifacts installs generate  0
+remove() {
     :;
 }
-# }} yarn check
+# }} yarn remove
 
 # {{ yarn config
-# @cmd Manages the yarn configuration files.
+# @cmd
+# @flag --no-defaults    Omit the default values from the display
+# @flag --json           Format the output as an NDJSON stream
 config() {
     :;
 }
@@ -109,12 +120,581 @@ config::list() {
 # }}} yarn config list
 # }} yarn config
 
+# {{ yarn display
+# @cmd
+display() {
+    :;
+}
+# }} yarn display
+
+# {{ yarn read
+# @cmd
+read() {
+    :;
+}
+# }} yarn read
+
+# {{ yarn set
+# @cmd
+set() {
+    :;
+}
+# }} yarn set
+
+# {{ yarn change
+# @cmd
+change() {
+    :;
+}
+# }} yarn change
+
+# {{ yarn unset
+# @cmd
+unset() {
+    :;
+}
+# }} yarn unset
+
+# {{ yarn a
+# @cmd
+a() {
+    :;
+}
+# }} yarn a
+
+# {{ yarn dedupe
+# @cmd
+# @option -s --strategyThe strategy to use when deduping dependencies  0
+# @flag -c --check    Exit with exit code 1 when duplicates are found, without persisting the dependency tree
+# @flag --json        Format the output as an NDJSON stream
+# @option --modeChange what artifacts installs generate  0
+dedupe() {
+    :;
+}
+# }} yarn dedupe
+
+# {{ yarn deduplicate
+# @cmd dependencies with overlapping ranges
+deduplicate() {
+    :;
+}
+# }} yarn deduplicate
+
+# {{ yarn dlx
+# @cmd
+# @option -p --packageThe package(s) to install before running the command  0
+# @flag -q --quiet    Only report critical errors instead of printing the full install logs
+dlx() {
+    :;
+}
+# }} yarn dlx
+
+# {{ yarn run
+# @cmd a package in a temporary environment
+# @arg script[`_choice_script`]
+run() {
+    :;
+}
+# }} yarn run
+
+# {{ yarn execute
+# @cmd
+execute() {
+    :;
+}
+# }} yarn execute
+
+# {{ yarn explain
+# @cmd
+# @flag --json    Format the output as an NDJSON stream
+explain() {
+    :;
+}
+# }} yarn explain
+
+# {{ yarn an
+# @cmd
+an() {
+    :;
+}
+# }} yarn an
+
+# {{ yarn info
+# @cmd
+# @flag -A --all                         Print versions of a package from the whole project
+# @flag -R --recursive                   Print information for all packages, including transitive dependencies
+# @option -X --extraAn array of requests of extra data provided by plugins  0
+# @option --cache[path|size|checksum]    Print information about the cache entry of a package
+# @flag --dependents                     Print all dependents for each matching package
+# @flag --manifest                       Print data obtained by looking at the package archive (license, homepage, ...)
+# @flag --name-only                      Only print the name for the matching packages
+# @flag --virtuals                       Print each instance of the virtual packages
+# @flag --json                           Format the output as an NDJSON stream
+info() {
+    :;
+}
+# }} yarn info
+
+# {{ yarn see
+# @cmd information related to packages
+see() {
+    :;
+}
+# }} yarn see
+
+# {{ yarn init
+# @cmd
+# @flag -p --private      Initialize a private package
+# @flag -w --workspace    Initialize a workspace root with a `packages/` directory
+# @flag -i --install      Initialize a package with a specific bundle that will be locked in the project
+# @option -n --nameInitialize a package with the given name  0
+init() {
+    :;
+}
+# }} yarn init
+
 # {{ yarn create
-# @cmd Creates new projects from any create-* starter kits.
+# @cmd
+# @option -p --packageThe package to run the provided command from  0
+# @flag -q --quiet    Only report critical errors instead of printing the full install logs
 create() {
     :;
 }
 # }} yarn create
+
+# {{ yarn install
+# @cmd
+# @flag --json                 Format the output as an NDJSON stream
+# @flag --immutable            Abort with an error exit code if the lockfile was to be modified
+# @flag --immutable-cache      Abort with an error exit code if the cache folder was to be modified
+# @flag --refresh-lockfile     Refresh the package metadata stored in the lockfile
+# @flag --check-cache          Always refetch the packages and ensure that their checksums are consistent
+# @flag --check-resolutions    Validates that the package resolutions are coherent
+# @flag --inline-builds        Verbosely print the output of the build steps of dependencies
+# @option --modeChange what artifacts installs generate  0
+install() {
+    :;
+}
+# }} yarn install
+
+# {{ yarn the
+# @cmd
+the() {
+    :;
+}
+# }} yarn the
+
+# {{ yarn link
+# @cmd
+# @flag -A --all         Link all workspaces belonging to the target projects to the current one
+# @flag -p --private     Also link private workspaces belonging to the target projects to the current one
+# @flag -r --relative    Link workspaces using relative paths instead of absolute paths
+link() {
+    :;
+}
+# }} yarn link
+
+# {{ yarn connect
+# @cmd the local project to another one
+connect() {
+    :;
+}
+# }} yarn connect
+
+# {{ yarn node
+# @cmd
+node() {
+    :;
+}
+# }} yarn node
+
+# {{ yarn npm
+# @cmd
+npm() {
+    :;
+}
+# }} yarn npm
+
+# {{ yarn perform
+# @cmd a vulnerability audit against the installed packages
+perform() {
+    :;
+}
+# }} yarn perform
+
+# {{ yarn pack
+# @cmd
+# @flag --install-if-needed    Run a preliminary `yarn install` if the package contains build scripts
+# @flag -n --dry-run           Print the file paths without actually generating the package archive
+# @flag --json                 Format the output as an NDJSON stream
+# @option -o --outCreate the archive at the specified path  0
+pack() {
+    :;
+}
+# }} yarn pack
+
+# {{ yarn generate
+# @cmd a tarball from the active workspace
+generate() {
+    :;
+}
+# }} yarn generate
+
+# {{ yarn patch
+# @cmd
+# @flag -u --update    Reapply local patches that already apply to this packages
+# @flag --json         Format the output as an NDJSON stream
+patch() {
+    :;
+}
+# }} yarn patch
+
+# {{ yarn prepare
+# @cmd a package for patching
+prepare() {
+    :;
+}
+# }} yarn prepare
+
+# {{ yarn patch-commit
+# @cmd
+# @flag -s --save    Add the patch to your resolution entries
+patch-commit() {
+    :;
+}
+# }} yarn patch-commit
+
+# {{ yarn rebuild
+# @cmd
+rebuild() {
+    :;
+}
+# }} yarn rebuild
+
+# {{ yarn enforce
+# @cmd
+enforce() {
+    :;
+}
+# }} yarn enforce
+
+# {{ yarn version
+# @cmd
+# @flag -d --deferred     Prepare the version to be bumped during the next release cycle
+# @flag -i --immediate    Bump the version immediately
+version() {
+    :;
+}
+# }} yarn version
+
+# {{ yarn lock
+# @cmd the Yarn version used by the project
+lock() {
+    :;
+}
+# }} yarn lock
+
+# {{ yarn build
+# @cmd Yarn from master
+build() {
+    :;
+}
+# }} yarn build
+
+# {{ yarn stage
+# @cmd
+# @flag -c --commit     Commit the staged files
+# @flag -r --reset      Remove all files from the staging area
+# @flag -n --dry-run    Print the commit message and the list of modified files without staging / committing
+stage() {
+    :;
+}
+# }} yarn stage
+
+# {{ yarn unlink
+# @cmd
+# @flag -A --all    Unlink all workspaces belonging to the target project from the current one
+unlink() {
+    :;
+}
+# }} yarn unlink
+
+# {{ yarn disconnect
+# @cmd the local project from another one
+disconnect() {
+    :;
+}
+# }} yarn disconnect
+
+# {{ yarn unplug
+# @cmd
+# @flag -A --all          Unplug direct dependencies from the entire project
+# @flag -R --recursive    Unplug both direct and transitive dependencies
+# @flag --json            Format the output as an NDJSON stream
+unplug() {
+    :;
+}
+# }} yarn unplug
+
+# {{ yarn force
+# @cmd the unpacking of a list of packages
+force() {
+    :;
+}
+# }} yarn force
+
+# {{ yarn up
+# @cmd
+# @flag -i --interactive    Offer various choices, depending on the detected upgrade paths
+# @flag -F --fixed          Store dependency tags as-is instead of resolving them
+# @flag -E --exact          Don't use any semver modifier on the resolved range
+# @flag -T --tilde          Use the `~` semver modifier on the resolved range
+# @flag -C --caret          Use the `^` semver modifier on the resolved range
+# @flag -R --recursive      Resolve again ALL resolutions for those packages
+# @option --modeChange what artifacts installs generate  0
+up() {
+    :;
+}
+# }} yarn up
+
+# {{ yarn upgrade
+# @cmd dependencies across the project
+# @arg packages*[`_choice_dependency`]
+upgrade() {
+    :;
+}
+# }} yarn upgrade
+
+# {{ yarn why
+# @cmd
+# @flag -R --recursive    List, for each workspace, what are all the paths that lead to the dependency
+# @flag --json            Format the output as an NDJSON stream
+# @flag --peers           Also print the peer dependencies that match the specified name
+why() {
+    :;
+}
+# }} yarn why
+
+# {{ yarn constraints
+# @cmd
+# @flag --fix     Attempt to automatically fix unambiguous issues, following a multi-pass process
+# @flag --json    Format the output as an NDJSON stream
+constraints() {
+    :;
+}
+# }} yarn constraints
+
+# {{ yarn check
+# @cmd that the project constraints are met
+check() {
+    :;
+}
+# }} yarn check
+
+# {{ yarn query
+# @cmd
+query() {
+    :;
+}
+# }} yarn query
+
+# {{ yarn source
+# @cmd
+source() {
+    :;
+}
+# }} yarn source
+
+# {{ yarn print
+# @cmd the source code for the constraints
+print() {
+    :;
+}
+# }} yarn print
+
+# {{ yarn search
+# @cmd
+search() {
+    :;
+}
+# }} yarn search
+
+# {{ yarn open
+# @cmd
+open() {
+    :;
+}
+# }} yarn open
+
+# {{ yarn upgrade-interactive
+# @cmd
+upgrade-interactive() {
+    :;
+}
+# }} yarn upgrade-interactive
+
+# {{ yarn interface
+# @cmd
+interface() {
+    :;
+}
+# }} yarn interface
+
+# {{ yarn show
+# @cmd information about a package
+show() {
+    :;
+}
+# }} yarn show
+
+# {{ yarn login
+# @cmd
+login() {
+    :;
+}
+# }} yarn login
+
+# {{ yarn store
+# @cmd new login info to access the npm registry
+store() {
+    :;
+}
+# }} yarn store
+
+# {{ yarn logout
+# @cmd
+logout() {
+    :;
+}
+# }} yarn logout
+
+# {{ yarn publish
+# @cmd
+publish() {
+    :;
+}
+# }} yarn publish
+
+# {{ yarn tag
+# @cmd
+tag() {
+    :;
+}
+# }} yarn tag
+
+# {{ yarn list
+# @cmd all dist-tags of a package
+list() {
+    :;
+}
+# }} yarn list
+
+# {{ yarn whoami
+# @cmd
+whoami() {
+    :;
+}
+# }} yarn whoami
+
+# {{ yarn plugin
+# @cmd
+plugin() {
+    :;
+}
+# }} yarn plugin
+
+# {{ yarn find
+# @cmd all third-party plugins that differ from their own spec
+find() {
+    :;
+}
+# }} yarn find
+
+# {{ yarn import
+# @cmd
+import() {
+    :;
+}
+# }} yarn import
+
+# {{ yarn download
+# @cmd
+download() {
+    :;
+}
+# }} yarn download
+
+# {{ yarn runtime
+# @cmd
+runtime() {
+    :;
+}
+# }} yarn runtime
+
+# {{ yarn active
+# @cmd
+active() {
+    :;
+}
+# }} yarn active
+
+# {{ yarn apply
+# @cmd a new version to the current package
+apply() {
+    :;
+}
+# }} yarn apply
+
+# {{ yarn workspaces
+# @cmd
+workspaces() {
+    :;
+}
+
+# {{{ yarn workspaces info
+# @cmd display the workspace dependency tree of your current project.
+# @flag --json
+workspaces::info() {
+    :;
+}
+# }}} yarn workspaces info
+
+# {{{ yarn workspaces run
+# @cmd run the chosen Yarn command in each workspace.
+# @arg cmd~[`_choice_workspaces_cmd`]
+workspaces::run() {
+    :;
+}
+# }}} yarn workspaces run
+# }} yarn workspaces
+
+# {{ yarn foreach
+# @cmd
+foreach() {
+    :;
+}
+# }} yarn foreach
+
+# {{ yarn all
+# @cmd
+all() {
+    :;
+}
+# }} yarn all
+
+# {{ yarn audit
+# @cmd Perform a vulnerability audit against the installed packages.
+audit() {
+    :;
+}
+# }} yarn audit
+
+# {{ yarn autoclean
+# @cmd Cleans and removes unnecessary files from package dependencies.
+autoclean() {
+    :;
+}
+# }} yarn autoclean
 
 # {{ yarn generate-lock-entry
 # @cmd Generates a lock file entry.
@@ -166,34 +746,6 @@ global::upgrade() {
 # }}} yarn global upgrade
 # }} yarn global
 
-# {{ yarn import
-# @cmd Generates yarn.lock from an npm package-lock.json file in the same location or an existing npm-installed node_modules folder.
-import() {
-    :;
-}
-# }} yarn import
-
-# {{ yarn info
-# @cmd Show information about a package.
-info() {
-    :;
-}
-# }} yarn info
-
-# {{ yarn init
-# @cmd Interactively creates or updates a package.json file.
-init() {
-    :;
-}
-# }} yarn init
-
-# {{ yarn install
-# @cmd Install all dependencies for a project.
-install() {
-    :;
-}
-# }} yarn install
-
 # {{ yarn licenses
 # @cmd List licenses for installed packages.
 licenses() {
@@ -214,41 +766,6 @@ licenses::generate-disclaimer() {
 }
 # }}} yarn licenses generate-disclaimer
 # }} yarn licenses
-
-# {{ yarn link
-# @cmd Symlink a package folder during development.
-link() {
-    :;
-}
-# }} yarn link
-
-# {{ yarn list
-# @cmd List installed packages.
-list() {
-    :;
-}
-# }} yarn list
-
-# {{ yarn login
-# @cmd Store registry username and email.
-login() {
-    :;
-}
-# }} yarn login
-
-# {{ yarn logout
-# @cmd Clear registry username and email.
-logout() {
-    :;
-}
-# }} yarn logout
-
-# {{ yarn node
-# @cmd Runs Node with the same version that the one used by Yarn itself, and by default from the project root.
-node() {
-    :;
-}
-# }} yarn node
 
 # {{ yarn outdated
 # @cmd Checks for outdated package dependencies.
@@ -290,13 +807,6 @@ owner::remove() {
 # }}} yarn owner remove
 # }} yarn owner
 
-# {{ yarn pack
-# @cmd Creates a compressed gzip archive of package dependencies.
-pack() {
-    :;
-}
-# }} yarn pack
-
 # {{ yarn policies
 # @cmd Defines project-wide policies for your project.
 policies() {
@@ -312,35 +822,6 @@ policies::set-version() {
 }
 # }}} yarn policies set-version
 # }} yarn policies
-
-# {{ yarn publish
-# @cmd Publishes a package to the npm registry.
-publish() {
-    :;
-}
-# }} yarn publish
-
-# {{ yarn remove
-# @cmd Remove the package named foo from your direct dependencies updating your package.json and yarn.lock files in the process.
-remove() {
-    :;
-}
-# }} yarn remove
-
-# {{ yarn run
-# @cmd Runs a defined package script.
-# @arg script[`_choice_script`]
-run() {
-    :;
-}
-# }} yarn run
-
-# {{ yarn tag
-# @cmd Add, remove, or list tags on a package.
-tag() {
-    :;
-}
-# }} yarn tag
 
 # {{ yarn team
 # @cmd Maintain team memberships.
@@ -398,42 +879,12 @@ test() {
 }
 # }} yarn test
 
-# {{ yarn unlink
-# @cmd Unlink a previously created symlink for a package.
-unlink() {
-    :;
-}
-# }} yarn unlink
-
-# {{ yarn unplug
-# @cmd Runs Node with the same version that the one used by Yarn itself, and by default from the project root.
-unplug() {
-    :;
-}
-# }} yarn unplug
-
-# {{ yarn upgrade
-# @cmd Upgrades packages to their latest version based on the specified range.
-# @arg packages*[`_choice_dependency`]
-upgrade() {
-    :;
-}
-# }} yarn upgrade
-
-# {{ yarn upgrade-interactive
+# {{ yarn upgradeInteractive
 # @cmd Update outdated packages in interactive mode.
-# @alias upgradeInteractive
-upgrade-interactive() {
+upgradeInteractive() {
     :;
 }
-# }} yarn upgrade-interactive
-
-# {{ yarn version
-# @cmd Updates the package version.
-version() {
-    :;
-}
-# }} yarn version
+# }} yarn upgradeInteractive
 
 # {{ yarn versions
 # @cmd Displays version information of the currently installed Yarn, Node.js, and its dependencies.
@@ -441,13 +892,6 @@ versions() {
     :;
 }
 # }} yarn versions
-
-# {{ yarn why
-# @cmd Show information about why a package is installed.
-why() {
-    :;
-}
-# }} yarn why
 
 # {{ yarn workspace
 # @cmd Run the chosen Yarn command in the selected workspace.
@@ -457,29 +901,6 @@ workspace() {
     :;
 }
 # }} yarn workspace
-
-# {{ yarn workspaces
-# @cmd Show information about your workspaces.
-workspaces() {
-    :;
-}
-
-# {{{ yarn workspaces info
-# @cmd display the workspace dependency tree of your current project.
-# @flag --json
-workspaces::info() {
-    :;
-}
-# }}} yarn workspaces info
-
-# {{{ yarn workspaces run
-# @cmd run the chosen Yarn command in each workspace.
-# @arg cmd~[`_choice_workspaces_cmd`]
-workspaces::run() {
-    :;
-}
-# }}} yarn workspaces run
-# }} yarn workspaces
 
 . "$ARGC_COMPLETIONS_ROOT/utils/_argc_utils.sh"
 

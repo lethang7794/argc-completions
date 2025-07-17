@@ -17,13 +17,14 @@
 # @option -e --evaluate[LABEL|UUID|PARTUUID|PARTLABEL]  convert tags to device names
 # @option -F --tab-file <path>                     alternative file for -s, -m or -k options
 # @flag -f --first-only                            print the first found filesystem only
+# @flag -I --dfi                                   imitate the output of df(1) with -i option
 # @flag -i --invert                                invert the sense of matching
 # @flag -J --json                                  use JSON output format
 # @flag -l --list                                  use list format output
 # @option -N --task[`_module_os_pid`] <tid>        use alternative namespace (/proc/<tid>/mountinfo file)
 # @flag -n --noheadings                            don't print column headings
 # @option -O --options <list>                      limit the set of filesystems by mount options
-# @option -o --output*[`_choice_column`] <list>    the output columns to be shown
+# @option -o --output*[`_choice_column`] <list>    output columns (see --list-columns)
 # @flag --output-all                               output all available columns
 # @flag -P --pairs                                 use key="value" output format
 # @flag --pseudo                                   print only pseudo-filesystems
@@ -43,6 +44,7 @@
 # @flag -x --verify                                verify mount table content (default is fstab)
 # @flag --verbose                                  print more details
 # @flag --vfs-all                                  print all VFS options
+# @flag -H --list-columns                          list the available columns
 # @flag -h --help                                  display this help
 # @flag -V --version                               display version
 # @arg device-mountpoint[`_choice_device_mountpoint`]

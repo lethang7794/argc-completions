@@ -8,7 +8,7 @@
 # @cmd Authenticate gh and git with GitHub
 # @flag --help    Show help for command
 auth() {
-    :;
+    :
 }
 
 # {{{ gh auth login
@@ -22,7 +22,7 @@ auth() {
 # @flag --with-token                               Read token from standard input
 # @flag --help                                     Show help for command
 auth::login() {
-    :;
+    :
 }
 # }}} gh auth login
 
@@ -32,7 +32,7 @@ auth::login() {
 # @option -u --user <string>    The account to log out of
 # @flag --help                  Show help for command
 auth::logout() {
-    :;
+    :
 }
 # }}} gh auth logout
 
@@ -45,7 +45,7 @@ auth::logout() {
 # @option -s --scopes*,[`_choice_auth_scope`] <string>  Additional authentication scopes for gh to have
 # @flag --help                            Show help for command
 auth::refresh() {
-    :;
+    :
 }
 # }}} gh auth refresh
 
@@ -56,7 +56,7 @@ auth::refresh() {
 # @option --hostname[`_choice_hostname`]    Force setup even if the host is not known.
 # @flag --help                              Show help for command
 auth::setup-git() {
-    :;
+    :
 }
 # }}} gh auth setup-git
 
@@ -66,7 +66,7 @@ auth::setup-git() {
 # @flag -t --show-token    Display the auth token
 # @flag --help             Show help for command
 auth::status() {
-    :;
+    :
 }
 # }}} gh auth status
 
@@ -76,7 +76,7 @@ auth::status() {
 # @option -u --user <string>    The account to switch to
 # @flag --help                  Show help for command
 auth::switch() {
-    :;
+    :
 }
 # }}} gh auth switch
 
@@ -86,7 +86,7 @@ auth::switch() {
 # @option -u --user <string>    The account to output the token for
 # @flag --help                  Show help for command
 auth::token() {
-    :;
+    :
 }
 # }}} gh auth token
 # }} gh auth
@@ -104,7 +104,7 @@ auth::token() {
 # @flag --help                             Show help for command
 # @arg number-path-commit-sha <<number>|<path>|<commit-SHA>>
 browse() {
-    :;
+    :
 }
 # }} gh browse
 
@@ -112,7 +112,7 @@ browse() {
 # @cmd Connect to and manage codespaces
 # @flag --help    Show help for command
 codespace() {
-    :;
+    :
 }
 
 # {{{ gh codespace code
@@ -124,7 +124,7 @@ codespace() {
 # @flag -w --web      Use the web version of Visual Studio Code
 # @flag --help        Show help for command
 codespace::code() {
-    :;
+    :
 }
 # }}} gh codespace code
 
@@ -140,7 +140,7 @@ codespace::code() {
 # @arg sources+
 # @arg dest!
 codespace::cp() {
-    :;
+    :
 }
 # }}} gh codespace cp
 
@@ -159,7 +159,7 @@ codespace::cp() {
 # @flag -w --web                           create codespace from browser, cannot be used with --display-name, --idle-timeout, or --retention-period
 # @flag --help                             Show help for command
 codespace::create() {
-    :;
+    :
 }
 # }}} gh codespace create
 
@@ -175,7 +175,7 @@ codespace::create() {
 # @option -u --user[`_choice_search_user`] <username>  The username to delete codespaces for (used with --org)
 # @flag --help                               Show help for command
 codespace::delete() {
-    :;
+    :
 }
 # }}} gh codespace delete
 
@@ -188,7 +188,7 @@ codespace::delete() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @flag --help                          Show help for command
 codespace::edit() {
-    :;
+    :
 }
 # }}} gh codespace edit
 
@@ -199,7 +199,7 @@ codespace::edit() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @flag --help    Show help for command
 codespace::jupyter() {
-    :;
+    :
 }
 # }}} gh codespace jupyter
 
@@ -215,7 +215,7 @@ codespace::jupyter() {
 # @flag -w --web                             List codespaces in the web browser, cannot be used with --user or --org
 # @flag --help                               Show help for command
 codespace::list() {
-    :;
+    :
 }
 # }}} gh codespace list
 
@@ -227,7 +227,7 @@ codespace::list() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @flag --help         Show help for command
 codespace::logs() {
-    :;
+    :
 }
 # }}} gh codespace logs
 
@@ -241,7 +241,7 @@ codespace::logs() {
 # @option -t --template <string>    Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                      Show help for command
 codespace::ports() {
-    :;
+    :
 }
 
 # {{{{ gh codespace ports forward
@@ -252,7 +252,7 @@ codespace::ports() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @arg remote-port-local-port* <<remote-port>:<local-port>>
 codespace::ports::forward() {
-    :;
+    :
 }
 # }}}} gh codespace ports forward
 
@@ -264,7 +264,7 @@ codespace::ports::forward() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @arg port-public-private-org* <<port>:{public|private|org}>
 codespace::ports::visibility() {
-    :;
+    :
 }
 # }}}} gh codespace ports visibility
 # }}} gh codespace ports
@@ -277,7 +277,7 @@ codespace::ports::visibility() {
 # @option --repo-owner[`_choice_owner`] <string>  Filter codespace selection by repository owner (username or org)
 # @flag --help    Show help for command
 codespace::rebuild() {
-    :;
+    :
 }
 # }}} gh codespace rebuild
 
@@ -294,7 +294,7 @@ codespace::rebuild() {
 # @flag --help                   Show help for command
 # @arg command[`_module_os_command`]
 codespace::ssh() {
-    :;
+    :
 }
 # }}} gh codespace ssh
 
@@ -307,7 +307,7 @@ codespace::ssh() {
 # @option -u --user[`_choice_search_user`] <username>  The username to stop codespace for (used with --org)
 # @flag --help                               Show help for command
 codespace::stop() {
-    :;
+    :
 }
 # }}} gh codespace stop
 
@@ -321,7 +321,7 @@ codespace::stop() {
 # @option -t --template <string>    Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                      Show help for command
 codespace::view() {
-    :;
+    :
 }
 # }}} gh codespace view
 # }} gh codespace
@@ -330,7 +330,7 @@ codespace::view() {
 # @cmd Manage gists
 # @flag --help    Show help for command
 gist() {
-    :;
+    :
 }
 
 # {{{ gh gist clone
@@ -339,7 +339,7 @@ gist() {
 # @arg gist![`_choice_gist`]
 # @arg directory
 gist::clone() {
-    :;
+    :
 }
 # }}} gh gist clone
 
@@ -352,7 +352,7 @@ gist::clone() {
 # @flag --help                    Show help for command
 # @arg filename <<filename>...|->
 gist::create() {
-    :;
+    :
 }
 # }}} gh gist create
 
@@ -361,7 +361,7 @@ gist::create() {
 # @flag --help    Show help for command
 # @arg gist[`_choice_gist`]
 gist::delete() {
-    :;
+    :
 }
 # }}} gh gist delete
 
@@ -375,7 +375,7 @@ gist::delete() {
 # @arg gist[`_choice_gist`]
 # @arg filename[`_choice_gist_file`]
 gist::edit() {
-    :;
+    :
 }
 # }}} gh gist edit
 
@@ -386,7 +386,7 @@ gist::edit() {
 # @flag --secret              Show only secret gists
 # @flag --help                Show help for command
 gist::list() {
-    :;
+    :
 }
 # }}} gh gist list
 
@@ -397,7 +397,7 @@ gist::list() {
 # @arg oldfilename![`_choice_gist_file`]
 # @arg newfilename!
 gist::rename() {
-    :;
+    :
 }
 # }}} gh gist rename
 
@@ -410,7 +410,7 @@ gist::rename() {
 # @flag --help      Show help for command
 # @arg gist[`_choice_gist`]
 gist::view() {
-    :;
+    :
 }
 # }}} gh gist view
 # }} gh gist
@@ -420,7 +420,7 @@ gist::view() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 issue() {
-    :;
+    :
 }
 
 # {{{ gh issue create
@@ -438,7 +438,7 @@ issue() {
 # @flag --help                                    Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 issue::create() {
-    :;
+    :
 }
 # }}} gh issue create
 
@@ -460,7 +460,7 @@ issue::create() {
 # @flag --help                                     Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 issue::list() {
-    :;
+    :
 }
 # }}} gh issue list
 
@@ -472,7 +472,7 @@ issue::list() {
 # @flag --help                    Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 issue::status() {
-    :;
+    :
 }
 # }}} gh issue status
 
@@ -484,7 +484,7 @@ issue::status() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::close() {
-    :;
+    :
 }
 # }}} gh issue close
 
@@ -499,7 +499,7 @@ issue::close() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::comment() {
-    :;
+    :
 }
 # }}} gh issue comment
 
@@ -510,7 +510,7 @@ issue::comment() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_all_issue`]
 issue::delete() {
-    :;
+    :
 }
 # }}} gh issue delete
 
@@ -525,7 +525,7 @@ issue::delete() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::develop() {
-    :;
+    :
 }
 # }}} gh issue develop
 
@@ -545,7 +545,7 @@ issue::develop() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::edit() {
-    :;
+    :
 }
 # }}} gh issue edit
 
@@ -556,7 +556,7 @@ issue::edit() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_all_issue`]
 issue::lock() {
-    :;
+    :
 }
 # }}} gh issue lock
 
@@ -566,7 +566,7 @@ issue::lock() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::pin() {
-    :;
+    :
 }
 # }}} gh issue pin
 
@@ -577,7 +577,7 @@ issue::pin() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_closed_issue`]
 issue::reopen() {
-    :;
+    :
 }
 # }}} gh issue reopen
 
@@ -588,7 +588,7 @@ issue::reopen() {
 # @arg issue[`_choice_all_issue`]
 # @arg destination-repo![`_choice_search_repo`]
 issue::transfer() {
-    :;
+    :
 }
 # }}} gh issue transfer
 
@@ -598,7 +598,7 @@ issue::transfer() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_all_issue`]
 issue::unlock() {
-    :;
+    :
 }
 # }}} gh issue unlock
 
@@ -608,7 +608,7 @@ issue::unlock() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_pin_issue`]
 issue::unpin() {
-    :;
+    :
 }
 # }}} gh issue unpin
 
@@ -623,7 +623,7 @@ issue::unpin() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg issue[`_choice_open_issue`]
 issue::view() {
-    :;
+    :
 }
 # }}} gh issue view
 # }} gh issue
@@ -632,7 +632,7 @@ issue::view() {
 # @cmd Manage organizations
 # @flag --help    Show help for command
 org() {
-    :;
+    :
 }
 
 # {{{ gh org list
@@ -640,7 +640,7 @@ org() {
 # @option -L --limit <int>    Maximum number of organizations to list (default 30)
 # @flag --help                Show help for command
 org::list() {
-    :;
+    :
 }
 # }}} gh org list
 # }} gh org
@@ -650,7 +650,7 @@ org::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 pr() {
-    :;
+    :
 }
 
 # {{{ gh pr create
@@ -677,7 +677,7 @@ pr() {
 # @flag --help                                    Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 pr::create() {
-    :;
+    :
 }
 # }}} gh pr create
 
@@ -700,7 +700,7 @@ pr::create() {
 # @flag --help                                     Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 pr::list() {
-    :;
+    :
 }
 # }}} gh pr list
 
@@ -713,7 +713,7 @@ pr::list() {
 # @flag --help                                     Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 pr::status() {
-    :;
+    :
 }
 # }}} gh pr status
 
@@ -727,7 +727,7 @@ pr::status() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::checkout() {
-    :;
+    :
 }
 # }}} gh pr checkout
 
@@ -741,7 +741,7 @@ pr::checkout() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_pr_checks`]
 pr::checks() {
-    :;
+    :
 }
 # }}} gh pr checks
 
@@ -753,7 +753,7 @@ pr::checks() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::close() {
-    :;
+    :
 }
 # }}} gh pr close
 
@@ -768,7 +768,7 @@ pr::close() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::comment() {
-    :;
+    :
 }
 # }}} gh pr comment
 
@@ -782,7 +782,7 @@ pr::comment() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::diff() {
-    :;
+    :
 }
 # }}} gh pr diff
 
@@ -805,7 +805,7 @@ pr::diff() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::edit() {
-    :;
+    :
 }
 # }}} gh pr edit
 
@@ -816,7 +816,7 @@ pr::edit() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::lock() {
-    :;
+    :
 }
 # }}} gh pr lock
 
@@ -838,7 +838,7 @@ pr::lock() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::merge() {
-    :;
+    :
 }
 # }}} gh pr merge
 
@@ -849,7 +849,7 @@ pr::merge() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_ready_pr`]
 pr::ready() {
-    :;
+    :
 }
 # }}} gh pr ready
 
@@ -860,7 +860,7 @@ pr::ready() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_closed_pr`]
 pr::reopen() {
-    :;
+    :
 }
 # }}} gh pr reopen
 
@@ -875,7 +875,7 @@ pr::reopen() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::review() {
-    :;
+    :
 }
 # }}} gh pr review
 
@@ -885,7 +885,7 @@ pr::review() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::unlock() {
-    :;
+    :
 }
 # }}} gh pr unlock
 
@@ -900,7 +900,7 @@ pr::unlock() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg pr[`_choice_open_pr`]
 pr::view() {
-    :;
+    :
 }
 # }}} gh pr view
 # }} gh pr
@@ -909,7 +909,7 @@ pr::view() {
 # @cmd Work with GitHub Projects.
 # @flag --help    Show help for command
 project() {
-    :;
+    :
 }
 
 # {{{ gh project close
@@ -922,7 +922,7 @@ project() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::close() {
-    :;
+    :
 }
 # }}} gh project close
 
@@ -938,7 +938,7 @@ project::close() {
 # @flag --help                       Show help for command
 # @arg project[`_choice_project`]
 project::copy() {
-    :;
+    :
 }
 # }}} gh project copy
 
@@ -951,7 +951,7 @@ project::copy() {
 # @option --title <string>                     Title for the project
 # @flag --help                                 Show help for command
 project::create() {
-    :;
+    :
 }
 # }}} gh project create
 
@@ -964,7 +964,7 @@ project::create() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::delete() {
-    :;
+    :
 }
 # }}} gh project delete
 
@@ -981,7 +981,7 @@ project::delete() {
 # @flag --help                                     Show help for command
 # @arg project[`_choice_project`]
 project::edit() {
-    :;
+    :
 }
 # }}} gh project edit
 
@@ -997,7 +997,7 @@ project::edit() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::field-create() {
-    :;
+    :
 }
 # }}} gh project field-create
 
@@ -1009,7 +1009,7 @@ project::field-create() {
 # @option -t --template <string>     Format JSON output using a Go template; see "gh help formatting"
 # @flag --help                       Show help for command
 project::field-delete() {
-    :;
+    :
 }
 # }}} gh project field-delete
 
@@ -1023,7 +1023,7 @@ project::field-delete() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::field-list() {
-    :;
+    :
 }
 # }}} gh project field-list
 
@@ -1037,7 +1037,7 @@ project::field-list() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-add() {
-    :;
+    :
 }
 # }}} gh project item-add
 
@@ -1052,7 +1052,7 @@ project::item-add() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-archive() {
-    :;
+    :
 }
 # }}} gh project item-archive
 
@@ -1067,7 +1067,7 @@ project::item-archive() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-create() {
-    :;
+    :
 }
 # }}} gh project item-create
 
@@ -1081,7 +1081,7 @@ project::item-create() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-delete() {
-    :;
+    :
 }
 # }}} gh project item-delete
 
@@ -1103,7 +1103,7 @@ project::item-delete() {
 # @option --title <string>                      Title of the draft issue item
 # @flag --help                                  Show help for command
 project::item-edit() {
-    :;
+    :
 }
 # }}} gh project item-edit
 
@@ -1117,7 +1117,7 @@ project::item-edit() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::item-list() {
-    :;
+    :
 }
 # }}} gh project item-list
 
@@ -1129,7 +1129,7 @@ project::item-list() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::link() {
-    :;
+    :
 }
 # }}} gh project link
 
@@ -1144,7 +1144,7 @@ project::link() {
 # @flag -w --web                               Open projects list in the browser
 # @flag --help                                 Show help for command
 project::list() {
-    :;
+    :
 }
 # }}} gh project list
 
@@ -1158,7 +1158,7 @@ project::list() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::mark-template() {
-    :;
+    :
 }
 # }}} gh project mark-template
 
@@ -1170,7 +1170,7 @@ project::mark-template() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::unlink() {
-    :;
+    :
 }
 # }}} gh project unlink
 
@@ -1184,7 +1184,7 @@ project::unlink() {
 # @flag --help                                 Show help for command
 # @arg project[`_choice_project`]
 project::view() {
-    :;
+    :
 }
 # }}} gh project view
 # }} gh project
@@ -1194,7 +1194,7 @@ project::view() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 release() {
-    :;
+    :
 }
 
 # {{{ gh release create
@@ -1216,7 +1216,7 @@ release() {
 # @arg tag[`_choice_tag`]
 # @arg files*
 release::create() {
-    :;
+    :
 }
 # }}} gh release create
 
@@ -1232,7 +1232,7 @@ release::create() {
 # @flag --help                             Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 release::list() {
-    :;
+    :
 }
 # }}} gh release list
 
@@ -1244,7 +1244,7 @@ release::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg tag![`_choice_tag`]
 release::delete() {
-    :;
+    :
 }
 # }}} gh release delete
 
@@ -1256,7 +1256,7 @@ release::delete() {
 # @arg tag![`_choice_tag`]
 # @arg asset-name![`_choice_release_asset`]
 release::delete-asset() {
-    :;
+    :
 }
 # }}} gh release delete-asset
 
@@ -1272,7 +1272,7 @@ release::delete-asset() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg tag[`_choice_tag`]
 release::download() {
-    :;
+    :
 }
 # }}} gh release download
 
@@ -1292,7 +1292,7 @@ release::download() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg tag![`_choice_tag`]
 release::edit() {
-    :;
+    :
 }
 # }}} gh release edit
 
@@ -1304,7 +1304,7 @@ release::edit() {
 # @arg tag![`_choice_tag`]
 # @arg files+
 release::upload() {
-    :;
+    :
 }
 # }}} gh release upload
 
@@ -1318,7 +1318,7 @@ release::upload() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg tag[`_choice_tag`]
 release::view() {
-    :;
+    :
 }
 # }}} gh release view
 # }} gh release
@@ -1327,7 +1327,7 @@ release::view() {
 # @cmd Manage repositories
 # @flag --help    Show help for command
 repo() {
-    :;
+    :
 }
 
 # {{{ gh repo create
@@ -1352,7 +1352,7 @@ repo() {
 # @flag --help                         Show help for command
 # @arg name
 repo::create() {
-    :;
+    :
 }
 # }}} gh repo create
 
@@ -1372,7 +1372,7 @@ repo::create() {
 # @flag --help                                     Show help for command
 # @arg owner[`_choice_owner`]
 repo::list() {
-    :;
+    :
 }
 # }}} gh repo list
 
@@ -1382,7 +1382,7 @@ repo::list() {
 # @flag --help      Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::archive() {
-    :;
+    :
 }
 # }}} gh repo archive
 
@@ -1393,7 +1393,7 @@ repo::archive() {
 # @arg repository![`_choice_search_repo`]
 # @arg directory
 repo::clone() {
-    :;
+    :
 }
 # }}} gh repo clone
 
@@ -1403,7 +1403,7 @@ repo::clone() {
 # @flag --help    Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::delete() {
-    :;
+    :
 }
 # }}} gh repo delete
 
@@ -1412,7 +1412,7 @@ repo::delete() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 repo::deploy-key() {
-    :;
+    :
 }
 
 # {{{{ gh repo deploy-key add
@@ -1423,7 +1423,7 @@ repo::deploy-key() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg key-file!
 repo::deploy-key::add() {
-    :;
+    :
 }
 # }}}} gh repo deploy-key add
 
@@ -1433,7 +1433,7 @@ repo::deploy-key::add() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg key-id![`_choice_repo_key`]
 repo::deploy-key::delete() {
-    :;
+    :
 }
 # }}}} gh repo deploy-key delete
 
@@ -1445,7 +1445,7 @@ repo::deploy-key::delete() {
 # @flag --help                                     Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 repo::deploy-key::list() {
-    :;
+    :
 }
 # }}}} gh repo deploy-key list
 # }}} gh repo deploy-key
@@ -1473,7 +1473,7 @@ repo::deploy-key::list() {
 # @flag --help                                 Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::edit() {
-    :;
+    :
 }
 # }}} gh repo edit
 
@@ -1488,7 +1488,7 @@ repo::edit() {
 # @flag --help                             Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::fork() {
-    :;
+    :
 }
 # }}} gh repo fork
 
@@ -1499,7 +1499,7 @@ repo::fork() {
 # @flag --help      Show help for command
 # @arg new-name
 repo::rename() {
-    :;
+    :
 }
 # }}} gh repo rename
 
@@ -1510,7 +1510,7 @@ repo::rename() {
 # @flag --help        Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::set-default() {
-    :;
+    :
 }
 # }}} gh repo set-default
 
@@ -1522,7 +1522,7 @@ repo::set-default() {
 # @flag --help     Show help for command
 # @arg destination-repository[`_choice_search_repo`]
 repo::sync() {
-    :;
+    :
 }
 # }}} gh repo sync
 
@@ -1532,7 +1532,7 @@ repo::sync() {
 # @flag --help      Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::unarchive() {
-    :;
+    :
 }
 # }}} gh repo unarchive
 
@@ -1546,7 +1546,7 @@ repo::unarchive() {
 # @flag --help                                     Show help for command
 # @arg repository[`_choice_search_repo`]
 repo::view() {
-    :;
+    :
 }
 # }}} gh repo view
 # }} gh repo
@@ -1556,7 +1556,7 @@ repo::view() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 cache() {
-    :;
+    :
 }
 
 # {{{ gh cache delete
@@ -1566,7 +1566,7 @@ cache() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg cache-id-cache-key <<cache-id>| <cache-key>>
 cache::delete() {
-    :;
+    :
 }
 # }}} gh cache delete
 
@@ -1583,7 +1583,7 @@ cache::delete() {
 # @flag --help                             Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 cache::list() {
-    :;
+    :
 }
 # }}} gh cache list
 # }} gh cache
@@ -1593,7 +1593,7 @@ cache::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 run() {
-    :;
+    :
 }
 
 # {{{ gh run cancel
@@ -1602,7 +1602,7 @@ run() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id[`_choice_inprogress_run`]
 run::cancel() {
-    :;
+    :
 }
 # }}} gh run cancel
 
@@ -1612,7 +1612,7 @@ run::cancel() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id[`_choice_all_run`]
 run::delete() {
-    :;
+    :
 }
 # }}} gh run delete
 
@@ -1625,7 +1625,7 @@ run::delete() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id[`_choice_all_run`]
 run::download() {
-    :;
+    :
 }
 # }}} gh run download
 
@@ -1645,7 +1645,7 @@ run::download() {
 # @flag --help                      Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 run::list() {
-    :;
+    :
 }
 # }}} gh run list
 
@@ -1658,7 +1658,7 @@ run::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id[`_choice_failed_run`]
 run::rerun() {
-    :;
+    :
 }
 # }}} gh run rerun
 
@@ -1678,7 +1678,7 @@ run::rerun() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id[`_choice_all_run`]
 run::view() {
-    :;
+    :
 }
 # }}} gh run view
 
@@ -1690,7 +1690,7 @@ run::view() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg run-id![`_choice_inprogress_run`]
 run::watch() {
-    :;
+    :
 }
 # }}} gh run watch
 # }} gh run
@@ -1700,7 +1700,7 @@ run::watch() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 workflow() {
-    :;
+    :
 }
 
 # {{{ gh workflow disable
@@ -1709,7 +1709,7 @@ workflow() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg workflow[`_choice_workflow`]
 workflow::disable() {
-    :;
+    :
 }
 # }}} gh workflow disable
 
@@ -1719,7 +1719,7 @@ workflow::disable() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg workflow[`_choice_workflow`]
 workflow::enable() {
-    :;
+    :
 }
 # }}} gh workflow enable
 
@@ -1733,7 +1733,7 @@ workflow::enable() {
 # @flag --help                      Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 workflow::list() {
-    :;
+    :
 }
 # }}} gh workflow list
 
@@ -1747,7 +1747,7 @@ workflow::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg workflow[`_choice_workflow`]
 workflow::run() {
-    :;
+    :
 }
 # }}} gh workflow run
 
@@ -1760,7 +1760,7 @@ workflow::run() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg workflow[`_choice_workflow_or_file`]
 workflow::view() {
-    :;
+    :
 }
 # }}} gh workflow view
 # }} gh workflow
@@ -1768,7 +1768,7 @@ workflow::view() {
 # {{ gh co
 # @cmd Alias for "pr checkout"
 co() {
-    :;
+    :
 }
 # }} gh co
 
@@ -1776,7 +1776,7 @@ co() {
 # @cmd Create command shortcuts
 # @flag --help    Show help for command
 alias() {
-    :;
+    :
 }
 
 # {{{ gh alias delete
@@ -1785,7 +1785,7 @@ alias() {
 # @flag --help    Show help for command
 # @arg alias[`_choice_alias`]
 alias::delete() {
-    :;
+    :
 }
 # }}} gh alias delete
 
@@ -1796,7 +1796,7 @@ alias::delete() {
 # @flag --help       Show help for command
 # @arg filename <<filename>|->
 alias::import() {
-    :;
+    :
 }
 # }}} gh alias import
 
@@ -1804,7 +1804,7 @@ alias::import() {
 # @cmd List your aliases
 # @flag --help    Show help for command
 alias::list() {
-    :;
+    :
 }
 # }}} gh alias list
 
@@ -1816,7 +1816,7 @@ alias::list() {
 # @arg alias![`_choice_alias`]
 # @arg expansion!
 alias::set() {
-    :;
+    :
 }
 # }}} gh alias set
 # }} gh alias
@@ -1839,13 +1839,9 @@ alias::set() {
 # @option -t --template <string>        Format JSON output using a Go template; see "gh help formatting"
 # @flag --verbose                       Include full HTTP request and response in the output
 # @flag --help                          Show help for command
-# @option -F <properties[][property_name]=environment>
-# @option -F <properties[][default_value]=production>
-# @option -F <properties[][allowed_values][]=staging>
-# @option -F <properties[][allowed_values][]=production>
 # @arg endpoint!
 api() {
-    :;
+    :
 }
 # }} gh api
 
@@ -1855,7 +1851,7 @@ api() {
 # @flag --help    Show help for command
 # @arg shell![bash|zsh|fish|powershell]
 completion() {
-    :;
+    :
 }
 # }} gh completion
 
@@ -1863,14 +1859,14 @@ completion() {
 # @cmd Manage configuration for gh
 # @flag --help    Show help for command
 config() {
-    :;
+    :
 }
 
 # {{{ gh config clear-cache
 # @cmd Clear the cli cache
 # @flag --help    Show help for command
 config::clear-cache() {
-    :;
+    :
 }
 # }}} gh config clear-cache
 
@@ -1880,7 +1876,7 @@ config::clear-cache() {
 # @flag --help                  Show help for command
 # @arg key![`_choice_config_key`]
 config::get() {
-    :;
+    :
 }
 # }}} gh config get
 
@@ -1889,7 +1885,7 @@ config::get() {
 # @option -h --host <string>    Get per-host configuration
 # @flag --help                  Show help for command
 config::list() {
-    :;
+    :
 }
 # }}} gh config list
 
@@ -1900,7 +1896,7 @@ config::list() {
 # @arg key![`_choice_config_key`]
 # @arg value!
 config::set() {
-    :;
+    :
 }
 # }}} gh config set
 # }} gh config
@@ -1909,7 +1905,7 @@ config::set() {
 # @cmd Manage gh extensions
 # @flag --help    Show help for command
 extension() {
-    :;
+    :
 }
 
 # {{{ gh extension browse
@@ -1918,7 +1914,7 @@ extension() {
 # @flag -s --single-column    Render TUI with only one column of text
 # @flag --help                Show help for command
 extension::browse() {
-    :;
+    :
 }
 # }}} gh extension browse
 
@@ -1928,14 +1924,14 @@ extension::browse() {
 # @flag --help                                Show help for command
 # @arg name
 extension::create() {
-    :;
+    :
 }
 # }}} gh extension create
 
 # {{{ gh extension exec
 # @cmd Execute an installed extension
 extension::exec() {
-    :;
+    :
 }
 # }}} gh extension exec
 
@@ -1946,7 +1942,7 @@ extension::exec() {
 # @flag --help              Show help for command
 # @arg repository!
 extension::install() {
-    :;
+    :
 }
 # }}} gh extension install
 
@@ -1954,7 +1950,7 @@ extension::install() {
 # @cmd List installed extension commands
 # @flag --help    Show help for command
 extension::list() {
-    :;
+    :
 }
 # }}} gh extension list
 
@@ -1963,7 +1959,7 @@ extension::list() {
 # @flag --help    Show help for command
 # @arg name!
 extension::remove() {
-    :;
+    :
 }
 # }}} gh extension remove
 
@@ -1981,7 +1977,7 @@ extension::remove() {
 # @flag --help                          Show help for command
 # @arg query
 extension::search() {
-    :;
+    :
 }
 # }}} gh extension search
 
@@ -1993,7 +1989,7 @@ extension::search() {
 # @flag --help       Show help for command
 # @arg name
 extension::upgrade() {
-    :;
+    :
 }
 # }}} gh extension upgrade
 # }} gh extension
@@ -2002,7 +1998,7 @@ extension::upgrade() {
 # @cmd Manage GPG keys
 # @flag --help    Show help for command
 gpg-key() {
-    :;
+    :
 }
 
 # {{{ gh gpg-key add
@@ -2011,7 +2007,7 @@ gpg-key() {
 # @flag --help                   Show help for command
 # @arg key-file
 gpg-key::add() {
-    :;
+    :
 }
 # }}} gh gpg-key add
 
@@ -2021,7 +2017,7 @@ gpg-key::add() {
 # @flag --help      Show help for command
 # @arg key-id![`_choice_gpg_key`]
 gpg-key::delete() {
-    :;
+    :
 }
 # }}} gh gpg-key delete
 
@@ -2029,7 +2025,7 @@ gpg-key::delete() {
 # @cmd Lists GPG keys in your GitHub account
 # @flag --help    Show help for command
 gpg-key::list() {
-    :;
+    :
 }
 # }}} gh gpg-key list
 # }} gh gpg-key
@@ -2039,7 +2035,7 @@ gpg-key::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 label() {
-    :;
+    :
 }
 
 # {{{ gh label clone
@@ -2049,7 +2045,7 @@ label() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg source-repository![`_choice_search_repo`]
 label::clone() {
-    :;
+    :
 }
 # }}} gh label clone
 
@@ -2062,7 +2058,7 @@ label::clone() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg name![`_choice_label`]
 label::create() {
-    :;
+    :
 }
 # }}} gh label create
 
@@ -2073,7 +2069,7 @@ label::create() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg name![`_choice_label`]
 label::delete() {
-    :;
+    :
 }
 # }}} gh label delete
 
@@ -2086,7 +2082,7 @@ label::delete() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg name![`_choice_label`]
 label::edit() {
-    :;
+    :
 }
 # }}} gh label edit
 
@@ -2103,7 +2099,7 @@ label::edit() {
 # @flag --help                             Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 label::list() {
-    :;
+    :
 }
 # }}} gh label list
 # }} gh label
@@ -2113,7 +2109,7 @@ label::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 ruleset() {
-    :;
+    :
 }
 
 # {{{ gh ruleset check
@@ -2124,7 +2120,7 @@ ruleset() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg branch[`_choice_branch`]
 ruleset::check() {
-    :;
+    :
 }
 # }}} gh ruleset check
 
@@ -2137,7 +2133,7 @@ ruleset::check() {
 # @flag --help                                Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 ruleset::list() {
-    :;
+    :
 }
 # }}} gh ruleset list
 
@@ -2150,7 +2146,7 @@ ruleset::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg ruleset-id[`_choice_ruleset`]
 ruleset::view() {
-    :;
+    :
 }
 # }}} gh ruleset view
 # }} gh ruleset
@@ -2159,7 +2155,7 @@ ruleset::view() {
 # @cmd Search for repositories, issues, and pull requests
 # @flag --help    Show help for command
 search() {
-    :;
+    :
 }
 
 # {{{ gh search code
@@ -2179,7 +2175,7 @@ search() {
 # @flag --help                          Show help for command
 # @arg query!
 search::code() {
-    :;
+    :
 }
 # }}} gh search code
 
@@ -2210,7 +2206,7 @@ search::code() {
 # @flag --help                          Show help for command
 # @arg query
 search::commits() {
-    :;
+    :
 }
 # }}} gh search commits
 
@@ -2255,7 +2251,7 @@ search::commits() {
 # @flag --help                             Show help for command
 # @arg query
 search::issues() {
-    :;
+    :
 }
 # }}} gh search issues
 
@@ -2308,7 +2304,7 @@ search::issues() {
 # @flag --help                                     Show help for command
 # @arg query
 search::prs() {
-    :;
+    :
 }
 # }}} gh search prs
 
@@ -2341,7 +2337,7 @@ search::prs() {
 # @flag --help                             Show help for command
 # @arg query
 search::repos() {
-    :;
+    :
 }
 # }}} gh search repos
 # }} gh search
@@ -2351,7 +2347,7 @@ search::repos() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 secret() {
-    :;
+    :
 }
 
 # {{{ gh secret delete
@@ -2364,7 +2360,7 @@ secret() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg secret-name![`_choice_secret`]
 secret::delete() {
-    :;
+    :
 }
 # }}} gh secret delete
 
@@ -2380,7 +2376,7 @@ secret::delete() {
 # @flag --help                                Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 secret::list() {
-    :;
+    :
 }
 # }}} gh secret list
 
@@ -2399,7 +2395,7 @@ secret::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg secret-name![`_choice_secret`]
 secret::set() {
-    :;
+    :
 }
 # }}} gh secret set
 # }} gh secret
@@ -2408,7 +2404,7 @@ secret::set() {
 # @cmd Manage SSH keys
 # @flag --help    Show help for command
 ssh-key() {
-    :;
+    :
 }
 
 # {{{ gh ssh-key add
@@ -2418,7 +2414,7 @@ ssh-key() {
 # @flag --help                   Show help for command
 # @arg key-file
 ssh-key::add() {
-    :;
+    :
 }
 # }}} gh ssh-key add
 
@@ -2428,7 +2424,7 @@ ssh-key::add() {
 # @flag --help      Show help for command
 # @arg id![`_choice_ssh_key`]
 ssh-key::delete() {
-    :;
+    :
 }
 # }}} gh ssh-key delete
 
@@ -2436,7 +2432,7 @@ ssh-key::delete() {
 # @cmd Lists SSH keys in your GitHub account
 # @flag --help    Show help for command
 ssh-key::list() {
-    :;
+    :
 }
 # }}} gh ssh-key list
 # }} gh ssh-key
@@ -2447,7 +2443,7 @@ ssh-key::list() {
 # @option -o --org[`_choice_org`] <string>    Report status within an organization
 # @flag --help                                Show help for command
 status() {
-    :;
+    :
 }
 # }} gh status
 
@@ -2456,7 +2452,7 @@ status() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @flag --help    Show help for command
 variable() {
-    :;
+    :
 }
 
 # {{{ gh variable delete
@@ -2467,7 +2463,7 @@ variable() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg variable-name![`_choice_variable`]
 variable::delete() {
-    :;
+    :
 }
 # }}} gh variable delete
 
@@ -2481,7 +2477,7 @@ variable::delete() {
 # @flag --help                                Show help for command
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 variable::list() {
-    :;
+    :
 }
 # }}} gh variable list
 
@@ -2497,7 +2493,7 @@ variable::list() {
 # @option -R --repo[`_choice_search_repo`] <[HOST/]OWNER/REPO>  Select another repository using the [HOST/]OWNER/REPO format
 # @arg variable-name!
 variable::set() {
-    :;
+    :
 }
 # }}} gh variable set
 # }} gh variable
@@ -2506,42 +2502,42 @@ variable::set() {
 # @cmd Learn about working with GitHub Actions
 # @flag --help    Show help for command
 actions() {
-    :;
+    :
 }
 # }} gh actions
 
 # {{ gh environment
 # @cmd Environment variables that can be used with gh
 environment() {
-    :;
+    :
 }
 # }} gh environment
 
 # {{ gh exit-codes
 # @cmd Exit codes used by gh
 exit-codes() {
-    :;
+    :
 }
 # }} gh exit-codes
 
 # {{ gh formatting
 # @cmd Formatting options for JSON data exported from gh
 formatting() {
-    :;
+    :
 }
 # }} gh formatting
 
 # {{ gh mintty
 # @cmd Information about using gh with MinTTY
 mintty() {
-    :;
+    :
 }
 # }} gh mintty
 
 # {{ gh reference
 # @cmd A comprehensive reference of all gh commands
 reference() {
-    :;
+    :
 }
 # }} gh reference
 
@@ -2594,8 +2590,8 @@ EOF
 }
 
 _choice_branch() {
-    _helper_repo_query 'refs(first: 100, refPrefix: "refs/heads/") { nodes { name, target { abbreviatedOid } } }' | \
-    yq '.data.repository.refs.nodes[] | .name + "	" + .target.abbreviatedOid'
+    _helper_repo_query 'refs(first: 100, refPrefix: "refs/heads/") { nodes { name, target { abbreviatedOid } } }' |
+        yq '.data.repository.refs.nodes[] | .name + "	" + .target.abbreviatedOid'
 }
 
 _choice_search_repo() {
@@ -2608,8 +2604,8 @@ _choice_search_repo() {
 }
 
 _choice_codespace() {
-    gh codespace list --json name,owner,repository,state | \
-    yq '.[] | .name + "	" + .owner + " • " + .repository + " • " + .state'
+    gh codespace list --json name,owner,repository,state |
+        yq '.[] | .name + "	" + .owner + " • " + .repository + " • " + .state'
 }
 
 _choice_owner() {
@@ -2630,8 +2626,8 @@ _choice_search_user() {
             search( type:USER, query: "'$val' in:login", first: 100) {
                 edges { node { ... on User { login name } } } 
             }
-        }' | \
-    yq '.data.search.edges[].node | .login + "	" + (.name // "")'
+        }' |
+        yq '.data.search.edges[].node | .login + "	" + (.name // "")'
 }
 
 _choice_codespace_field() {
@@ -2639,38 +2635,38 @@ _choice_codespace_field() {
 }
 
 _choice_gist() {
-    _helper_user_query 'gists(first:100, privacy:ALL, orderBy: {field: UPDATED_AT, direction: DESC}) { edges { node { name, description } } } ' | \
-    yq '.data.user.gists.edges[].node | .name + "	" + (.description // "")'
+    _helper_user_query 'gists(first:100, privacy:ALL, orderBy: {field: UPDATED_AT, direction: DESC}) { edges { node { name, description } } } ' |
+        yq '.data.user.gists.edges[].node | .name + "	" + (.description // "")'
 }
 
 _choice_gist_file() {
-    _helper_user_query 'gist(name:"'$argc_gist'") { files { name } }' | \
-    yq '.data.user.gist.files[].name'
+    _helper_user_query 'gist(name:"'$argc_gist'") { files { name } }' |
+        yq '.data.user.gist.files[].name'
 }
 
 _choice_assignee() {
-    _helper_repo_query 'assignableUsers(first: 100, query: "'$ARGC_CWORD'") { nodes { login, name } }' | \
-    yq '.data.repository.assignableUsers.nodes[] | .login + "	" + (.name // "")'
+    _helper_repo_query 'assignableUsers(first: 100, query: "'$ARGC_CWORD'") { nodes { login, name } }' |
+        yq '.data.repository.assignableUsers.nodes[] | .login + "	" + (.name // "")'
 }
 
 _choice_label() {
-    _helper_repo_query 'labels(first: 100) { nodes { name, description } }' | \
-    yq '.data.repository.labels.nodes[] | .name + "	" + (.description // "")'
+    _helper_repo_query 'labels(first: 100) { nodes { name, description } }' |
+        yq '.data.repository.labels.nodes[] | .name + "	" + (.description // "")'
 }
 
 _choice_milestone() {
-    _helper_repo_query 'milestones(first: 100, states: OPEN) { nodes { title, description } }' | \
-    yq '.data.repository.milestones.nodes[] | .title + "	" + (.description // "")'
+    _helper_repo_query 'milestones(first: 100, states: OPEN) { nodes { title, description } }' |
+        yq '.data.repository.milestones.nodes[] | .title + "	" + (.description // "")'
 }
 
 _choice_repo_project() {
-    _helper_repo_query 'projectsV2(first: 100, orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number title } }' | \
-    yq '.data.repository.projectsV2.nodes[] | .number + "	" + .title'
+    _helper_repo_query 'projectsV2(first: 100, orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number title } }' |
+        yq '.data.repository.projectsV2.nodes[] | .number + "	" + .title'
 }
 
 _choice_issue_template() {
-    _helper_repo_query 'issueTemplates { name, about }' | \
-    yq '.data.repository.issueTemplates[] | .name + "	" + (.about // "")'
+    _helper_repo_query 'issueTemplates { name, about }' |
+        yq '.data.repository.issueTemplates[] | .name + "	" + (.about // "")'
 }
 
 _choice_issue_field() {
@@ -2678,8 +2674,8 @@ _choice_issue_field() {
 }
 
 _choice_mention() {
-    _helper_repo_query 'mentionableUsers(first: 100, query: "'$ARGC_CWORD'") { nodes { login, name } }' | \
-    yq '.data.repository.mentionableUsers.nodes[] | .login + "	" + (.name // "")'
+    _helper_repo_query 'mentionableUsers(first: 100, query: "'$ARGC_CWORD'") { nodes { login, name } }' |
+        yq '.data.repository.mentionableUsers.nodes[] | .login + "	" + (.name // "")'
 }
 
 _choice_open_issue() {
@@ -2694,24 +2690,24 @@ _choice_issue_assignee() {
     if [[ -z "$argc_issue" ]]; then
         return
     fi
-    _helper_repo_query 'issue(number: '$argc_issue') { assignees(first: 100) { nodes { login, name } } }' | \
-    yq '.data.repository.issue.assignees.nodes[]| .login + "	" + (.name // "")'
+    _helper_repo_query 'issue(number: '$argc_issue') { assignees(first: 100) { nodes { login, name } } }' |
+        yq '.data.repository.issue.assignees.nodes[]| .login + "	" + (.name // "")'
 }
 
 _choice_issue_label() {
     if [[ -z "$argc_issue" ]]; then
         return
     fi
-    _helper_repo_query 'issue(number: '$argc_issue') { labels(first: 100) { nodes { name, description } } }' | \
-    yq '.data.repository.issue.labels.nodes[] | .name + "	" + (.description // "")'
+    _helper_repo_query 'issue(number: '$argc_issue') { labels(first: 100) { nodes { name, description } } }' |
+        yq '.data.repository.issue.labels.nodes[] | .name + "	" + (.description // "")'
 }
 
 _choice_issue_project() {
     if [[ -z "$argc_issue" ]]; then
         return
     fi
-    _helper_repo_query 'issue(number: '$argc_issue') { projectsV2(first:100) { nodes { number title } } }' | \
-    yq '.data.repository.issue.projectsV2.nodes[] | .number + "	" + .title'
+    _helper_repo_query 'issue(number: '$argc_issue') { projectsV2(first:100) { nodes { number title } } }' |
+        yq '.data.repository.issue.projectsV2.nodes[] | .number + "	" + .title'
 }
 
 _choice_closed_issue() {
@@ -2719,8 +2715,8 @@ _choice_closed_issue() {
 }
 
 _choice_pin_issue() {
-    _helper_repo_query 'pinnedIssues(first: 3) { nodes { issue { number, title, state } } }' | \
-    yq '.data.repository.pinnedIssues.nodes[].issue | .number + "	" + .title'
+    _helper_repo_query 'pinnedIssues(first: 3) { nodes { issue { number, title, state } } }' |
+        yq '.data.repository.pinnedIssues.nodes[].issue | .number + "	" + .title'
 }
 
 _choice_pr_field() {
@@ -2739,45 +2735,45 @@ _choice_pr_assignee() {
     if [[ -z "$argc_pr" ]]; then
         return
     fi
-    _helper_repo_query 'pullRequest(number: '$argc_pr') { assignees(first: 100) { nodes { login, name } } }' | \
-    yq '.data.repository.pullRequest.assignees.nodes[] | .login + "	" + (.name // "")'
+    _helper_repo_query 'pullRequest(number: '$argc_pr') { assignees(first: 100) { nodes { login, name } } }' |
+        yq '.data.repository.pullRequest.assignees.nodes[] | .login + "	" + (.name // "")'
 }
 
 _choice_pr_label() {
     if [[ -z "$argc_pr" ]]; then
         return
     fi
-    _helper_repo_query 'pullRequest(number: '$argc_pr') { labels(first: 100) { nodes { name, description } } }' | \
-    yq '.data.repository.pullRequest.labels.nodes[] | .name + "	" + (.description // "")'
+    _helper_repo_query 'pullRequest(number: '$argc_pr') { labels(first: 100) { nodes { name, description } } }' |
+        yq '.data.repository.pullRequest.labels.nodes[] | .name + "	" + (.description // "")'
 }
 
 _choice_pr_project() {
     if [[ -z "$argc_pr" ]]; then
         return
     fi
-    _helper_repo_query 'pullRequest(number: '$argc_pr') { projectsV2(first:100) { nodes { number title } } }' | \
-    yq '.data.repository.pullRequest.projectsV2.nodes[] | .number + "	" + .title'
+    _helper_repo_query 'pullRequest(number: '$argc_pr') { projectsV2(first:100) { nodes { number title } } }' |
+        yq '.data.repository.pullRequest.projectsV2.nodes[] | .number + "	" + .title'
 }
 
 _choice_pr_reviewer() {
     if [[ -z "$argc_pr" ]]; then
         return
     fi
-    _helper_repo_query 'pullRequest(number: '$argc_pr') { latestReviews(first:100) { nodes { author { login } } } }' | \
-    yq '.data.repository.pullRequest.latestReviews.nodes[].author.login'
+    _helper_repo_query 'pullRequest(number: '$argc_pr') { latestReviews(first:100) { nodes { author { login } } } }' |
+        yq '.data.repository.pullRequest.latestReviews.nodes[].author.login'
 }
 
 _choice_pr_commit() {
     if [[ -z "$argc_pr" ]]; then
         return
     fi
-    _helper_repo_curl pulls/$argc_pr/commits | \
-    yq '.[] | .sha + "	" + .commit.message'
+    _helper_repo_curl pulls/$argc_pr/commits |
+        yq '.[] | .sha + "	" + .commit.message'
 }
 
 _choice_ready_pr() {
-    _helper_repo_query 'pullRequests(first: 100, states: OPEN, orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number, title, isDraft, state  } }' | \
-    yq '.data.repository.pullRequests.nodes[] | select(.isDraft) | .number + "	" + .title'
+    _helper_repo_query 'pullRequests(first: 100, states: OPEN, orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number, title, isDraft, state  } }' |
+        yq '.data.repository.pullRequests.nodes[] | select(.isDraft) | .number + "	" + .title'
 }
 
 _choice_closed_pr() {
@@ -2786,34 +2782,34 @@ _choice_closed_pr() {
 
 _choice_project() {
     if [[ -n "$argc_owner" ]]; then
-        gh api graphql -f query='query { organization(login: "'$argc_owner'") { projectsV2(first: 100) { nodes { number title } } } }' | \
-        yq '.data.organization.projectsV2.nodes[] | .number + "	" + .title'
+        gh api graphql -f query='query { organization(login: "'$argc_owner'") { projectsV2(first: 100) { nodes { number title } } } }' |
+            yq '.data.organization.projectsV2.nodes[] | .number + "	" + .title'
     else
         user_val="$(_helper_get_user)"
         if [[ -n "$user_val" ]]; then
-            gh api graphql -f query='query { user(login: "'$user_val'") { projectsV2(first: 100) { nodes { number title } } } }' | \
-            yq '.data.user.projectsV2.nodes[] | .number + "	" + .title'
+            gh api graphql -f query='query { user(login: "'$user_val'") { projectsV2(first: 100) { nodes { number title } } } }' |
+                yq '.data.user.projectsV2.nodes[] | .number + "	" + .title'
         fi
     fi
 }
 
 _choice_discussion_category() {
-    _helper_repo_query 'discussionCategories(first:100) { nodes { name, description } } ' | \
-    yq '.data.repository.discussionCategories.nodes[] | .name + "	" + (.description // "")'
+    _helper_repo_query 'discussionCategories(first:100) { nodes { name, description } } ' |
+        yq '.data.repository.discussionCategories.nodes[] | .name + "	" + (.description // "")'
 
 }
 
 _choice_tag() {
-    _helper_repo_query 'refs(first: 100, refPrefix: "refs/tags/", orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) { nodes { name } }' | \
-    yq '.data.repository.refs.nodes[] | .name'
+    _helper_repo_query 'refs(first: 100, refPrefix: "refs/tags/", orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) { nodes { name } }' |
+        yq '.data.repository.refs.nodes[] | .name'
 }
 
 _choice_release_asset() {
     if [[ -z $argc_tag ]]; then
         return
     fi
-    _helper_repo_query 'release(tagName: "'$argc_tag'") { releaseAssets(first:100) { nodes { name } } }' | \
-    yq '.data.repository.release.releaseAssets.nodes[].name'
+    _helper_repo_query 'release(tagName: "'$argc_tag'") { releaseAssets(first:100) { nodes { name } } }' |
+        yq '.data.repository.release.releaseAssets.nodes[].name'
 }
 
 _choice_gitignore() {
@@ -2840,18 +2836,18 @@ _choice_search_topic() {
 }
 
 _choice_repo_topic() {
-    _helper_repo_query 'repositoryTopics(first:100) { nodes { topic { name } } }' | \
-    yq '.data.repository.repositoryTopics.nodes[].topic.name'
+    _helper_repo_query 'repositoryTopics(first:100) { nodes { topic { name } } }' |
+        yq '.data.repository.repositoryTopics.nodes[].topic.name'
 }
 
 _choice_inprogress_run() {
-    _helper_repo_curl 'actions/runs?status=in_progress' | \
-    yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
+    _helper_repo_curl 'actions/runs?status=in_progress' |
+        yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
 }
 
 _choice_all_run() {
-    _helper_repo_curl 'actions/runs' | \
-    yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
+    _helper_repo_curl 'actions/runs' |
+        yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
 }
 
 _choice_artifact_name() {
@@ -2861,8 +2857,8 @@ _choice_artifact_name() {
     else
         path="actions/runs/$argc_run_id/artifacts"
     fi
-    _helper_repo_curl "$path" | \
-    yq '.artifacts[].name'
+    _helper_repo_curl "$path" |
+        yq '.artifacts[].name'
 }
 
 _choice_workflow_event() {
@@ -2910,26 +2906,26 @@ _choice_run_field() {
 }
 
 _choice_workflow() {
-    _helper_repo_curl "actions/workflows" | \
-    yq '.workflows[] | .id + "	" + .name'
+    _helper_repo_curl "actions/workflows" |
+        yq '.workflows[] | .id + "	" + .name'
 }
 
-_choice_run_job() { 
+_choice_run_job() {
     if [[ -z "$argc_run_id" ]]; then
         return
     fi
-    _helper_repo_curl "actions/runs/$argc_run_id/jobs" | \
-    yq '.jobs[] | .id + "	" + .name'
+    _helper_repo_curl "actions/runs/$argc_run_id/jobs" |
+        yq '.jobs[] | .id + "	" + .name'
 }
 
 _choice_failed_run() {
-    _helper_repo_curl 'actions/runs?status=failure' | \
-    yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
+    _helper_repo_curl 'actions/runs?status=failure' |
+        yq '.workflow_runs[] | .id + "	" + .name + ": " + (.display_title // "")'
 }
 
 _choice_workflow_or_file() {
     if _argc_util_is_path "$ARGC_CWORD"; then
-        _argc_util_comp_path 
+        _argc_util_comp_path
     else
         _choice_workflow
     fi
@@ -2948,13 +2944,13 @@ _choice_config_key() {
 }
 
 _choice_gpg_key() {
-    gh api user/gpg_keys | \
-    yq '.[] | .key_id + "	" + .name'
+    gh api user/gpg_keys |
+        yq '.[] | .key_id + "	" + .name'
 }
 
 _choice_ruleset() {
-    gh ruleset list $(_argc_util_param_select_options --repo) | \
-    _argc_util_transform_table 'ID;NAME' '\t'
+    gh ruleset list $(_argc_util_param_select_options --repo) |
+        _argc_util_transform_table 'ID;NAME' '\t'
 }
 
 _choice_commit_field() {
@@ -2966,13 +2962,13 @@ _choice_secret() {
 }
 
 _choice_ssh_key() {
-    gh api user/keys | \
-    yq '.[] | .id + "	" + .title'
+    gh api user/keys |
+        yq '.[] | .id + "	" + .title'
 }
 
 _choice_env() {
     _helper_repo_curl 'environments' |
-    yq  '.environments[].name'
+        yq '.environments[].name'
 }
 
 _choice_search_org() {
@@ -2985,17 +2981,17 @@ _choice_search_org() {
             search( type:USER, query: "'$val' in:login", first: 100) {
                 edges { node { ... on Organization  { login name } } } 
             }
-        }' | \
-    yq '.data.search.edges[].node | .login + "	" + (.name // "")'
+        }' |
+        yq '.data.search.edges[].node | .login + "	" + (.name // "")'
 }
 
 _choice_variable() {
     if [[ -n "$argc_org" ]]; then
-        gh "orgs/$argc_org/actions/variables?per_page=100" | \
-        yq '.variables[] | .name + "	" + .value'
+        gh "orgs/$argc_org/actions/variables?per_page=100" |
+            yq '.variables[] | .name + "	" + .value'
     else
-       _helper_repo_curl 'actions/variables?per_page=100' | \
-        yq '.variables[] | .name + "	" + .value'
+        _helper_repo_curl 'actions/variables?per_page=100' |
+            yq '.variables[] | .name + "	" + .value'
     fi
 }
 
@@ -3012,8 +3008,8 @@ _helper_query_issue() {
     if [[ -n "$1" ]]; then
         states="states: $1,"
     fi
-    _helper_repo_query 'issues(first: 100, '"$states"' orderBy: {direction: DESC, field: UPDATED_AT}) { nodes { number, title, state } }' | \
-    yq '.data.repository.issues.nodes[] | .number + "	" + .title'
+    _helper_repo_query 'issues(first: 100, '"$states"' orderBy: {direction: DESC, field: UPDATED_AT}) { nodes { number, title, state } }' |
+        yq '.data.repository.issues.nodes[] | .number + "	" + .title'
 }
 
 _helper_query_pr() {
@@ -3021,8 +3017,8 @@ _helper_query_pr() {
     if [[ -n "$1" ]]; then
         states="states: $1,"
     fi
-    _helper_repo_query 'pullRequests(first: 100, '"$states"' orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number, title, isDraft, state  } }' | \
-    yq '.data.repository.pullRequests.nodes[] | .number + "	" + .title'
+    _helper_repo_query 'pullRequests(first: 100, '"$states"' orderBy: {direction: DESC, field: UPDATED_AT}) { nodes {  number, title, isDraft, state  } }' |
+        yq '.data.repository.pullRequests.nodes[] | .number + "	" + .title'
 }
 
 _helper_repo_curl() {
@@ -3046,9 +3042,9 @@ _helper_retrieve_owner_repo_vals() {
         owner_val="${argc_repo%/*}"
         repo_val="${argc_repo##*/}"
     else
-        local raw_values="$( \
-            git remote -v | \
-            gawk '{
+        local raw_values="$(
+            git remote -v |
+                gawk '{
                 if (match($0, /^origin\thttps:\/\/[^\/]+\/([^\/]+)\/([^\/]+) \(fetch\)/, arr)) {
                     gsub(".git", "", arr[2])
                     print arr[1] " " arr[2]
@@ -3056,9 +3052,9 @@ _helper_retrieve_owner_repo_vals() {
                     gsub(".git", "", arr[2])
                     print arr[1] " " arr[2]
                 }
-            }' \
+            }'
         )"
-        local values=( $raw_values )
+        local values=($raw_values)
         if [[ "${#values[@]}" -eq 2 ]]; then
             owner_val=${values[0]}
             repo_val=${values[1]}
@@ -3072,8 +3068,8 @@ _helper_search_repo() {
             search( type:REPOSITORY, query: """user:'$1' "'$2'" in:name fork:true""", first: 100) {
                 edges { node { ... on Repository { name description } } } 
             }
-        }' | \
-    yq '.data.search.edges[].node | .name + "	" + (.description // "")'
+        }' |
+        yq '.data.search.edges[].node | .name + "	" + (.description // "")'
 }
 
 _helper_user_query() {

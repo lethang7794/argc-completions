@@ -20,7 +20,7 @@
 # @option -u --unit[`_choice_unit`]           Show logs from the specified unit
 # @option --user-unit[`_choice_user_unit`] <UNIT>  Show logs from the specified user unit
 # @option -t --identifier <STRING>            Show entries with the specified syslog identifier
-# @option -p --priority[`_choice_priority`] <RANGE>  Show entries with the specified priority
+# @option -p --priority[`_choice_priority`] <RANGE>  Show entries within the specified priority range
 # @option --facility*,[`_choice_facility`]    Show entries with the specified facilities
 # @option -g --grep <PATTERN>                 Show entries with MESSAGE matching PATTERN
 # @option --case-sensitive <BOOL>             Force case sensitive or insensitive matching

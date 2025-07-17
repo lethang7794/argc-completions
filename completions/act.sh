@@ -20,7 +20,7 @@
 # @option --defaultbranch <string>              the name of the main branch
 # @flag --detect-event                          Use first event type from workflow as event that triggered the workflow
 # @option -C --directory <dir>                  working directory (default ".")
-# @flag -n --dryrun                             dryrun mode
+# @flag -n --dryrun                             disable container creation, validates only workflow correctness
 # @option --env* <string>                       env to make available to actions with optional value (e.g. --env myenv=foo or --env myenv)
 # @option --env-file <file>                     environment file to read and use as env in the containers (default ".env")
 # @option -e --eventpath <file>                 path to event JSON file

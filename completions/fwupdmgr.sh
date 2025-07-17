@@ -5,6 +5,7 @@
 # @flag -h --help                Show help options
 # @flag -v --verbose             Show extra debugging information
 # @flag --version                Show client and daemon versions
+# @flag --download-retries       Set the download retries for transient errors
 # @flag --offline                Schedule installation for next reboot when possible
 # @flag --allow-reinstall        Allow reinstalling existing firmware versions
 # @flag --allow-older            Allow downgrading firmware versions
@@ -315,6 +316,13 @@ reinstall() {
     :;
 }
 # }} fwupdmgr reinstall
+
+# {{ fwupdmgr report-devices
+# @cmd Upload the list of updatable devices to a remote server
+report-devices() {
+    :;
+}
+# }} fwupdmgr report-devices
 
 # {{ fwupdmgr report-export
 # @cmd Export firmware history for manual upload

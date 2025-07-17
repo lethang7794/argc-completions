@@ -82,7 +82,7 @@ auto-update() {
 # @option --creds <username[:password]>          use [username[:password]] for accessing the registry
 # @option --cw <options>                         confidential workload options
 # @option --decryption-key* <string>             key needed to decrypt the image
-# @option --device* <string>                     additional devices to be used within containers (default [])
+# @option --device* <string>                     additional devices to provide
 # @flag -D --disable-compression                 don't compress layers by default (default true)
 # @flag --disable-content-trust                  this is a Docker specific option and is a NOOP
 # @option --dns </etc/resolv.conf>               set custom DNS servers or disable it completely by setting it to 'none', which prevents the automatic creation of /etc/resolv.conf.
@@ -842,7 +842,7 @@ container::cp() {
 # @option --retry-delay <string>                   delay between retries in case of pull failures
 # @flag --rm                                       Remove container and any anonymous unnamed volume associated with the container after exit
 # @flag --rootfs                                   The first argument is not an image but the rootfs to the exploded container
-# @option --sdnotify[container|conmon|ignore] <string>  control sd-notify behavior (default "container")
+# @option --sdnotify[container|conmon|healthy|ignore] <string>  control sd-notify behavior (default "container")
 # @option --seccomp-policy <file>                  Policy for selecting a seccomp profile (experimental) (default "default")
 # @option --secret* <string>                       Add secret to container
 # @option --security-opt* <string>                 Security Options
@@ -1246,7 +1246,7 @@ container::rm() {
 # @flag --rm                                       Remove container and any anonymous unnamed volume associated with the container after exit
 # @flag --rmi                                      Remove image unless used by other containers, implies --rm
 # @flag --rootfs                                   The first argument is not an image but the rootfs to the exploded container
-# @option --sdnotify[container|conmon|ignore] <string>  control sd-notify behavior (default "container")
+# @option --sdnotify[container|conmon|healthy|ignore] <string>  control sd-notify behavior (default "container")
 # @option --seccomp-policy <file>                  Policy for selecting a seccomp profile (experimental) (default "default")
 # @option --secret* <string>                       Add secret to container
 # @option --security-opt* <string>                 Security Options
@@ -1401,6 +1401,7 @@ container::unpause() {
 # @option --memory-swap <string>            Swap limit equal to memory plus swap: '-1' to enable unlimited swap
 # @option --memory-swappiness <int>         Tune container memory swappiness (0 to 100, or -1 for system default) (default -1)
 # @option --pids-limit <int>                Tune container pids limit (set -1 for unlimited) (default 2048)
+# @option --restart[always|no|never|on-failure|unless-stopped] <string>  Restart policy to apply when a container exits
 # @arg container[`_choice_container`]
 container::update() {
     :;
@@ -1542,7 +1543,7 @@ cp() {
 # @option --retry-delay <string>                   delay between retries in case of pull failures
 # @flag --rm                                       Remove container and any anonymous unnamed volume associated with the container after exit
 # @flag --rootfs                                   The first argument is not an image but the rootfs to the exploded container
-# @option --sdnotify[container|conmon|ignore] <string>  control sd-notify behavior (default "container")
+# @option --sdnotify[container|conmon|healthy|ignore] <string>  control sd-notify behavior (default "container")
 # @option --seccomp-policy <file>                  Policy for selecting a seccomp profile (experimental) (default "default")
 # @option --secret* <string>                       Add secret to container
 # @option --security-opt* <string>                 Security Options
@@ -1664,7 +1665,7 @@ farm() {
 # @option --cpuset-mems <string>                 memory nodes (MEMs) in which to allow execution (0-3, 0,1).
 # @option --creds <username[:password]>          use [username[:password]] for accessing the registry
 # @option --decryption-key* <string>             key needed to decrypt the image
-# @option --device* <string>                     additional devices to be used within containers (default [])
+# @option --device* <string>                     additional devices to provide
 # @flag -D --disable-compression                 don't compress layers by default (default true)
 # @option --dns </etc/resolv.conf>               set custom DNS servers or disable it completely by setting it to 'none', which prevents the automatic creation of /etc/resolv.conf.
 # @option --dns-option* <string>                 set custom DNS options
@@ -1896,7 +1897,7 @@ image() {
 # @option --creds <username[:password]>       use [username[:password]] for accessing the registry
 # @option --cw <options>                      confidential workload options
 # @option --decryption-key* <string>          key needed to decrypt the image
-# @option --device* <string>                  additional devices to be used within containers (default [])
+# @option --device* <string>                  additional devices to provide
 # @flag -D --disable-compression              don't compress layers by default (default true)
 # @flag --disable-content-trust               this is a Docker specific option and is a NOOP
 # @option --dns </etc/resolv.conf>            set custom DNS servers or disable it completely by setting it to 'none', which prevents the automatic creation of /etc/resolv.conf.
@@ -2107,7 +2108,7 @@ image::pull() {
 # @option --authfile <file>                        Path of the authentication file.
 # @option --cert-dir <dir>                         Path to a directory containing TLS certificates and keys
 # @flag --compress                                 Compress tarball image layers when pushing to a directory using the 'dir' transport.
-# @option --compression-format <string>            compression format to use (default "gzip")
+# @option --compression-format <string>            compression format to use (default "zstd:chunked")
 # @option --compression-level <int>                compression level to use
 # @option --creds <Credentials>                    Credentials (USERNAME:PASSWORD) to use for authenticating to a registry
 # @option --digestfile <file>                      Write the digest of the pushed image to the specified file
@@ -3211,7 +3212,7 @@ pull() {
 # @option --authfile <file>                        Path of the authentication file.
 # @option --cert-dir <dir>                         Path to a directory containing TLS certificates and keys
 # @flag --compress                                 Compress tarball image layers when pushing to a directory using the 'dir' transport.
-# @option --compression-format <string>            compression format to use (default "gzip")
+# @option --compression-format <string>            compression format to use (default "zstd:chunked")
 # @option --compression-level <int>                compression level to use
 # @option --creds <Credentials>                    Credentials (USERNAME:PASSWORD) to use for authenticating to a registry
 # @option --digestfile <file>                      Write the digest of the pushed image to the specified file
@@ -3404,7 +3405,7 @@ rmi() {
 # @flag --rm                                       Remove container and any anonymous unnamed volume associated with the container after exit
 # @flag --rmi                                      Remove image unless used by other containers, implies --rm
 # @flag --rootfs                                   The first argument is not an image but the rootfs to the exploded container
-# @option --sdnotify[container|conmon|ignore] <string>  control sd-notify behavior (default "container")
+# @option --sdnotify[container|conmon|healthy|ignore] <string>  control sd-notify behavior (default "container")
 # @option --seccomp-policy <file>                  Policy for selecting a seccomp profile (experimental) (default "default")
 # @option --secret* <string>                       Add secret to container
 # @option --security-opt* <string>                 Security Options
@@ -3801,6 +3802,7 @@ untag() {
 # @option --memory-swap <string>            Swap limit equal to memory plus swap: '-1' to enable unlimited swap
 # @option --memory-swappiness <int>         Tune container memory swappiness (0 to 100, or -1 for system default) (default -1)
 # @option --pids-limit <int>                Tune container pids limit (set -1 for unlimited) (default 2048)
+# @option --restart[always|no|never|on-failure|unless-stopped] <string>  Restart policy to apply when a container exits
 # @arg container[`_choice_container`]
 update() {
     :;

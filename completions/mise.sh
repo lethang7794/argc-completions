@@ -299,6 +299,48 @@ exec() {
 }
 # }} mise exec
 
+# {{ mise generate
+# @cmd [experimental] Generate files for various tools/services [aliases: gen]
+# @option -C --cd <DIR>    Change directory before running command
+# @flag -q --quiet         Suppress non-error messages
+# @flag -v --verbose*      Show extra output (use -vv for even more)
+# @flag -y --yes           Answer yes to all confirmation prompts
+# @flag -h --help          Print help
+generate() {
+    :;
+}
+
+# {{{ mise generate git-pre-commit
+# @cmd [experimental] Generate a git pre-commit hook [aliases: pre-commit]
+# @option -C --cd <DIR>    Change directory before running command
+# @option --hook           Which hook to generate (saves to .git/hooks/$hook)
+# @option -t --task        The task to run when the pre-commit hook is triggered
+# @flag -w --write         write to .git/hooks/pre-commit and make it executable
+# @flag -q --quiet         Suppress non-error messages
+# @flag -v --verbose*      Show extra output (use -vv for even more)
+# @flag -y --yes           Answer yes to all confirmation prompts
+# @flag -h --help          Print help (see a summary with '-h')
+generate::git-pre-commit() {
+    :;
+}
+# }}} mise generate git-pre-commit
+
+# {{{ mise generate github-action
+# @cmd [experimental] Generate a Github Action workflow file
+# @option -C --cd <DIR>    Change directory before running command
+# @option -n --name        the name of the workflow to generate
+# @option -t --task        The task to run when the workflow is triggered
+# @flag -w --write         write to .github/workflows/$name.yml
+# @flag -q --quiet         Suppress non-error messages
+# @flag -v --verbose*      Show extra output (use -vv for even more)
+# @flag -y --yes           Answer yes to all confirmation prompts
+# @flag -h --help          Print help (see a summary with '-h')
+generate::github-action() {
+    :;
+}
+# }}} mise generate github-action
+# }} mise generate
+
 # {{ mise implode
 # @cmd Removes mise CLI and all related data
 # @option -C --cd <DIR>    Change directory before running command
@@ -515,6 +557,8 @@ plugins::update() {
 # @cmd Delete unused versions of tools
 # @option -C --cd <DIR>    Change directory before running command
 # @flag -n --dry-run       Do not actually delete anything
+# @flag --configs          Prune only tracked and trusted configuration links that point to non-existent configurations
+# @flag --tools            Prune only unused versions of tools
 # @flag -q --quiet         Suppress non-error messages
 # @flag -v --verbose*      Show extra output (use -vv for even more)
 # @flag -y --yes           Answer yes to all confirmation prompts
@@ -524,6 +568,18 @@ prune() {
     :;
 }
 # }} mise prune
+
+# {{ mise registry
+# @cmd [experimental] List available tools
+# @option -C --cd <DIR>    Change directory before running command
+# @flag -q --quiet         Suppress non-error messages
+# @flag -v --verbose*      Show extra output (use -vv for even more)
+# @flag -y --yes           Answer yes to all confirmation prompts
+# @flag -h --help          Print help (see a summary with '-h')
+registry() {
+    :;
+}
+# }} mise registry
 
 # {{ mise reshim
 # @cmd rebuilds the shim farm
@@ -722,6 +778,7 @@ sync::python() {
 # @flag -y --yes                                 Answer yes to all confirmation prompts
 # @option --sort[name|alias|description|source] <COLUMN>  Sort by column.
 # @option --sort-order[asc|desc] <SORT_ORDER>    Sort order.
+# @flag -J --json                                Output in JSON format
 # @flag -h --help                                Print help (see a summary with '-h')
 tasks() {
     :;
@@ -765,6 +822,7 @@ tasks::edit() {
 # @flag -q --quiet                               Suppress non-error messages
 # @option --sort[name|alias|description|source] <COLUMN>  Sort by column.
 # @option --sort-order[asc|desc] <SORT_ORDER>    Sort order.
+# @flag -J --json                                Output in JSON format
 # @flag -v --verbose*                            Show extra output (use -vv for even more)
 # @flag -y --yes                                 Answer yes to all confirmation prompts
 # @flag -h --help                                Print help (see a summary with '-h')
